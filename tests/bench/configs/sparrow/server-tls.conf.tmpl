@@ -1,0 +1,26 @@
+# TLS-инстанс Nano-Sparrow (порт 8443). 1 подставляется runner'ом.
+[server]
+port = 8443
+worker_threads = 1
+max_connections = __MAX_CONNECTIONS__
+buffer_size = 8192
+io_timeout_ms = 30000
+enable_sqpoll = false
+enable_affinity = false
+enable_gzip = true
+enable_keep_alive = true
+
+[ssl]
+enable_ssl = true
+ssl_cert = /certs/cert.pem
+ssl_key = /certs/key.pem
+
+[upstream:api]
+node = 172.30.0.10:9090
+
+[routes]
+/status = status
+/big = big
+/echo = echo
+/static/ = static:/www
+/api = proxy:api

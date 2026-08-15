@@ -1,0 +1,5393 @@
+{
+  "meta": {
+    "date": "2026-08-09 13:35:54",
+    "tag": "",
+    "workers": [
+      "1",
+      "3"
+    ],
+    "git_rev": "",
+    "host_kernel": "7.0.0-28-generic"
+  },
+  "runs": [
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "status",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 51.175000000000004,
+        "cpu_max": 102.31,
+        "rss_mb": 134.35,
+        "usage_mb": 133.62890625,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 133.75,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.3671875
+      },
+      "mem": {
+        "cpu_avg": 51.175000000000004,
+        "cpu_max": 102.31,
+        "rss_mb": 134.35,
+        "usage_mb": 133.62890625,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 133.75,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.41ms    2.73ms  39.54ms   89.84%\n    Req/Sec    45.98k     7.16k  124.08k    85.48%\n  Latency Distribution\n     50%  124.00us\n     75%    1.52ms\n     90%    4.20ms\n     99%   13.02ms\n  1102042 requests in 6.10s, 150.29MB read\nRequests/sec: 180678.11\nTransfer/sec:     24.64MB\n",
+        "rps": 180678.11,
+        "transfer_mbps": 24.64,
+        "lat_avg_ms": 1.41,
+        "lat_stdev_ms": 2.73,
+        "lat_max_ms": 39.54,
+        "lat_dist_ms": {
+          "50": 0.124,
+          "75": 1.52,
+          "90": 4.2,
+          "99": 13.02
+        },
+        "lat_p50_ms": 0.124,
+        "lat_p99_ms": 13.02,
+        "requests": 1102042
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "status",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 50.755,
+        "cpu_max": 101.51,
+        "rss_mb": 19.48,
+        "usage_mb": 20.8671875,
+        "anon_mb": 16.990234375,
+        "cache_mb": 2.0234375,
+        "usage_peak_mb": 20.98828125,
+        "anon_peak_mb": 17.859375,
+        "cache_peak_mb": 2.0234375
+      },
+      "mem": {
+        "cpu_avg": 50.755,
+        "cpu_max": 101.51,
+        "rss_mb": 19.48,
+        "usage_mb": 20.8671875,
+        "anon_mb": 16.990234375,
+        "cache_mb": 2.0234375,
+        "usage_peak_mb": 20.98828125,
+        "anon_peak_mb": 17.859375,
+        "cache_peak_mb": 2.0234375
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.39ms    1.07ms  10.03ms   73.04%\n    Req/Sec    12.81k     2.75k   52.51k    97.51%\n  Latency Distribution\n     50%    1.23ms\n     75%    1.80ms\n     90%    2.83ms\n     99%    4.75ms\n  306965 requests in 6.10s, 45.38MB read\nRequests/sec:  50323.84\nTransfer/sec:      7.44MB\n",
+        "rps": 50323.84,
+        "transfer_mbps": 7.44,
+        "lat_avg_ms": 1.39,
+        "lat_stdev_ms": 1.07,
+        "lat_max_ms": 10.03,
+        "lat_dist_ms": {
+          "50": 1.23,
+          "75": 1.8,
+          "90": 2.83,
+          "99": 4.75
+        },
+        "lat_p50_ms": 1.23,
+        "lat_p99_ms": 4.75,
+        "requests": 306965
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "status",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 51.08,
+        "cpu_max": 102.16,
+        "rss_mb": 8.35,
+        "usage_mb": 8.615234375,
+        "anon_mb": 6.42578125,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 8.94921875,
+        "anon_peak_mb": 6.44140625,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 51.08,
+        "cpu_max": 102.16,
+        "rss_mb": 8.35,
+        "usage_mb": 8.615234375,
+        "anon_mb": 6.42578125,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 8.94921875,
+        "anon_peak_mb": 6.44140625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   652.63us  122.54us   9.51ms   90.71%\n    Req/Sec    24.65k     2.67k   49.53k    94.63%\n  Latency Distribution\n     50%  621.00us\n     75%  683.00us\n     90%  750.00us\n     99%    1.00ms\n  593487 requests in 6.10s, 165.27MB read\nRequests/sec:  97303.10\nTransfer/sec:     27.10MB\n",
+        "rps": 97303.1,
+        "transfer_mbps": 27.1,
+        "lat_avg_ms": 0.65263,
+        "lat_stdev_ms": 0.12254000000000001,
+        "lat_max_ms": 9.51,
+        "lat_dist_ms": {
+          "50": 0.621,
+          "75": 0.683,
+          "90": 0.75,
+          "99": 1.0
+        },
+        "lat_p50_ms": 0.621,
+        "lat_p99_ms": 1.0,
+        "requests": 593487
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "status_noka",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 7.475,
+        "cpu_max": 14.91,
+        "rss_mb": 134.45,
+        "usage_mb": 133.595703125,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 133.65625,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.3671875
+      },
+      "mem": {
+        "cpu_avg": 7.475,
+        "cpu_max": 14.91,
+        "rss_mb": 134.45,
+        "usage_mb": 133.595703125,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 133.65625,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     4.47ms    5.03ms  25.59ms   82.52%\n    Req/Sec     1.58k     2.65k   14.36k    93.10%\n  Latency Distribution\n     50%    1.49ms\n     75%    7.25ms\n     90%   12.30ms\n     99%   19.81ms\n  37281 requests in 6.10s, 4.91MB read\nRequests/sec:   6110.15\nTransfer/sec:    823.44KB\n",
+        "rps": 6110.15,
+        "transfer_mbps": 0.804140625,
+        "lat_avg_ms": 4.47,
+        "lat_stdev_ms": 5.03,
+        "lat_max_ms": 25.59,
+        "lat_dist_ms": {
+          "50": 1.49,
+          "75": 7.25,
+          "90": 12.3,
+          "99": 19.81
+        },
+        "lat_p50_ms": 1.49,
+        "lat_p99_ms": 19.81,
+        "requests": 37281
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "status_noka",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 23.825,
+        "cpu_max": 47.65,
+        "rss_mb": 22.130000000000003,
+        "usage_mb": 22.98828125,
+        "anon_mb": 15.486328125,
+        "cache_mb": 2.0234375,
+        "usage_peak_mb": 23.2265625,
+        "anon_peak_mb": 15.67578125,
+        "cache_peak_mb": 2.0234375
+      },
+      "mem": {
+        "cpu_avg": 23.825,
+        "cpu_max": 47.65,
+        "rss_mb": 22.130000000000003,
+        "usage_mb": 22.98828125,
+        "anon_mb": 15.486328125,
+        "cache_mb": 2.0234375,
+        "usage_peak_mb": 23.2265625,
+        "anon_peak_mb": 15.67578125,
+        "cache_peak_mb": 2.0234375
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     5.20ms    4.94ms  28.30ms   80.27%\n    Req/Sec     1.82k     2.03k    6.39k    80.70%\n  Latency Distribution\n     50%    2.78ms\n     75%    6.73ms\n     90%   13.26ms\n     99%   20.74ms\n  42249 requests in 6.06s, 7.01MB read\nRequests/sec:   6970.11\nTransfer/sec:      1.16MB\n",
+        "rps": 6970.11,
+        "transfer_mbps": 1.16,
+        "lat_avg_ms": 5.2,
+        "lat_stdev_ms": 4.94,
+        "lat_max_ms": 28.3,
+        "lat_dist_ms": {
+          "50": 2.78,
+          "75": 6.73,
+          "90": 13.26,
+          "99": 20.74
+        },
+        "lat_p50_ms": 2.78,
+        "lat_p99_ms": 20.74,
+        "requests": 42249
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "status_noka",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 49.845,
+        "cpu_max": 99.69,
+        "rss_mb": 9.74,
+        "usage_mb": 9.306640625,
+        "anon_mb": 6.41015625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.7421875,
+        "anon_peak_mb": 6.41015625,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 49.845,
+        "cpu_max": 99.69,
+        "rss_mb": 9.74,
+        "usage_mb": 9.306640625,
+        "anon_mb": 6.41015625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.7421875,
+        "anon_peak_mb": 6.41015625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   616.79us  328.16us   7.88ms   75.70%\n    Req/Sec    17.48k     2.53k   23.58k    64.17%\n  Latency Distribution\n     50%  615.00us\n     75%  745.00us\n     90%    0.93ms\n     99%    1.78ms\n  417282 requests in 6.01s, 114.21MB read\nRequests/sec:  69410.25\nTransfer/sec:     19.00MB\n",
+        "rps": 69410.25,
+        "transfer_mbps": 19.0,
+        "lat_avg_ms": 0.61679,
+        "lat_stdev_ms": 0.32816,
+        "lat_max_ms": 7.88,
+        "lat_dist_ms": {
+          "50": 0.615,
+          "75": 0.745,
+          "90": 0.93,
+          "99": 1.78
+        },
+        "lat_p50_ms": 0.615,
+        "lat_p99_ms": 1.78,
+        "requests": 417282
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "tls_status",
+      "server": "sparrow",
+      "url": "https://sparrow-tls:8443/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow-tls",
+      "cpu": {
+        "cpu_avg": 50.67,
+        "cpu_max": 101.31,
+        "rss_mb": 136.05,
+        "usage_mb": 135.712890625,
+        "anon_mb": 129.05859375,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 136.0234375,
+        "anon_peak_mb": 129.05859375,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 50.67,
+        "cpu_max": 101.31,
+        "rss_mb": 136.05,
+        "usage_mb": 135.712890625,
+        "anon_mb": 129.05859375,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 136.0234375,
+        "anon_peak_mb": 129.05859375,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ https://sparrow-tls:8443/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     3.07ms   21.13ms 458.34ms   98.31%\n    Req/Sec    31.74k     6.53k   37.44k    94.74%\n  Latency Distribution\n     50%  161.00us\n     75%    1.28ms\n     90%    1.95ms\n     99%   99.29ms\n  720233 requests in 6.01s, 98.22MB read\nRequests/sec: 119801.55\nTransfer/sec:     16.34MB\n",
+        "rps": 119801.55,
+        "transfer_mbps": 16.34,
+        "lat_avg_ms": 3.07,
+        "lat_stdev_ms": 21.13,
+        "lat_max_ms": 458.34,
+        "lat_dist_ms": {
+          "50": 0.161,
+          "75": 1.28,
+          "90": 1.95,
+          "99": 99.29
+        },
+        "lat_p50_ms": 0.161,
+        "lat_p99_ms": 99.29,
+        "requests": 720233
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "tls_status",
+      "server": "caddy",
+      "url": "https://caddy:8443/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 51.045,
+        "cpu_max": 102.09,
+        "rss_mb": 19.634999999999998,
+        "usage_mb": 20.78125,
+        "anon_mb": 16.76953125,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 22.1640625,
+        "anon_peak_mb": 17.49609375,
+        "cache_peak_mb": 2.09765625
+      },
+      "mem": {
+        "cpu_avg": 51.045,
+        "cpu_max": 102.09,
+        "rss_mb": 19.634999999999998,
+        "usage_mb": 20.78125,
+        "anon_mb": 16.76953125,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 22.1640625,
+        "anon_peak_mb": 17.49609375,
+        "cache_peak_mb": 2.09765625
+      },
+      "result": {
+        "raw": "Running 6s test @ https://caddy:8443/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.51ms    1.70ms  56.80ms   91.80%\n    Req/Sec    12.09k     1.71k   25.59k    97.52%\n  Latency Distribution\n     50%    1.29ms\n     75%    1.89ms\n     90%    2.92ms\n     99%    5.23ms\n  291172 requests in 6.10s, 52.20MB read\nRequests/sec:  47734.73\nTransfer/sec:      8.56MB\n",
+        "rps": 47734.73,
+        "transfer_mbps": 8.56,
+        "lat_avg_ms": 1.51,
+        "lat_stdev_ms": 1.7,
+        "lat_max_ms": 56.8,
+        "lat_dist_ms": {
+          "50": 1.29,
+          "75": 1.89,
+          "90": 2.92,
+          "99": 5.23
+        },
+        "lat_p50_ms": 1.29,
+        "lat_p99_ms": 5.23,
+        "requests": 291172
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "tls_status",
+      "server": "nginx",
+      "url": "https://nginx:8443/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 50.69,
+        "cpu_max": 101.38,
+        "rss_mb": 9.8095,
+        "usage_mb": 8.8984375,
+        "anon_mb": 6.4453125,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.484375,
+        "anon_peak_mb": 6.4453125,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 50.69,
+        "cpu_max": 101.38,
+        "rss_mb": 9.8095,
+        "usage_mb": 8.8984375,
+        "anon_mb": 6.4453125,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.484375,
+        "anon_peak_mb": 6.4453125,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ https://nginx:8443/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.23ms    0.91ms  38.83ms   98.72%\n    Req/Sec    13.42k     1.41k   14.77k    92.50%\n  Latency Distribution\n     50%    1.13ms\n     75%    1.24ms\n     90%    1.39ms\n     99%    2.42ms\n  320434 requests in 6.01s, 89.23MB read\nRequests/sec:  53308.04\nTransfer/sec:     14.84MB\n",
+        "rps": 53308.04,
+        "transfer_mbps": 14.84,
+        "lat_avg_ms": 1.23,
+        "lat_stdev_ms": 0.91,
+        "lat_max_ms": 38.83,
+        "lat_dist_ms": {
+          "50": 1.13,
+          "75": 1.24,
+          "90": 1.39,
+          "99": 2.42
+        },
+        "lat_p50_ms": 1.13,
+        "lat_p99_ms": 2.42,
+        "requests": 320434
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "gzip_mid",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/static/mid.txt",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 51.125,
+        "cpu_max": 102.24,
+        "rss_mb": 134.3,
+        "usage_mb": 133.705078125,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 133.90234375,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.3671875
+      },
+      "mem": {
+        "cpu_avg": 51.125,
+        "cpu_max": 102.24,
+        "rss_mb": 134.3,
+        "usage_mb": 133.705078125,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 133.90234375,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/static/mid.txt\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     2.09ms    3.11ms  33.56ms   88.44%\n    Req/Sec    17.06k     1.65k   22.28k    67.08%\n  Latency Distribution\n     50%  300.00us\n     75%    2.99ms\n     90%    5.68ms\n     99%   14.96ms\n  407407 requests in 6.01s, 79.65MB read\nRequests/sec:  67771.50\nTransfer/sec:     13.25MB\n",
+        "rps": 67771.5,
+        "transfer_mbps": 13.25,
+        "lat_avg_ms": 2.09,
+        "lat_stdev_ms": 3.11,
+        "lat_max_ms": 33.56,
+        "lat_dist_ms": {
+          "50": 0.3,
+          "75": 2.99,
+          "90": 5.68,
+          "99": 14.96
+        },
+        "lat_p50_ms": 0.3,
+        "lat_p99_ms": 14.96,
+        "requests": 407407
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "gzip_mid",
+      "server": "caddy",
+      "url": "http://caddy:8080/static/mid.txt",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 50.735,
+        "cpu_max": 101.47,
+        "rss_mb": 23.065,
+        "usage_mb": 24.763671875,
+        "anon_mb": 20.16015625,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 25.98046875,
+        "anon_peak_mb": 20.16015625,
+        "cache_peak_mb": 2.09765625
+      },
+      "mem": {
+        "cpu_avg": 50.735,
+        "cpu_max": 101.47,
+        "rss_mb": 23.065,
+        "usage_mb": 24.763671875,
+        "anon_mb": 20.16015625,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 25.98046875,
+        "anon_peak_mb": 20.16015625,
+        "cache_peak_mb": 2.09765625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/static/mid.txt\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     3.11ms    2.22ms  17.60ms   70.25%\n    Req/Sec     5.53k     1.45k   24.94k    93.78%\n  Latency Distribution\n     50%    2.86ms\n     75%    4.16ms\n     90%    6.09ms\n     99%   10.04ms\n  132511 requests in 6.10s, 41.70MB read\nRequests/sec:  21724.46\nTransfer/sec:      6.84MB\n",
+        "rps": 21724.46,
+        "transfer_mbps": 6.84,
+        "lat_avg_ms": 3.11,
+        "lat_stdev_ms": 2.22,
+        "lat_max_ms": 17.6,
+        "lat_dist_ms": {
+          "50": 2.86,
+          "75": 4.16,
+          "90": 6.09,
+          "99": 10.04
+        },
+        "lat_p50_ms": 2.86,
+        "lat_p99_ms": 10.04,
+        "requests": 132511
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "gzip_mid",
+      "server": "nginx",
+      "url": "http://nginx:8080/static/mid.txt",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 50.785,
+        "cpu_max": 101.57,
+        "rss_mb": 8.422,
+        "usage_mb": 8.693359375,
+        "anon_mb": 6.47265625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.04296875,
+        "anon_peak_mb": 6.47265625,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 50.785,
+        "cpu_max": 101.57,
+        "rss_mb": 8.422,
+        "usage_mb": 8.693359375,
+        "anon_mb": 6.47265625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.04296875,
+        "anon_peak_mb": 6.47265625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/static/mid.txt\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.34ms  334.68us  20.19ms   92.65%\n    Req/Sec    12.02k   709.27    13.19k    76.67%\n  Latency Distribution\n     50%    1.26ms\n     75%    1.41ms\n     90%    1.61ms\n     99%    2.16ms\n  286998 requests in 6.01s, 98.53MB read\nRequests/sec:  47751.51\nTransfer/sec:     16.39MB\n",
+        "rps": 47751.51,
+        "transfer_mbps": 16.39,
+        "lat_avg_ms": 1.34,
+        "lat_stdev_ms": 0.33468000000000003,
+        "lat_max_ms": 20.19,
+        "lat_dist_ms": {
+          "50": 1.26,
+          "75": 1.41,
+          "90": 1.61,
+          "99": 2.16
+        },
+        "lat_p50_ms": 1.26,
+        "lat_p99_ms": 2.16,
+        "requests": 286998
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "static_small",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/static/small.txt",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 51.54,
+        "cpu_max": 103.06,
+        "rss_mb": 134.55,
+        "usage_mb": 133.880859375,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 134.12109375,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.3671875
+      },
+      "mem": {
+        "cpu_avg": 51.54,
+        "cpu_max": 103.06,
+        "rss_mb": 134.55,
+        "usage_mb": 133.880859375,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 134.12109375,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/static/small.txt\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     0.85ms  673.10us   7.28ms   49.76%\n    Req/Sec    19.40k     1.42k   24.39k    75.42%\n  Latency Distribution\n     50%    1.10ms\n     75%    1.31ms\n     90%    1.61ms\n     99%    2.22ms\n  463063 requests in 6.01s, 83.91MB read\nRequests/sec:  77085.41\nTransfer/sec:     13.97MB\n",
+        "rps": 77085.41,
+        "transfer_mbps": 13.97,
+        "lat_avg_ms": 0.85,
+        "lat_stdev_ms": 0.6731,
+        "lat_max_ms": 7.28,
+        "lat_dist_ms": {
+          "50": 1.1,
+          "75": 1.31,
+          "90": 1.61,
+          "99": 2.22
+        },
+        "lat_p50_ms": 1.1,
+        "lat_p99_ms": 2.22,
+        "requests": 463063
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "static_small",
+      "server": "caddy",
+      "url": "http://caddy:8080/static/small.txt",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 50.95,
+        "cpu_max": 101.9,
+        "rss_mb": 20.21,
+        "usage_mb": 20.90625,
+        "anon_mb": 17.33203125,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 21.83984375,
+        "anon_peak_mb": 17.89453125,
+        "cache_peak_mb": 2.09765625
+      },
+      "mem": {
+        "cpu_avg": 50.95,
+        "cpu_max": 101.9,
+        "rss_mb": 20.21,
+        "usage_mb": 20.90625,
+        "anon_mb": 17.33203125,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 21.83984375,
+        "anon_peak_mb": 17.89453125,
+        "cache_peak_mb": 2.09765625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/static/small.txt\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     2.21ms    1.55ms  13.31ms   70.32%\n    Req/Sec     7.75k     1.54k   30.10k    97.10%\n  Latency Distribution\n     50%    2.06ms\n     75%    3.00ms\n     90%    4.17ms\n     99%    6.93ms\n  185980 requests in 6.10s, 59.06MB read\nRequests/sec:  30490.02\nTransfer/sec:      9.68MB\n",
+        "rps": 30490.02,
+        "transfer_mbps": 9.68,
+        "lat_avg_ms": 2.21,
+        "lat_stdev_ms": 1.55,
+        "lat_max_ms": 13.31,
+        "lat_dist_ms": {
+          "50": 2.06,
+          "75": 3.0,
+          "90": 4.17,
+          "99": 6.93
+        },
+        "lat_p50_ms": 2.06,
+        "lat_p99_ms": 6.93,
+        "requests": 185980
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "static_small",
+      "server": "nginx",
+      "url": "http://nginx:8080/static/small.txt",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 50.63,
+        "cpu_max": 101.26,
+        "rss_mb": 8.824000000000002,
+        "usage_mb": 8.8515625,
+        "anon_mb": 6.48828125,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.359375,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 50.63,
+        "cpu_max": 101.26,
+        "rss_mb": 8.824000000000002,
+        "usage_mb": 8.8515625,
+        "anon_mb": 6.48828125,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.359375,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/static/small.txt\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   658.42us  130.65us   7.86ms   86.72%\n    Req/Sec    24.40k     4.63k   94.75k    99.59%\n  Latency Distribution\n     50%  617.00us\n     75%  688.00us\n     90%  799.00us\n     99%    1.07ms\n  585096 requests in 6.10s, 193.06MB read\nRequests/sec:  95922.25\nTransfer/sec:     31.65MB\n",
+        "rps": 95922.25,
+        "transfer_mbps": 31.65,
+        "lat_avg_ms": 0.65842,
+        "lat_stdev_ms": 0.13065000000000002,
+        "lat_max_ms": 7.86,
+        "lat_dist_ms": {
+          "50": 0.617,
+          "75": 0.6880000000000001,
+          "90": 0.799,
+          "99": 1.07
+        },
+        "lat_p50_ms": 0.617,
+        "lat_p99_ms": 1.07,
+        "requests": 585096
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "static_big",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/static/big.bin",
+      "conns": 16,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 81.64500000000001,
+        "cpu_max": 163.27,
+        "rss_mb": 145.9,
+        "usage_mb": 134.3984375,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 134.53515625,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.3671875
+      },
+      "mem": {
+        "cpu_avg": 81.64500000000001,
+        "cpu_max": 163.27,
+        "rss_mb": 145.9,
+        "usage_mb": 134.3984375,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 134.53515625,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/static/big.bin\n  4 threads and 16 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    10.66ms    4.70ms  66.66ms   83.71%\n    Req/Sec   266.78     36.19   336.00     79.83%\n  Latency Distribution\n     50%   10.10ms\n     75%   12.42ms\n     90%   15.76ms\n     99%   26.27ms\n  6407 requests in 6.08s, 62.57GB read\nRequests/sec:   1053.13\nTransfer/sec:     10.28GB\n",
+        "rps": 1053.13,
+        "transfer_mbps": 10526.72,
+        "lat_avg_ms": 10.66,
+        "lat_stdev_ms": 4.7,
+        "lat_max_ms": 66.66,
+        "lat_dist_ms": {
+          "50": 10.1,
+          "75": 12.42,
+          "90": 15.76,
+          "99": 26.27
+        },
+        "lat_p50_ms": 10.1,
+        "lat_p99_ms": 26.27,
+        "requests": 6407
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "static_big",
+      "server": "caddy",
+      "url": "http://caddy:8080/static/big.bin",
+      "conns": 16,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 108.05,
+        "cpu_max": 216.1,
+        "rss_mb": 30.435,
+        "usage_mb": 39.08203125,
+        "anon_mb": 16.763671875,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 57.69140625,
+        "anon_peak_mb": 16.97265625,
+        "cache_peak_mb": 2.09765625
+      },
+      "mem": {
+        "cpu_avg": 108.05,
+        "cpu_max": 216.1,
+        "rss_mb": 30.435,
+        "usage_mb": 39.08203125,
+        "anon_mb": 16.763671875,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 57.69140625,
+        "anon_peak_mb": 16.97265625,
+        "cache_peak_mb": 2.09765625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/static/big.bin\n  4 threads and 16 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    14.90ms    6.66ms  67.34ms   70.78%\n    Req/Sec   222.56     32.27   320.00     68.64%\n  Latency Distribution\n     50%   13.82ms\n     75%   18.52ms\n     90%   23.48ms\n     99%   35.23ms\n  5370 requests in 6.09s, 52.47GB read\nRequests/sec:    881.66\nTransfer/sec:      8.61GB\n",
+        "rps": 881.66,
+        "transfer_mbps": 8816.64,
+        "lat_avg_ms": 14.9,
+        "lat_stdev_ms": 6.66,
+        "lat_max_ms": 67.34,
+        "lat_dist_ms": {
+          "50": 13.82,
+          "75": 18.52,
+          "90": 23.48,
+          "99": 35.23
+        },
+        "lat_p50_ms": 13.82,
+        "lat_p99_ms": 35.23,
+        "requests": 5370
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "static_big",
+      "server": "nginx",
+      "url": "http://nginx:8080/static/big.bin",
+      "conns": 16,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 37.29,
+        "cpu_max": 74.58,
+        "rss_mb": 19.951,
+        "usage_mb": 17.90625,
+        "anon_mb": 6.556640625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 27.46875,
+        "anon_peak_mb": 6.640625,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 37.29,
+        "cpu_max": 74.58,
+        "rss_mb": 19.951,
+        "usage_mb": 17.90625,
+        "anon_mb": 6.556640625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 27.46875,
+        "anon_peak_mb": 6.640625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/static/big.bin\n  4 threads and 16 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    11.97ms    4.01ms  49.70ms   79.88%\n    Req/Sec   317.63     49.47   480.00     76.67%\n  Latency Distribution\n     50%   11.82ms\n     75%   13.35ms\n     90%   15.50ms\n     99%   26.55ms\n  7646 requests in 6.06s, 74.70GB read\nRequests/sec:   1262.46\nTransfer/sec:     12.33GB\n",
+        "rps": 1262.46,
+        "transfer_mbps": 12625.92,
+        "lat_avg_ms": 11.97,
+        "lat_stdev_ms": 4.01,
+        "lat_max_ms": 49.7,
+        "lat_dist_ms": {
+          "50": 11.82,
+          "75": 13.35,
+          "90": 15.5,
+          "99": 26.55
+        },
+        "lat_p50_ms": 11.82,
+        "lat_p99_ms": 26.55,
+        "requests": 7646
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "proxy",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/api/ping",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 4.645,
+        "cpu_max": 9.27,
+        "rss_mb": 135.25,
+        "usage_mb": 134.841796875,
+        "anon_mb": 127.2265625,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 135.51953125,
+        "anon_peak_mb": 127.2265625,
+        "cache_peak_mb": 0.3671875
+      },
+      "mem": {
+        "cpu_avg": 4.645,
+        "cpu_max": 9.27,
+        "rss_mb": 135.25,
+        "usage_mb": 134.841796875,
+        "anon_mb": 127.2265625,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 135.51953125,
+        "anon_peak_mb": 127.2265625,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/api/ping\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   115.05ms  257.22ms   1.89s    92.00%\n    Req/Sec   272.13    132.99   484.00     66.25%\n  Latency Distribution\n     50%   41.08ms\n     75%   42.01ms\n     90%  114.90ms\n     99%    1.36s \n  6505 requests in 6.01s, 1.14MB read\n  Socket errors: connect 0, read 0, write 0, timeout 13\nRequests/sec:   1082.13\nTransfer/sec:    193.98KB\n",
+        "rps": 1082.13,
+        "transfer_mbps": 0.18943359375,
+        "lat_avg_ms": 115.05,
+        "lat_stdev_ms": 257.22,
+        "lat_max_ms": 1890.0,
+        "lat_dist_ms": {
+          "50": 41.08,
+          "75": 42.01,
+          "90": 114.9,
+          "99": 1360.0
+        },
+        "lat_p50_ms": 41.08,
+        "lat_p99_ms": 1360.0,
+        "requests": 6505
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "proxy",
+      "server": "caddy",
+      "url": "http://caddy:8080/api/ping",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 16.345,
+        "cpu_max": 32.69,
+        "rss_mb": 30.415,
+        "usage_mb": 32.20703125,
+        "anon_mb": 27.466796875,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 33.28515625,
+        "anon_peak_mb": 27.5,
+        "cache_peak_mb": 2.09765625
+      },
+      "mem": {
+        "cpu_avg": 16.345,
+        "cpu_max": 32.69,
+        "rss_mb": 30.415,
+        "usage_mb": 32.20703125,
+        "anon_mb": 27.466796875,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 33.28515625,
+        "anon_peak_mb": 27.5,
+        "cache_peak_mb": 2.09765625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/api/ping\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    41.54ms    3.24ms  76.92ms   96.36%\n    Req/Sec   385.49     23.19   444.00     72.50%\n  Latency Distribution\n     50%   41.16ms\n     75%   42.01ms\n     90%   42.64ms\n     99%   50.18ms\n  9214 requests in 6.01s, 1.52MB read\nRequests/sec:   1532.87\nTransfer/sec:    258.97KB\n",
+        "rps": 1532.87,
+        "transfer_mbps": 0.252900390625,
+        "lat_avg_ms": 41.54,
+        "lat_stdev_ms": 3.24,
+        "lat_max_ms": 76.92,
+        "lat_dist_ms": {
+          "50": 41.16,
+          "75": 42.01,
+          "90": 42.64,
+          "99": 50.18
+        },
+        "lat_p50_ms": 41.16,
+        "lat_p99_ms": 50.18,
+        "requests": 9214
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "proxy",
+      "server": "nginx",
+      "url": "http://nginx:8080/api/ping",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 7.24,
+        "cpu_max": 14.48,
+        "rss_mb": 9.7595,
+        "usage_mb": 9.23046875,
+        "anon_mb": 6.49609375,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.00390625,
+        "anon_peak_mb": 6.49609375,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 7.24,
+        "cpu_max": 14.48,
+        "rss_mb": 9.7595,
+        "usage_mb": 9.23046875,
+        "anon_mb": 6.49609375,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.00390625,
+        "anon_peak_mb": 6.49609375,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/api/ping\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   123.63ms  269.47ms   1.87s    91.38%\n    Req/Sec   320.72    107.73   444.00     80.83%\n  Latency Distribution\n     50%   41.51ms\n     75%   42.27ms\n     90%  236.82ms\n     99%    1.36s \n  7667 requests in 6.01s, 1.22MB read\n  Socket errors: connect 0, read 0, write 0, timeout 5\nRequests/sec:   1275.23\nTransfer/sec:    207.97KB\n",
+        "rps": 1275.23,
+        "transfer_mbps": 0.203095703125,
+        "lat_avg_ms": 123.63,
+        "lat_stdev_ms": 269.47,
+        "lat_max_ms": 1870.0,
+        "lat_dist_ms": {
+          "50": 41.51,
+          "75": 42.27,
+          "90": 236.82,
+          "99": 1360.0
+        },
+        "lat_p50_ms": 41.51,
+        "lat_p99_ms": 1360.0,
+        "requests": 7667
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "proxy_post",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/api/echo",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 3.6199999999999997,
+        "cpu_max": 7.22,
+        "rss_mb": 135.39999999999998,
+        "usage_mb": 134.298828125,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 134.35546875,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "mem": {
+        "cpu_avg": 3.6199999999999997,
+        "cpu_max": 7.22,
+        "rss_mb": 135.39999999999998,
+        "usage_mb": 134.298828125,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 134.35546875,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/api/echo\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   137.37ms  288.30ms   1.89s    90.10%\n    Req/Sec   328.61    116.26   470.00     76.96%\n  Latency Distribution\n     50%   41.05ms\n     75%   42.01ms\n     90%  401.56ms\n     99%    1.43s \n  7531 requests in 6.01s, 8.82MB read\n  Socket errors: connect 0, read 0, write 0, timeout 4\nRequests/sec:   1253.15\nTransfer/sec:      1.47MB\n",
+        "rps": 1253.15,
+        "transfer_mbps": 1.47,
+        "lat_avg_ms": 137.37,
+        "lat_stdev_ms": 288.3,
+        "lat_max_ms": 1890.0,
+        "lat_dist_ms": {
+          "50": 41.05,
+          "75": 42.01,
+          "90": 401.56,
+          "99": 1430.0
+        },
+        "lat_p50_ms": 41.05,
+        "lat_p99_ms": 1430.0,
+        "requests": 7531
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "proxy_post",
+      "server": "caddy",
+      "url": "http://caddy:8080/api/echo",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 17.01,
+        "cpu_max": 34.02,
+        "rss_mb": 31.43,
+        "usage_mb": 32.919921875,
+        "anon_mb": 28.240234375,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 34.24609375,
+        "anon_peak_mb": 28.54296875,
+        "cache_peak_mb": 2.09765625
+      },
+      "mem": {
+        "cpu_avg": 17.01,
+        "cpu_max": 34.02,
+        "rss_mb": 31.43,
+        "usage_mb": 32.919921875,
+        "anon_mb": 28.240234375,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 34.24609375,
+        "anon_peak_mb": 28.54296875,
+        "cache_peak_mb": 2.09765625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/api/echo\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    41.79ms    3.70ms  83.04ms   94.45%\n    Req/Sec   383.11     26.47   464.00     68.33%\n  Latency Distribution\n     50%   41.18ms\n     75%   42.05ms\n     90%   43.32ms\n     99%   51.86ms\n  9154 requests in 6.01s, 10.63MB read\n  Non-2xx or 3xx responses: 2\nRequests/sec:   1522.34\nTransfer/sec:      1.77MB\n",
+        "rps": 1522.34,
+        "transfer_mbps": 1.77,
+        "lat_avg_ms": 41.79,
+        "lat_stdev_ms": 3.7,
+        "lat_max_ms": 83.04,
+        "lat_dist_ms": {
+          "50": 41.18,
+          "75": 42.05,
+          "90": 43.32,
+          "99": 51.86
+        },
+        "lat_p50_ms": 41.18,
+        "lat_p99_ms": 51.86,
+        "requests": 9154
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "proxy_post",
+      "server": "nginx",
+      "url": "http://nginx:8080/api/echo",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 6.435,
+        "cpu_max": 12.87,
+        "rss_mb": 9.9495,
+        "usage_mb": 9.259765625,
+        "anon_mb": 6.49609375,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.1015625,
+        "anon_peak_mb": 6.49609375,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 6.435,
+        "cpu_max": 12.87,
+        "rss_mb": 9.9495,
+        "usage_mb": 9.259765625,
+        "anon_mb": 6.49609375,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.1015625,
+        "anon_peak_mb": 6.49609375,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/api/echo\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   103.41ms  242.06ms   1.87s    93.41%\n    Req/Sec   274.46    109.41   434.00     61.25%\n  Latency Distribution\n     50%   41.12ms\n     75%   42.04ms\n     90%   46.73ms\n     99%    1.34s \n  6559 requests in 6.01s, 7.58MB read\n  Socket errors: connect 0, read 0, write 0, timeout 13\nRequests/sec:   1090.92\nTransfer/sec:      1.26MB\n",
+        "rps": 1090.92,
+        "transfer_mbps": 1.26,
+        "lat_avg_ms": 103.41,
+        "lat_stdev_ms": 242.06,
+        "lat_max_ms": 1870.0,
+        "lat_dist_ms": {
+          "50": 41.12,
+          "75": 42.04,
+          "90": 46.73,
+          "99": 1340.0
+        },
+        "lat_p50_ms": 41.12,
+        "lat_p99_ms": 1340.0,
+        "requests": 6559
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "badnet_base",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 32,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 50.864999999999995,
+        "cpu_max": 101.71,
+        "rss_mb": 134.5,
+        "usage_mb": 133.9453125,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 133.9453125,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "mem": {
+        "cpu_avg": 50.864999999999995,
+        "cpu_max": 101.71,
+        "rss_mb": 134.5,
+        "usage_mb": 133.9453125,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 133.9453125,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   381.23us  722.82us  12.28ms   91.67%\n    Req/Sec    47.13k     5.83k  108.87k    94.63%\n  Latency Distribution\n     50%   97.00us\n     75%  386.00us\n     90%    0.94ms\n     99%    3.73ms\n  1134921 requests in 6.10s, 154.78MB read\nRequests/sec: 186073.95\nTransfer/sec:     25.38MB\n",
+        "rps": 186073.95,
+        "transfer_mbps": 25.38,
+        "lat_avg_ms": 0.38123,
+        "lat_stdev_ms": 0.72282,
+        "lat_max_ms": 12.28,
+        "lat_dist_ms": {
+          "50": 0.097,
+          "75": 0.386,
+          "90": 0.94,
+          "99": 3.73
+        },
+        "lat_p50_ms": 0.097,
+        "lat_p99_ms": 3.73,
+        "requests": 1134921
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "badnet_base",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 32,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 50.98,
+        "cpu_max": 101.96,
+        "rss_mb": 22.814999999999998,
+        "usage_mb": 23.9765625,
+        "anon_mb": 20.140625,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 24.06640625,
+        "anon_peak_mb": 20.265625,
+        "cache_peak_mb": 2.09765625
+      },
+      "mem": {
+        "cpu_avg": 50.98,
+        "cpu_max": 101.96,
+        "rss_mb": 22.814999999999998,
+        "usage_mb": 23.9765625,
+        "anon_mb": 20.140625,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 24.06640625,
+        "anon_peak_mb": 20.265625,
+        "cache_peak_mb": 2.09765625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   710.80us  594.08us   5.87ms   80.02%\n    Req/Sec    12.88k   679.78    15.68k    70.78%\n  Latency Distribution\n     50%  608.00us\n     75%    0.87ms\n     90%    1.37ms\n     99%    3.00ms\n  311445 requests in 6.10s, 46.04MB read\nRequests/sec:  51056.64\nTransfer/sec:      7.55MB\n",
+        "rps": 51056.64,
+        "transfer_mbps": 7.55,
+        "lat_avg_ms": 0.7108,
+        "lat_stdev_ms": 0.59408,
+        "lat_max_ms": 5.87,
+        "lat_dist_ms": {
+          "50": 0.608,
+          "75": 0.87,
+          "90": 1.37,
+          "99": 3.0
+        },
+        "lat_p50_ms": 0.608,
+        "lat_p99_ms": 3.0,
+        "requests": 311445
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "badnet_base",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 32,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 50.915,
+        "cpu_max": 101.83,
+        "rss_mb": 8.664,
+        "usage_mb": 8.958984375,
+        "anon_mb": 6.49609375,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.55859375,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 50.915,
+        "cpu_max": 101.83,
+        "rss_mb": 8.664,
+        "usage_mb": 8.958984375,
+        "anon_mb": 6.49609375,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.55859375,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   331.86us   98.04us   4.23ms   93.66%\n    Req/Sec    24.42k     1.23k   26.06k    86.48%\n  Latency Distribution\n     50%  307.00us\n     75%  334.00us\n     90%  376.00us\n     99%  621.00us\n  592747 requests in 6.10s, 165.06MB read\nRequests/sec:  97175.43\nTransfer/sec:     27.06MB\n",
+        "rps": 97175.43,
+        "transfer_mbps": 27.06,
+        "lat_avg_ms": 0.33186000000000004,
+        "lat_stdev_ms": 0.09804,
+        "lat_max_ms": 4.23,
+        "lat_dist_ms": {
+          "50": 0.307,
+          "75": 0.334,
+          "90": 0.376,
+          "99": 0.621
+        },
+        "lat_p50_ms": 0.307,
+        "lat_p99_ms": 0.621,
+        "requests": 592747
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "badnet_latency",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 32,
+      "netem": "delay, 50ms, 10ms, distribution, normal",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 1.9849999999999999,
+        "cpu_max": 3.92,
+        "rss_mb": 134.2,
+        "usage_mb": 134.16796875,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 134.41015625,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "mem": {
+        "cpu_avg": 1.9849999999999999,
+        "cpu_max": 3.92,
+        "rss_mb": 134.2,
+        "usage_mb": 134.16796875,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 134.41015625,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    50.19ms    9.90ms  85.35ms   68.54%\n    Req/Sec   157.97     20.15   191.00     85.00%\n  Latency Distribution\n     50%   50.23ms\n     75%   56.87ms\n     90%   62.99ms\n     99%   73.04ms\n  3780 requests in 6.00s, 527.87KB read\nRequests/sec:    629.53\nTransfer/sec:     87.91KB\n",
+        "rps": 629.53,
+        "transfer_mbps": 0.085849609375,
+        "lat_avg_ms": 50.19,
+        "lat_stdev_ms": 9.9,
+        "lat_max_ms": 85.35,
+        "lat_dist_ms": {
+          "50": 50.23,
+          "75": 56.87,
+          "90": 62.99,
+          "99": 73.04
+        },
+        "lat_p50_ms": 50.23,
+        "lat_p99_ms": 73.04,
+        "requests": 3780
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "badnet_latency",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 32,
+      "netem": "delay, 50ms, 10ms, distribution, normal",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 4.625,
+        "cpu_max": 9.25,
+        "rss_mb": 19.045,
+        "usage_mb": 20.55859375,
+        "anon_mb": 16.453125,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 20.8984375,
+        "anon_peak_mb": 16.453125,
+        "cache_peak_mb": 2.09765625
+      },
+      "mem": {
+        "cpu_avg": 4.625,
+        "cpu_max": 9.25,
+        "rss_mb": 19.045,
+        "usage_mb": 20.55859375,
+        "anon_mb": 16.453125,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 20.8984375,
+        "anon_peak_mb": 16.453125,
+        "cache_peak_mb": 2.09765625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    50.37ms    9.90ms  85.77ms   68.04%\n    Req/Sec   157.42     19.61   200.00     83.82%\n  Latency Distribution\n     50%   50.37ms\n     75%   57.09ms\n     90%   62.88ms\n     99%   71.94ms\n  3783 requests in 6.10s, 572.62KB read\nRequests/sec:    620.16\nTransfer/sec:     93.87KB\n",
+        "rps": 620.16,
+        "transfer_mbps": 0.091669921875,
+        "lat_avg_ms": 50.37,
+        "lat_stdev_ms": 9.9,
+        "lat_max_ms": 85.77,
+        "lat_dist_ms": {
+          "50": 50.37,
+          "75": 57.09,
+          "90": 62.88,
+          "99": 71.94
+        },
+        "lat_p50_ms": 50.37,
+        "lat_p99_ms": 71.94,
+        "requests": 3783
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "badnet_latency",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 32,
+      "netem": "delay, 50ms, 10ms, distribution, normal",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 2.735,
+        "cpu_max": 5.47,
+        "rss_mb": 9.164000000000001,
+        "usage_mb": 9.64453125,
+        "anon_mb": 6.49609375,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.9296875,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 2.735,
+        "cpu_max": 5.47,
+        "rss_mb": 9.164000000000001,
+        "usage_mb": 9.64453125,
+        "anon_mb": 6.49609375,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.9296875,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    50.26ms    9.86ms  83.32ms   69.09%\n    Req/Sec   157.79     20.03   200.00     83.75%\n  Latency Distribution\n     50%   50.30ms\n     75%   56.91ms\n     90%   62.74ms\n     99%   73.14ms\n  3775 requests in 6.00s, 1.05MB read\nRequests/sec:    628.79\nTransfer/sec:    179.30KB\n",
+        "rps": 628.79,
+        "transfer_mbps": 0.17509765625,
+        "lat_avg_ms": 50.26,
+        "lat_stdev_ms": 9.86,
+        "lat_max_ms": 83.32,
+        "lat_dist_ms": {
+          "50": 50.3,
+          "75": 56.91,
+          "90": 62.74,
+          "99": 73.14
+        },
+        "lat_p50_ms": 50.3,
+        "lat_p99_ms": 73.14,
+        "requests": 3775
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "badnet_jitter",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 32,
+      "netem": "delay, 20ms, 15ms, distribution, normal",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 3.31,
+        "cpu_max": 6.59,
+        "rss_mb": 134.15,
+        "usage_mb": 133.931640625,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 133.9375,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "mem": {
+        "cpu_avg": 3.31,
+        "cpu_max": 6.59,
+        "rss_mb": 134.15,
+        "usage_mb": 133.931640625,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 133.9375,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    21.31ms   13.48ms  72.94ms   65.14%\n    Req/Sec   383.16     43.86   520.00     73.33%\n  Latency Distribution\n     50%   21.48ms\n     75%   30.42ms\n     90%   38.85ms\n     99%   54.74ms\n  9158 requests in 6.00s, 1.25MB read\nRequests/sec:   1525.62\nTransfer/sec:    213.05KB\n",
+        "rps": 1525.62,
+        "transfer_mbps": 0.208056640625,
+        "lat_avg_ms": 21.31,
+        "lat_stdev_ms": 13.48,
+        "lat_max_ms": 72.94,
+        "lat_dist_ms": {
+          "50": 21.48,
+          "75": 30.42,
+          "90": 38.85,
+          "99": 54.74
+        },
+        "lat_p50_ms": 21.48,
+        "lat_p99_ms": 54.74,
+        "requests": 9158
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "badnet_jitter",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 32,
+      "netem": "delay, 20ms, 15ms, distribution, normal",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 8.23,
+        "cpu_max": 16.46,
+        "rss_mb": 19.83,
+        "usage_mb": 21.08203125,
+        "anon_mb": 16.95703125,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 21.8984375,
+        "anon_peak_mb": 17.1640625,
+        "cache_peak_mb": 2.09765625
+      },
+      "mem": {
+        "cpu_avg": 8.23,
+        "cpu_max": 16.46,
+        "rss_mb": 19.83,
+        "usage_mb": 21.08203125,
+        "anon_mb": 16.95703125,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 21.8984375,
+        "anon_peak_mb": 17.1640625,
+        "cache_peak_mb": 2.09765625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    21.16ms   13.55ms  73.51ms   65.22%\n    Req/Sec   386.44     45.39   535.00     69.17%\n  Latency Distribution\n     50%   21.22ms\n     75%   30.07ms\n     90%   38.95ms\n     99%   54.97ms\n  9237 requests in 6.00s, 1.37MB read\nRequests/sec:   1539.07\nTransfer/sec:    232.96KB\n",
+        "rps": 1539.07,
+        "transfer_mbps": 0.2275,
+        "lat_avg_ms": 21.16,
+        "lat_stdev_ms": 13.55,
+        "lat_max_ms": 73.51,
+        "lat_dist_ms": {
+          "50": 21.22,
+          "75": 30.07,
+          "90": 38.95,
+          "99": 54.97
+        },
+        "lat_p50_ms": 21.22,
+        "lat_p99_ms": 54.97,
+        "requests": 9237
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "badnet_jitter",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 32,
+      "netem": "delay, 20ms, 15ms, distribution, normal",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 4.925,
+        "cpu_max": 9.85,
+        "rss_mb": 9.327,
+        "usage_mb": 9.494140625,
+        "anon_mb": 6.49609375,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.38671875,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 4.925,
+        "cpu_max": 9.85,
+        "rss_mb": 9.327,
+        "usage_mb": 9.494140625,
+        "anon_mb": 6.49609375,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.38671875,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    21.08ms   13.61ms  73.09ms   64.65%\n    Req/Sec   387.86     50.47   580.00     71.25%\n  Latency Distribution\n     50%   21.26ms\n     75%   30.21ms\n     90%   39.14ms\n     99%   54.47ms\n  9273 requests in 6.01s, 2.58MB read\nRequests/sec:   1543.95\nTransfer/sec:    440.27KB\n",
+        "rps": 1543.95,
+        "transfer_mbps": 0.429951171875,
+        "lat_avg_ms": 21.08,
+        "lat_stdev_ms": 13.61,
+        "lat_max_ms": 73.09,
+        "lat_dist_ms": {
+          "50": 21.26,
+          "75": 30.21,
+          "90": 39.14,
+          "99": 54.47
+        },
+        "lat_p50_ms": 21.26,
+        "lat_p99_ms": 54.47,
+        "requests": 9273
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "badnet_loss",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 32,
+      "netem": "loss, 2%",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 3.3499999999999996,
+        "cpu_max": 6.68,
+        "rss_mb": 134.65,
+        "usage_mb": 134.509765625,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 135.09375,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "mem": {
+        "cpu_avg": 3.3499999999999996,
+        "cpu_max": 6.68,
+        "rss_mb": 134.65,
+        "usage_mb": 134.509765625,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 135.09375,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    55.15ms   73.98ms 616.03ms   80.16%\n    Req/Sec     1.66k     1.06k    5.16k    75.16%\n  Latency Distribution\n     50%  393.00us\n     75%  107.78ms\n     90%  172.00ms\n     99%  258.12ms\n  38922 requests in 6.00s, 5.31MB read\nRequests/sec:   6482.00\nTransfer/sec:      0.88MB\n",
+        "rps": 6482.0,
+        "transfer_mbps": 0.88,
+        "lat_avg_ms": 55.15,
+        "lat_stdev_ms": 73.98,
+        "lat_max_ms": 616.03,
+        "lat_dist_ms": {
+          "50": 0.393,
+          "75": 107.78,
+          "90": 172.0,
+          "99": 258.12
+        },
+        "lat_p50_ms": 0.393,
+        "lat_p99_ms": 258.12,
+        "requests": 38922
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "badnet_loss",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 32,
+      "netem": "loss, 2%",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 11.745000000000001,
+        "cpu_max": 23.44,
+        "rss_mb": 20.985,
+        "usage_mb": 21.2890625,
+        "anon_mb": 16.97265625,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 22.0546875,
+        "anon_peak_mb": 17.0078125,
+        "cache_peak_mb": 2.09765625
+      },
+      "mem": {
+        "cpu_avg": 11.745000000000001,
+        "cpu_max": 23.44,
+        "rss_mb": 20.985,
+        "usage_mb": 21.2890625,
+        "anon_mb": 16.97265625,
+        "cache_mb": 2.09765625,
+        "usage_peak_mb": 22.0546875,
+        "anon_peak_mb": 17.0078125,
+        "cache_peak_mb": 2.09765625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    54.60ms   72.19ms 418.24ms   79.71%\n    Req/Sec     1.83k     1.07k    5.01k    65.36%\n  Latency Distribution\n     50%  706.00us\n     75%  106.84ms\n     90%  170.34ms\n     99%  220.74ms\n  45002 requests in 6.00s, 6.65MB read\nRequests/sec:   7494.42\nTransfer/sec:      1.11MB\n",
+        "rps": 7494.42,
+        "transfer_mbps": 1.11,
+        "lat_avg_ms": 54.6,
+        "lat_stdev_ms": 72.19,
+        "lat_max_ms": 418.24,
+        "lat_dist_ms": {
+          "50": 0.706,
+          "75": 106.84,
+          "90": 170.34,
+          "99": 220.74
+        },
+        "lat_p50_ms": 0.706,
+        "lat_p99_ms": 220.74,
+        "requests": 45002
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "scenario": "badnet_loss",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 32,
+      "netem": "loss, 2%",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 7.355,
+        "cpu_max": 14.71,
+        "rss_mb": 9.367,
+        "usage_mb": 9.3671875,
+        "anon_mb": 6.48828125,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.37890625,
+        "anon_peak_mb": 6.48828125,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 7.355,
+        "cpu_max": 14.71,
+        "rss_mb": 9.367,
+        "usage_mb": 9.3671875,
+        "anon_mb": 6.48828125,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.37890625,
+        "anon_peak_mb": 6.48828125,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    53.78ms   70.43ms 417.12ms   79.31%\n    Req/Sec     1.82k     1.21k    7.20k    74.14%\n  Latency Distribution\n     50%  650.00us\n     75%  106.16ms\n     90%  168.96ms\n     99%  207.37ms\n  43764 requests in 6.01s, 12.19MB read\nRequests/sec:   7284.10\nTransfer/sec:      2.03MB\n",
+        "rps": 7284.1,
+        "transfer_mbps": 2.03,
+        "lat_avg_ms": 53.78,
+        "lat_stdev_ms": 70.43,
+        "lat_max_ms": 417.12,
+        "lat_dist_ms": {
+          "50": 0.65,
+          "75": 106.16,
+          "90": 168.96,
+          "99": 207.37
+        },
+        "lat_p50_ms": 0.65,
+        "lat_p99_ms": 207.37,
+        "requests": 43764
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "status",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 51.085,
+        "cpu_max": 102.15,
+        "rss_mb": 133.64999999999998,
+        "usage_mb": 133.22265625,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.3125,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 51.085,
+        "cpu_max": 102.15,
+        "rss_mb": 133.64999999999998,
+        "usage_mb": 133.22265625,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.3125,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.06ms    1.78ms  21.74ms   88.45%\n    Req/Sec    45.78k     4.23k   58.12k    65.83%\n  Latency Distribution\n     50%  119.00us\n     75%    1.31ms\n     90%    3.15ms\n     99%    8.47ms\n  1093344 requests in 6.01s, 149.11MB read\nRequests/sec: 181975.72\nTransfer/sec:     24.82MB\n",
+        "rps": 181975.72,
+        "transfer_mbps": 24.82,
+        "lat_avg_ms": 1.06,
+        "lat_stdev_ms": 1.78,
+        "lat_max_ms": 21.74,
+        "lat_dist_ms": {
+          "50": 0.11900000000000001,
+          "75": 1.31,
+          "90": 3.15,
+          "99": 8.47
+        },
+        "lat_p50_ms": 0.11900000000000001,
+        "lat_p99_ms": 8.47,
+        "requests": 1093344
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "status",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 150.35,
+        "cpu_max": 300.7,
+        "rss_mb": 20.805,
+        "usage_mb": 21.130859375,
+        "anon_mb": 17.38671875,
+        "cache_mb": 1.5234375,
+        "usage_peak_mb": 22.12890625,
+        "anon_peak_mb": 17.421875,
+        "cache_peak_mb": 1.5234375
+      },
+      "mem": {
+        "cpu_avg": 150.35,
+        "cpu_max": 300.7,
+        "rss_mb": 20.805,
+        "usage_mb": 21.130859375,
+        "anon_mb": 17.38671875,
+        "cache_mb": 1.5234375,
+        "usage_peak_mb": 22.12890625,
+        "anon_peak_mb": 17.421875,
+        "cache_peak_mb": 1.5234375
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   680.32us  717.00us  22.92ms   88.70%\n    Req/Sec    28.47k     2.86k   34.38k    73.75%\n  Latency Distribution\n     50%  509.00us\n     75%    0.91ms\n     90%    1.48ms\n     99%    2.96ms\n  679797 requests in 6.01s, 100.49MB read\nRequests/sec: 113146.54\nTransfer/sec:     16.73MB\n",
+        "rps": 113146.54,
+        "transfer_mbps": 16.73,
+        "lat_avg_ms": 0.68032,
+        "lat_stdev_ms": 0.717,
+        "lat_max_ms": 22.92,
+        "lat_dist_ms": {
+          "50": 0.509,
+          "75": 0.91,
+          "90": 1.48,
+          "99": 2.96
+        },
+        "lat_p50_ms": 0.509,
+        "lat_p99_ms": 2.96,
+        "requests": 679797
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "status",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 50.985,
+        "cpu_max": 101.97,
+        "rss_mb": 9.3215,
+        "usage_mb": 8.912109375,
+        "anon_mb": 6.44140625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.53125,
+        "anon_peak_mb": 6.45703125,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 50.985,
+        "cpu_max": 101.97,
+        "rss_mb": 9.3215,
+        "usage_mb": 8.912109375,
+        "anon_mb": 6.44140625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.53125,
+        "anon_peak_mb": 6.45703125,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   708.58us  253.13us  15.76ms   91.20%\n    Req/Sec    22.90k     2.63k   46.33k    90.91%\n  Latency Distribution\n     50%  642.00us\n     75%  738.00us\n     90%    0.90ms\n     99%    1.54ms\n  551236 requests in 6.10s, 153.50MB read\nRequests/sec:  90367.95\nTransfer/sec:     25.17MB\n",
+        "rps": 90367.95,
+        "transfer_mbps": 25.17,
+        "lat_avg_ms": 0.7085800000000001,
+        "lat_stdev_ms": 0.25313,
+        "lat_max_ms": 15.76,
+        "lat_dist_ms": {
+          "50": 0.642,
+          "75": 0.738,
+          "90": 0.9,
+          "99": 1.54
+        },
+        "lat_p50_ms": 0.642,
+        "lat_p99_ms": 1.54,
+        "requests": 551236
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "status_noka",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 7.45,
+        "cpu_max": 14.88,
+        "rss_mb": 134.05,
+        "usage_mb": 133.689453125,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 134.08984375,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 7.45,
+        "cpu_max": 14.88,
+        "rss_mb": 134.05,
+        "usage_mb": 133.689453125,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 134.08984375,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     4.25ms    4.95ms  40.73ms   82.81%\n    Req/Sec     1.61k     2.74k   15.56k    93.13%\n  Latency Distribution\n     50%    1.43ms\n     75%    6.71ms\n     90%   11.94ms\n     99%   19.43ms\n  38240 requests in 6.07s, 5.03MB read\nRequests/sec:   6299.79\nTransfer/sec:    849.00KB\n",
+        "rps": 6299.79,
+        "transfer_mbps": 0.8291015625,
+        "lat_avg_ms": 4.25,
+        "lat_stdev_ms": 4.95,
+        "lat_max_ms": 40.73,
+        "lat_dist_ms": {
+          "50": 1.43,
+          "75": 6.71,
+          "90": 11.94,
+          "99": 19.43
+        },
+        "lat_p50_ms": 1.43,
+        "lat_p99_ms": 19.43,
+        "requests": 38240
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "status_noka",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 122.995,
+        "cpu_max": 245.99,
+        "rss_mb": 21.564999999999998,
+        "usage_mb": 21.322265625,
+        "anon_mb": 16.33203125,
+        "cache_mb": 1.5234375,
+        "usage_peak_mb": 22.140625,
+        "anon_peak_mb": 16.33203125,
+        "cache_peak_mb": 1.5234375
+      },
+      "mem": {
+        "cpu_avg": 122.995,
+        "cpu_max": 245.99,
+        "rss_mb": 21.564999999999998,
+        "usage_mb": 21.322265625,
+        "anon_mb": 16.33203125,
+        "cache_mb": 1.5234375,
+        "usage_peak_mb": 22.140625,
+        "anon_peak_mb": 16.33203125,
+        "cache_peak_mb": 1.5234375
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     2.88ms    4.36ms  39.20ms   86.66%\n    Req/Sec     4.49k     5.27k   15.33k    75.43%\n  Latency Distribution\n     50%    1.03ms\n     75%    2.60ms\n     90%    9.10ms\n     99%   19.65ms\n  104346 requests in 6.03s, 17.32MB read\nRequests/sec:  17309.76\nTransfer/sec:      2.87MB\n",
+        "rps": 17309.76,
+        "transfer_mbps": 2.87,
+        "lat_avg_ms": 2.88,
+        "lat_stdev_ms": 4.36,
+        "lat_max_ms": 39.2,
+        "lat_dist_ms": {
+          "50": 1.03,
+          "75": 2.6,
+          "90": 9.1,
+          "99": 19.65
+        },
+        "lat_p50_ms": 1.03,
+        "lat_p99_ms": 19.65,
+        "requests": 104346
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "status_noka",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 49.49,
+        "cpu_max": 98.98,
+        "rss_mb": 9.405999999999999,
+        "usage_mb": 9.189453125,
+        "anon_mb": 6.4375,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.0703125,
+        "anon_peak_mb": 6.44921875,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 49.49,
+        "cpu_max": 98.98,
+        "rss_mb": 9.405999999999999,
+        "usage_mb": 9.189453125,
+        "anon_mb": 6.4375,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.0703125,
+        "anon_peak_mb": 6.44921875,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   743.30us  504.80us   9.45ms   78.42%\n    Req/Sec    14.22k     2.33k   24.61k    68.88%\n  Latency Distribution\n     50%  652.00us\n     75%    0.93ms\n     90%    1.27ms\n     99%    2.45ms\n  340928 requests in 6.10s, 93.31MB read\nRequests/sec:  55894.89\nTransfer/sec:     15.30MB\n",
+        "rps": 55894.89,
+        "transfer_mbps": 15.3,
+        "lat_avg_ms": 0.7433,
+        "lat_stdev_ms": 0.5048,
+        "lat_max_ms": 9.45,
+        "lat_dist_ms": {
+          "50": 0.652,
+          "75": 0.93,
+          "90": 1.27,
+          "99": 2.45
+        },
+        "lat_p50_ms": 0.652,
+        "lat_p99_ms": 2.45,
+        "requests": 340928
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "tls_status",
+      "server": "sparrow",
+      "url": "https://sparrow-tls:8443/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow-tls",
+      "cpu": {
+        "cpu_avg": 50.714999999999996,
+        "cpu_max": 101.41,
+        "rss_mb": 135.39999999999998,
+        "usage_mb": 135.203125,
+        "anon_mb": 129.0625,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 135.203125,
+        "anon_peak_mb": 129.0625,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 50.714999999999996,
+        "cpu_max": 101.41,
+        "rss_mb": 135.39999999999998,
+        "usage_mb": 135.203125,
+        "anon_mb": 129.0625,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 135.203125,
+        "anon_peak_mb": 129.0625,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ https://sparrow-tls:8443/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     2.02ms   13.38ms 226.05ms   98.70%\n    Req/Sec    29.68k     7.58k   84.57k    94.51%\n  Latency Distribution\n     50%  191.00us\n     75%    1.27ms\n     90%    1.89ms\n     99%   43.18ms\n  699860 requests in 6.10s, 95.44MB read\nRequests/sec: 114734.31\nTransfer/sec:     15.65MB\n",
+        "rps": 114734.31,
+        "transfer_mbps": 15.65,
+        "lat_avg_ms": 2.02,
+        "lat_stdev_ms": 13.38,
+        "lat_max_ms": 226.05,
+        "lat_dist_ms": {
+          "50": 0.191,
+          "75": 1.27,
+          "90": 1.89,
+          "99": 43.18
+        },
+        "lat_p50_ms": 0.191,
+        "lat_p99_ms": 43.18,
+        "requests": 699860
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "tls_status",
+      "server": "caddy",
+      "url": "https://caddy:8443/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 149.94,
+        "cpu_max": 299.88,
+        "rss_mb": 21.3,
+        "usage_mb": 22.833984375,
+        "anon_mb": 19.0234375,
+        "cache_mb": 1.59765625,
+        "usage_peak_mb": 23.77734375,
+        "anon_peak_mb": 19.08984375,
+        "cache_peak_mb": 1.59765625
+      },
+      "mem": {
+        "cpu_avg": 149.94,
+        "cpu_max": 299.88,
+        "rss_mb": 21.3,
+        "usage_mb": 22.833984375,
+        "anon_mb": 19.0234375,
+        "cache_mb": 1.59765625,
+        "usage_peak_mb": 23.77734375,
+        "anon_peak_mb": 19.08984375,
+        "cache_peak_mb": 1.59765625
+      },
+      "result": {
+        "raw": "Running 6s test @ https://caddy:8443/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   730.49us    0.89ms  47.80ms   90.76%\n    Req/Sec    26.15k     3.31k   30.94k    79.58%\n  Latency Distribution\n     50%  543.00us\n     75%    0.97ms\n     90%    1.57ms\n     99%    3.07ms\n  624681 requests in 6.01s, 112.00MB read\nRequests/sec: 103872.91\nTransfer/sec:     18.62MB\n",
+        "rps": 103872.91,
+        "transfer_mbps": 18.62,
+        "lat_avg_ms": 0.73049,
+        "lat_stdev_ms": 0.89,
+        "lat_max_ms": 47.8,
+        "lat_dist_ms": {
+          "50": 0.543,
+          "75": 0.97,
+          "90": 1.57,
+          "99": 3.07
+        },
+        "lat_p50_ms": 0.543,
+        "lat_p99_ms": 3.07,
+        "requests": 624681
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "tls_status",
+      "server": "nginx",
+      "url": "https://nginx:8443/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 50.5,
+        "cpu_max": 101.0,
+        "rss_mb": 9.027000000000001,
+        "usage_mb": 9.916015625,
+        "anon_mb": 7.5859375,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 11.5,
+        "anon_peak_mb": 8.7109375,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 50.5,
+        "cpu_max": 101.0,
+        "rss_mb": 9.027000000000001,
+        "usage_mb": 9.916015625,
+        "anon_mb": 7.5859375,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 11.5,
+        "anon_peak_mb": 8.7109375,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ https://nginx:8443/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.29ms    1.05ms  50.89ms   97.89%\n    Req/Sec    12.88k     3.07k   53.61k    97.93%\n  Latency Distribution\n     50%    1.17ms\n     75%    1.30ms\n     90%    1.54ms\n     99%    2.97ms\n  308817 requests in 6.10s, 86.00MB read\nRequests/sec:  50625.11\nTransfer/sec:     14.10MB\n",
+        "rps": 50625.11,
+        "transfer_mbps": 14.1,
+        "lat_avg_ms": 1.29,
+        "lat_stdev_ms": 1.05,
+        "lat_max_ms": 50.89,
+        "lat_dist_ms": {
+          "50": 1.17,
+          "75": 1.3,
+          "90": 1.54,
+          "99": 2.97
+        },
+        "lat_p50_ms": 1.17,
+        "lat_p99_ms": 2.97,
+        "requests": 308817
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "gzip_mid",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/static/mid.txt",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 50.655,
+        "cpu_max": 101.28,
+        "rss_mb": 133.7,
+        "usage_mb": 133.25390625,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.375,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 50.655,
+        "cpu_max": 101.28,
+        "rss_mb": 133.7,
+        "usage_mb": 133.25390625,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.375,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/static/mid.txt\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     2.01ms    2.88ms  31.37ms   87.62%\n    Req/Sec    17.11k     1.31k   21.10k    66.67%\n  Latency Distribution\n     50%  296.00us\n     75%    2.96ms\n     90%    5.53ms\n     99%   13.39ms\n  408458 requests in 6.01s, 79.85MB read\nRequests/sec:  67994.31\nTransfer/sec:     13.29MB\n",
+        "rps": 67994.31,
+        "transfer_mbps": 13.29,
+        "lat_avg_ms": 2.01,
+        "lat_stdev_ms": 2.88,
+        "lat_max_ms": 31.37,
+        "lat_dist_ms": {
+          "50": 0.296,
+          "75": 2.96,
+          "90": 5.53,
+          "99": 13.39
+        },
+        "lat_p50_ms": 0.296,
+        "lat_p99_ms": 13.39,
+        "requests": 408458
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "gzip_mid",
+      "server": "caddy",
+      "url": "http://caddy:8080/static/mid.txt",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 152.845,
+        "cpu_max": 305.69,
+        "rss_mb": 30.27,
+        "usage_mb": 31.29296875,
+        "anon_mb": 27.291015625,
+        "cache_mb": 1.62890625,
+        "usage_peak_mb": 32.66015625,
+        "anon_peak_mb": 27.5625,
+        "cache_peak_mb": 1.66015625
+      },
+      "mem": {
+        "cpu_avg": 152.845,
+        "cpu_max": 305.69,
+        "rss_mb": 30.27,
+        "usage_mb": 31.29296875,
+        "anon_mb": 27.291015625,
+        "cache_mb": 1.62890625,
+        "usage_peak_mb": 32.66015625,
+        "anon_peak_mb": 27.5625,
+        "cache_peak_mb": 1.66015625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/static/mid.txt\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.25ms    1.05ms  11.50ms   74.43%\n    Req/Sec    14.56k     2.83k   55.72k    96.68%\n  Latency Distribution\n     50%    1.03ms\n     75%    1.75ms\n     90%    2.63ms\n     99%    4.72ms\n  348973 requests in 6.10s, 109.83MB read\nRequests/sec:  57209.21\nTransfer/sec:     18.00MB\n",
+        "rps": 57209.21,
+        "transfer_mbps": 18.0,
+        "lat_avg_ms": 1.25,
+        "lat_stdev_ms": 1.05,
+        "lat_max_ms": 11.5,
+        "lat_dist_ms": {
+          "50": 1.03,
+          "75": 1.75,
+          "90": 2.63,
+          "99": 4.72
+        },
+        "lat_p50_ms": 1.03,
+        "lat_p99_ms": 4.72,
+        "requests": 348973
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "gzip_mid",
+      "server": "nginx",
+      "url": "http://nginx:8080/static/mid.txt",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 51.12,
+        "cpu_max": 102.24,
+        "rss_mb": 7.8165,
+        "usage_mb": 8.65234375,
+        "anon_mb": 6.48828125,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 8.94140625,
+        "anon_peak_mb": 6.48828125,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 51.12,
+        "cpu_max": 102.24,
+        "rss_mb": 7.8165,
+        "usage_mb": 8.65234375,
+        "anon_mb": 6.48828125,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 8.94140625,
+        "anon_peak_mb": 6.48828125,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/static/mid.txt\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.28ms  330.81us  22.88ms   94.87%\n    Req/Sec    12.64k   665.85    13.85k    82.50%\n  Latency Distribution\n     50%    1.21ms\n     75%    1.28ms\n     90%    1.44ms\n     99%    2.25ms\n  301772 requests in 6.01s, 103.61MB read\nRequests/sec:  50235.22\nTransfer/sec:     17.25MB\n",
+        "rps": 50235.22,
+        "transfer_mbps": 17.25,
+        "lat_avg_ms": 1.28,
+        "lat_stdev_ms": 0.33081,
+        "lat_max_ms": 22.88,
+        "lat_dist_ms": {
+          "50": 1.21,
+          "75": 1.28,
+          "90": 1.44,
+          "99": 2.25
+        },
+        "lat_p50_ms": 1.21,
+        "lat_p99_ms": 2.25,
+        "requests": 301772
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "static_small",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/static/small.txt",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 51.135000000000005,
+        "cpu_max": 102.26,
+        "rss_mb": 134.75,
+        "usage_mb": 133.7109375,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.9609375,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 51.135000000000005,
+        "cpu_max": 102.26,
+        "rss_mb": 134.75,
+        "usage_mb": 133.7109375,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.9609375,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/static/small.txt\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     0.87ms  707.87us   7.82ms   51.11%\n    Req/Sec    19.11k     1.32k   22.50k    77.50%\n  Latency Distribution\n     50%    1.11ms\n     75%    1.34ms\n     90%    1.63ms\n     99%    2.48ms\n  456201 requests in 6.01s, 82.66MB read\nRequests/sec:  75891.27\nTransfer/sec:     13.75MB\n",
+        "rps": 75891.27,
+        "transfer_mbps": 13.75,
+        "lat_avg_ms": 0.87,
+        "lat_stdev_ms": 0.70787,
+        "lat_max_ms": 7.82,
+        "lat_dist_ms": {
+          "50": 1.11,
+          "75": 1.34,
+          "90": 1.63,
+          "99": 2.48
+        },
+        "lat_p50_ms": 1.11,
+        "lat_p99_ms": 2.48,
+        "requests": 456201
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "static_small",
+      "server": "caddy",
+      "url": "http://caddy:8080/static/small.txt",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 151.44,
+        "cpu_max": 302.88,
+        "rss_mb": 22.575,
+        "usage_mb": 23.818359375,
+        "anon_mb": 19.703125,
+        "cache_mb": 1.7265625,
+        "usage_peak_mb": 24.609375,
+        "anon_peak_mb": 19.86328125,
+        "cache_peak_mb": 1.7265625
+      },
+      "mem": {
+        "cpu_avg": 151.44,
+        "cpu_max": 302.88,
+        "rss_mb": 22.575,
+        "usage_mb": 23.818359375,
+        "anon_mb": 19.703125,
+        "cache_mb": 1.7265625,
+        "usage_peak_mb": 24.609375,
+        "anon_peak_mb": 19.86328125,
+        "cache_peak_mb": 1.7265625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/static/small.txt\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.01ms    0.87ms  12.23ms   76.49%\n    Req/Sec    18.30k     1.44k   20.39k    75.42%\n  Latency Distribution\n     50%  817.00us\n     75%    1.39ms\n     90%    2.14ms\n     99%    3.90ms\n  437038 requests in 6.01s, 138.79MB read\nRequests/sec:  72753.66\nTransfer/sec:     23.10MB\n",
+        "rps": 72753.66,
+        "transfer_mbps": 23.1,
+        "lat_avg_ms": 1.01,
+        "lat_stdev_ms": 0.87,
+        "lat_max_ms": 12.23,
+        "lat_dist_ms": {
+          "50": 0.8170000000000001,
+          "75": 1.39,
+          "90": 2.14,
+          "99": 3.9
+        },
+        "lat_p50_ms": 0.8170000000000001,
+        "lat_p99_ms": 3.9,
+        "requests": 437038
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "static_small",
+      "server": "nginx",
+      "url": "http://nginx:8080/static/small.txt",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 50.835,
+        "cpu_max": 101.67,
+        "rss_mb": 7.65,
+        "usage_mb": 8.9296875,
+        "anon_mb": 6.50390625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.50390625,
+        "anon_peak_mb": 6.51953125,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 50.835,
+        "cpu_max": 101.67,
+        "rss_mb": 7.65,
+        "usage_mb": 8.9296875,
+        "anon_mb": 6.50390625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.50390625,
+        "anon_peak_mb": 6.51953125,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/static/small.txt\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   681.22us  173.44us   8.40ms   89.49%\n    Req/Sec    23.70k     2.96k   50.07k    92.98%\n  Latency Distribution\n     50%  629.00us\n     75%  700.00us\n     90%  831.00us\n     99%    1.37ms\n  570610 requests in 6.10s, 188.28MB read\nRequests/sec:  93544.34\nTransfer/sec:     30.87MB\n",
+        "rps": 93544.34,
+        "transfer_mbps": 30.87,
+        "lat_avg_ms": 0.68122,
+        "lat_stdev_ms": 0.17344,
+        "lat_max_ms": 8.4,
+        "lat_dist_ms": {
+          "50": 0.629,
+          "75": 0.7000000000000001,
+          "90": 0.8310000000000001,
+          "99": 1.37
+        },
+        "lat_p50_ms": 0.629,
+        "lat_p99_ms": 1.37,
+        "requests": 570610
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "static_big",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/static/big.bin",
+      "conns": 16,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 80.2,
+        "cpu_max": 160.38,
+        "rss_mb": 148.35000000000002,
+        "usage_mb": 133.94140625,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 134.4765625,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 80.2,
+        "cpu_max": 160.38,
+        "rss_mb": 148.35000000000002,
+        "usage_mb": 133.94140625,
+        "anon_mb": 126.98046875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 134.4765625,
+        "anon_peak_mb": 126.98046875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/static/big.bin\n  4 threads and 16 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    10.57ms    4.82ms  51.85ms   80.45%\n    Req/Sec   299.28     70.56   427.00     60.59%\n  Latency Distribution\n     50%    9.55ms\n     75%   12.24ms\n     90%   16.04ms\n     99%   29.75ms\n  7181 requests in 6.06s, 70.18GB read\nRequests/sec:   1185.11\nTransfer/sec:     11.58GB\n",
+        "rps": 1185.11,
+        "transfer_mbps": 11857.92,
+        "lat_avg_ms": 10.57,
+        "lat_stdev_ms": 4.82,
+        "lat_max_ms": 51.85,
+        "lat_dist_ms": {
+          "50": 9.55,
+          "75": 12.24,
+          "90": 16.04,
+          "99": 29.75
+        },
+        "lat_p50_ms": 9.55,
+        "lat_p99_ms": 29.75,
+        "requests": 7181
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "static_big",
+      "server": "caddy",
+      "url": "http://caddy:8080/static/big.bin",
+      "conns": 16,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 87.475,
+        "cpu_max": 174.95,
+        "rss_mb": 35.415,
+        "usage_mb": 30.3125,
+        "anon_mb": 17.802734375,
+        "cache_mb": 1.7265625,
+        "usage_peak_mb": 39.3828125,
+        "anon_peak_mb": 17.96875,
+        "cache_peak_mb": 1.7265625
+      },
+      "mem": {
+        "cpu_avg": 87.475,
+        "cpu_max": 174.95,
+        "rss_mb": 35.415,
+        "usage_mb": 30.3125,
+        "anon_mb": 17.802734375,
+        "cache_mb": 1.7265625,
+        "usage_peak_mb": 39.3828125,
+        "anon_peak_mb": 17.96875,
+        "cache_peak_mb": 1.7265625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/static/big.bin\n  4 threads and 16 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    13.60ms    6.67ms  62.34ms   78.03%\n    Req/Sec   216.29     36.07   298.00     65.52%\n  Latency Distribution\n     50%   12.17ms\n     75%   16.36ms\n     90%   22.08ms\n     99%   36.60ms\n  5213 requests in 6.07s, 50.91GB read\nRequests/sec:    859.22\nTransfer/sec:      8.39GB\n",
+        "rps": 859.22,
+        "transfer_mbps": 8591.36,
+        "lat_avg_ms": 13.6,
+        "lat_stdev_ms": 6.67,
+        "lat_max_ms": 62.34,
+        "lat_dist_ms": {
+          "50": 12.17,
+          "75": 16.36,
+          "90": 22.08,
+          "99": 36.6
+        },
+        "lat_p50_ms": 12.17,
+        "lat_p99_ms": 36.6,
+        "requests": 5213
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "static_big",
+      "server": "nginx",
+      "url": "http://nginx:8080/static/big.bin",
+      "conns": 16,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 37.33,
+        "cpu_max": 74.66,
+        "rss_mb": 10.41,
+        "usage_mb": 10.435546875,
+        "anon_mb": 6.556640625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 12.515625,
+        "anon_peak_mb": 6.625,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 37.33,
+        "cpu_max": 74.66,
+        "rss_mb": 10.41,
+        "usage_mb": 10.435546875,
+        "anon_mb": 6.556640625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 12.515625,
+        "anon_peak_mb": 6.625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/static/big.bin\n  4 threads and 16 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    12.82ms    4.88ms  74.59ms   79.61%\n    Req/Sec   289.87     47.04   454.00     70.00%\n  Latency Distribution\n     50%   12.64ms\n     75%   14.37ms\n     90%   17.12ms\n     99%   29.69ms\n  6992 requests in 6.07s, 68.32GB read\nRequests/sec:   1151.44\nTransfer/sec:     11.25GB\n",
+        "rps": 1151.44,
+        "transfer_mbps": 11520.0,
+        "lat_avg_ms": 12.82,
+        "lat_stdev_ms": 4.88,
+        "lat_max_ms": 74.59,
+        "lat_dist_ms": {
+          "50": 12.64,
+          "75": 14.37,
+          "90": 17.12,
+          "99": 29.69
+        },
+        "lat_p50_ms": 12.64,
+        "lat_p99_ms": 29.69,
+        "requests": 6992
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "proxy",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/api/ping",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 3.985,
+        "cpu_max": 7.96,
+        "rss_mb": 134.65,
+        "usage_mb": 133.927734375,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 134.09375,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 3.985,
+        "cpu_max": 7.96,
+        "rss_mb": 134.65,
+        "usage_mb": 133.927734375,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 134.09375,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/api/ping\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   114.09ms  250.04ms   1.83s    91.81%\n    Req/Sec   311.96    113.80   464.00     68.75%\n  Latency Distribution\n     50%   41.09ms\n     75%   42.00ms\n     90%  134.34ms\n     99%    1.31s \n  7458 requests in 6.01s, 1.30MB read\n  Socket errors: connect 0, read 0, write 0, timeout 9\nRequests/sec:   1241.78\nTransfer/sec:    222.44KB\n",
+        "rps": 1241.78,
+        "transfer_mbps": 0.2172265625,
+        "lat_avg_ms": 114.09,
+        "lat_stdev_ms": 250.04,
+        "lat_max_ms": 1830.0,
+        "lat_dist_ms": {
+          "50": 41.09,
+          "75": 42.0,
+          "90": 134.34,
+          "99": 1310.0
+        },
+        "lat_p50_ms": 41.09,
+        "lat_p99_ms": 1310.0,
+        "requests": 7458
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "proxy",
+      "server": "caddy",
+      "url": "http://caddy:8080/api/ping",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 22.03,
+        "cpu_max": 44.06,
+        "rss_mb": 31.894999999999996,
+        "usage_mb": 33.4140625,
+        "anon_mb": 28.90625,
+        "cache_mb": 1.7265625,
+        "usage_peak_mb": 34.7421875,
+        "anon_peak_mb": 29.078125,
+        "cache_peak_mb": 1.7265625
+      },
+      "mem": {
+        "cpu_avg": 22.03,
+        "cpu_max": 44.06,
+        "rss_mb": 31.894999999999996,
+        "usage_mb": 33.4140625,
+        "anon_mb": 28.90625,
+        "cache_mb": 1.7265625,
+        "usage_peak_mb": 34.7421875,
+        "anon_peak_mb": 29.078125,
+        "cache_peak_mb": 1.7265625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/api/ping\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    41.38ms    4.43ms 208.74ms   98.14%\n    Req/Sec   387.05     36.34   480.00     62.96%\n  Latency Distribution\n     50%   41.05ms\n     75%   41.97ms\n     90%   42.16ms\n     99%   46.12ms\n  9364 requests in 6.10s, 1.54MB read\nRequests/sec:   1534.91\nTransfer/sec:    259.32KB\n",
+        "rps": 1534.91,
+        "transfer_mbps": 0.2532421875,
+        "lat_avg_ms": 41.38,
+        "lat_stdev_ms": 4.43,
+        "lat_max_ms": 208.74,
+        "lat_dist_ms": {
+          "50": 41.05,
+          "75": 41.97,
+          "90": 42.16,
+          "99": 46.12
+        },
+        "lat_p50_ms": 41.05,
+        "lat_p99_ms": 46.12,
+        "requests": 9364
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "proxy",
+      "server": "nginx",
+      "url": "http://nginx:8080/api/ping",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 2.84,
+        "cpu_max": 5.68,
+        "rss_mb": 8.33,
+        "usage_mb": 9.884765625,
+        "anon_mb": 6.994140625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 11.26953125,
+        "anon_peak_mb": 7.4765625,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 2.84,
+        "cpu_max": 5.68,
+        "rss_mb": 8.33,
+        "usage_mb": 9.884765625,
+        "anon_mb": 6.994140625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 11.26953125,
+        "anon_peak_mb": 7.4765625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/api/ping\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   104.13ms  243.59ms   1.88s    93.32%\n    Req/Sec   296.08     93.67   474.00     69.14%\n  Latency Distribution\n     50%   41.10ms\n     75%   42.01ms\n     90%   44.97ms\n     99%    1.36s \n  7164 requests in 6.10s, 1.14MB read\n  Socket errors: connect 0, read 0, write 0, timeout 12\nRequests/sec:   1174.46\nTransfer/sec:    191.54KB\n",
+        "rps": 1174.46,
+        "transfer_mbps": 0.18705078125,
+        "lat_avg_ms": 104.13,
+        "lat_stdev_ms": 243.59,
+        "lat_max_ms": 1880.0,
+        "lat_dist_ms": {
+          "50": 41.1,
+          "75": 42.01,
+          "90": 44.97,
+          "99": 1360.0
+        },
+        "lat_p50_ms": 41.1,
+        "lat_p99_ms": 1360.0,
+        "requests": 7164
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "proxy_post",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/api/echo",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 3.2649999999999997,
+        "cpu_max": 6.51,
+        "rss_mb": 134.95,
+        "usage_mb": 133.76953125,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.78125,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 3.2649999999999997,
+        "cpu_max": 6.51,
+        "rss_mb": 134.95,
+        "usage_mb": 133.76953125,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.78125,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/api/echo\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   102.89ms  240.60ms   1.84s    93.41%\n    Req/Sec   270.65    116.84   424.00     66.80%\n  Latency Distribution\n     50%   41.06ms\n     75%   42.00ms\n     90%   43.69ms\n     99%    1.36s \n  6496 requests in 6.10s, 7.61MB read\n  Socket errors: connect 0, read 0, write 0, timeout 13\nRequests/sec:   1064.99\nTransfer/sec:      1.25MB\n",
+        "rps": 1064.99,
+        "transfer_mbps": 1.25,
+        "lat_avg_ms": 102.89,
+        "lat_stdev_ms": 240.6,
+        "lat_max_ms": 1840.0,
+        "lat_dist_ms": {
+          "50": 41.06,
+          "75": 42.0,
+          "90": 43.69,
+          "99": 1360.0
+        },
+        "lat_p50_ms": 41.06,
+        "lat_p99_ms": 1360.0,
+        "requests": 6496
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "proxy_post",
+      "server": "caddy",
+      "url": "http://caddy:8080/api/echo",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 28.275,
+        "cpu_max": 56.55,
+        "rss_mb": 32.625,
+        "usage_mb": 33.91796875,
+        "anon_mb": 29.576171875,
+        "cache_mb": 1.7265625,
+        "usage_peak_mb": 34.77734375,
+        "anon_peak_mb": 29.70703125,
+        "cache_peak_mb": 1.7265625
+      },
+      "mem": {
+        "cpu_avg": 28.275,
+        "cpu_max": 56.55,
+        "rss_mb": 32.625,
+        "usage_mb": 33.91796875,
+        "anon_mb": 29.576171875,
+        "cache_mb": 1.7265625,
+        "usage_peak_mb": 34.77734375,
+        "anon_peak_mb": 29.70703125,
+        "cache_peak_mb": 1.7265625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/api/echo\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    41.41ms    3.60ms  64.45ms   97.21%\n    Req/Sec   386.41     36.73   505.00     68.46%\n  Latency Distribution\n     50%   41.13ms\n     75%   42.00ms\n     90%   42.71ms\n     99%   47.89ms\n  9271 requests in 6.10s, 10.77MB read\n  Non-2xx or 3xx responses: 1\nRequests/sec:   1519.97\nTransfer/sec:      1.77MB\n",
+        "rps": 1519.97,
+        "transfer_mbps": 1.77,
+        "lat_avg_ms": 41.41,
+        "lat_stdev_ms": 3.6,
+        "lat_max_ms": 64.45,
+        "lat_dist_ms": {
+          "50": 41.13,
+          "75": 42.0,
+          "90": 42.71,
+          "99": 47.89
+        },
+        "lat_p50_ms": 41.13,
+        "lat_p99_ms": 47.89,
+        "requests": 9271
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "proxy_post",
+      "server": "nginx",
+      "url": "http://nginx:8080/api/echo",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 4.41,
+        "cpu_max": 8.82,
+        "rss_mb": 8.8325,
+        "usage_mb": 8.96484375,
+        "anon_mb": 6.51171875,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.5078125,
+        "anon_peak_mb": 6.51171875,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 4.41,
+        "cpu_max": 8.82,
+        "rss_mb": 8.8325,
+        "usage_mb": 8.96484375,
+        "anon_mb": 6.51171875,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.5078125,
+        "anon_peak_mb": 6.51171875,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/api/echo\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   103.72ms  241.51ms   1.87s    93.21%\n    Req/Sec   311.28    126.61   480.00     72.92%\n  Latency Distribution\n     50%   41.05ms\n     75%   41.98ms\n     90%   43.85ms\n     99%    1.35s \n  7439 requests in 6.01s, 8.60MB read\n  Socket errors: connect 0, read 0, write 0, timeout 18\nRequests/sec:   1238.31\nTransfer/sec:      1.43MB\n",
+        "rps": 1238.31,
+        "transfer_mbps": 1.43,
+        "lat_avg_ms": 103.72,
+        "lat_stdev_ms": 241.51,
+        "lat_max_ms": 1870.0,
+        "lat_dist_ms": {
+          "50": 41.05,
+          "75": 41.98,
+          "90": 43.85,
+          "99": 1350.0
+        },
+        "lat_p50_ms": 41.05,
+        "lat_p99_ms": 1350.0,
+        "requests": 7439
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "badnet_base",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 32,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 51.1,
+        "cpu_max": 102.18,
+        "rss_mb": 134.25,
+        "usage_mb": 133.603515625,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.671875,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 51.1,
+        "cpu_max": 102.18,
+        "rss_mb": 134.25,
+        "usage_mb": 133.603515625,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.671875,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   464.52us    1.00ms  15.20ms   91.93%\n    Req/Sec    47.25k     6.68k  138.43k    94.61%\n  Latency Distribution\n     50%   95.00us\n     75%  398.00us\n     90%    1.16ms\n     99%    5.05ms\n  1132544 requests in 6.10s, 154.45MB read\nRequests/sec: 185682.43\nTransfer/sec:     25.32MB\n",
+        "rps": 185682.43,
+        "transfer_mbps": 25.32,
+        "lat_avg_ms": 0.46452,
+        "lat_stdev_ms": 1.0,
+        "lat_max_ms": 15.2,
+        "lat_dist_ms": {
+          "50": 0.095,
+          "75": 0.398,
+          "90": 1.16,
+          "99": 5.05
+        },
+        "lat_p50_ms": 0.095,
+        "lat_p99_ms": 5.05,
+        "requests": 1132544
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "badnet_base",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 32,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 152.105,
+        "cpu_max": 304.21,
+        "rss_mb": 24.775,
+        "usage_mb": 26.091796875,
+        "anon_mb": 21.87890625,
+        "cache_mb": 1.796875,
+        "usage_peak_mb": 26.25,
+        "anon_peak_mb": 22.56640625,
+        "cache_peak_mb": 1.796875
+      },
+      "mem": {
+        "cpu_avg": 152.105,
+        "cpu_max": 304.21,
+        "rss_mb": 24.775,
+        "usage_mb": 26.091796875,
+        "anon_mb": 21.87890625,
+        "cache_mb": 1.796875,
+        "usage_peak_mb": 26.25,
+        "anon_peak_mb": 22.56640625,
+        "cache_peak_mb": 1.796875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   332.85us  337.70us   7.68ms   88.77%\n    Req/Sec    29.11k     5.49k  103.77k    94.61%\n  Latency Distribution\n     50%  242.00us\n     75%  431.00us\n     90%  710.00us\n     99%    1.60ms\n  697856 requests in 6.10s, 103.16MB read\nRequests/sec: 114411.31\nTransfer/sec:     16.91MB\n",
+        "rps": 114411.31,
+        "transfer_mbps": 16.91,
+        "lat_avg_ms": 0.33285000000000003,
+        "lat_stdev_ms": 0.3377,
+        "lat_max_ms": 7.68,
+        "lat_dist_ms": {
+          "50": 0.242,
+          "75": 0.431,
+          "90": 0.71,
+          "99": 1.6
+        },
+        "lat_p50_ms": 0.242,
+        "lat_p99_ms": 1.6,
+        "requests": 697856
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "badnet_base",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 32,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 51.19,
+        "cpu_max": 102.38,
+        "rss_mb": 7.3905,
+        "usage_mb": 8.66796875,
+        "anon_mb": 6.51171875,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 8.8828125,
+        "anon_peak_mb": 6.51953125,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 51.19,
+        "cpu_max": 102.38,
+        "rss_mb": 7.3905,
+        "usage_mb": 8.66796875,
+        "anon_mb": 6.51171875,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 8.8828125,
+        "anon_peak_mb": 6.51953125,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   344.18us  366.99us  21.98ms   98.96%\n    Req/Sec    24.34k     1.79k   31.49k    86.83%\n  Latency Distribution\n     50%  309.00us\n     75%  337.00us\n     90%  387.00us\n     99%  749.00us\n  588424 requests in 6.10s, 163.86MB read\nRequests/sec:  96461.69\nTransfer/sec:     26.86MB\n",
+        "rps": 96461.69,
+        "transfer_mbps": 26.86,
+        "lat_avg_ms": 0.34418000000000004,
+        "lat_stdev_ms": 0.36699000000000004,
+        "lat_max_ms": 21.98,
+        "lat_dist_ms": {
+          "50": 0.309,
+          "75": 0.337,
+          "90": 0.387,
+          "99": 0.749
+        },
+        "lat_p50_ms": 0.309,
+        "lat_p99_ms": 0.749,
+        "requests": 588424
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "badnet_latency",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 32,
+      "netem": "delay, 50ms, 10ms, distribution, normal",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 1.71,
+        "cpu_max": 3.41,
+        "rss_mb": 133.95,
+        "usage_mb": 133.849609375,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 134.0,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 1.71,
+        "cpu_max": 3.41,
+        "rss_mb": 133.95,
+        "usage_mb": 133.849609375,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 134.0,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    50.27ms    9.84ms  85.38ms   67.81%\n    Req/Sec   157.48     19.83   202.00     83.75%\n  Latency Distribution\n     50%   50.32ms\n     75%   57.13ms\n     90%   62.70ms\n     99%   72.68ms\n  3768 requests in 6.00s, 526.20KB read\nRequests/sec:    627.58\nTransfer/sec:     87.64KB\n",
+        "rps": 627.58,
+        "transfer_mbps": 0.0855859375,
+        "lat_avg_ms": 50.27,
+        "lat_stdev_ms": 9.84,
+        "lat_max_ms": 85.38,
+        "lat_dist_ms": {
+          "50": 50.32,
+          "75": 57.13,
+          "90": 62.7,
+          "99": 72.68
+        },
+        "lat_p50_ms": 50.32,
+        "lat_p99_ms": 72.68,
+        "requests": 3768
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "badnet_latency",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 32,
+      "netem": "delay, 50ms, 10ms, distribution, normal",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 4.305,
+        "cpu_max": 8.61,
+        "rss_mb": 20.235,
+        "usage_mb": 22.03515625,
+        "anon_mb": 17.70703125,
+        "cache_mb": 1.796875,
+        "usage_peak_mb": 22.81640625,
+        "anon_peak_mb": 17.72265625,
+        "cache_peak_mb": 1.796875
+      },
+      "mem": {
+        "cpu_avg": 4.305,
+        "cpu_max": 8.61,
+        "rss_mb": 20.235,
+        "usage_mb": 22.03515625,
+        "anon_mb": 17.70703125,
+        "cache_mb": 1.796875,
+        "usage_peak_mb": 22.81640625,
+        "anon_peak_mb": 17.72265625,
+        "cache_peak_mb": 1.796875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    50.31ms   10.08ms  85.61ms   67.70%\n    Req/Sec   157.52     19.78   181.00     87.50%\n  Latency Distribution\n     50%   50.43ms\n     75%   57.38ms\n     90%   62.79ms\n     99%   73.69ms\n  3771 requests in 6.00s, 570.81KB read\nRequests/sec:    628.04\nTransfer/sec:     95.07KB\n",
+        "rps": 628.04,
+        "transfer_mbps": 0.092841796875,
+        "lat_avg_ms": 50.31,
+        "lat_stdev_ms": 10.08,
+        "lat_max_ms": 85.61,
+        "lat_dist_ms": {
+          "50": 50.43,
+          "75": 57.38,
+          "90": 62.79,
+          "99": 73.69
+        },
+        "lat_p50_ms": 50.43,
+        "lat_p99_ms": 73.69,
+        "requests": 3771
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "badnet_latency",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 32,
+      "netem": "delay, 50ms, 10ms, distribution, normal",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 2.6,
+        "cpu_max": 5.2,
+        "rss_mb": 8.3635,
+        "usage_mb": 9.759765625,
+        "anon_mb": 6.51171875,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.90234375,
+        "anon_peak_mb": 6.51953125,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 2.6,
+        "cpu_max": 5.2,
+        "rss_mb": 8.3635,
+        "usage_mb": 9.759765625,
+        "anon_mb": 6.51171875,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.90234375,
+        "anon_peak_mb": 6.51953125,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    50.05ms   10.08ms  85.52ms   69.33%\n    Req/Sec   158.15     20.80   191.00     86.67%\n  Latency Distribution\n     50%   49.89ms\n     75%   56.57ms\n     90%   63.24ms\n     99%   73.84ms\n  3785 requests in 6.00s, 1.05MB read\nRequests/sec:    630.37\nTransfer/sec:    179.75KB\n",
+        "rps": 630.37,
+        "transfer_mbps": 0.175537109375,
+        "lat_avg_ms": 50.05,
+        "lat_stdev_ms": 10.08,
+        "lat_max_ms": 85.52,
+        "lat_dist_ms": {
+          "50": 49.89,
+          "75": 56.57,
+          "90": 63.24,
+          "99": 73.84
+        },
+        "lat_p50_ms": 49.89,
+        "lat_p99_ms": 73.84,
+        "requests": 3785
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "badnet_jitter",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 32,
+      "netem": "delay, 20ms, 15ms, distribution, normal",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 2.8699999999999997,
+        "cpu_max": 5.72,
+        "rss_mb": 133.75,
+        "usage_mb": 133.767578125,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 134.015625,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 2.8699999999999997,
+        "cpu_max": 5.72,
+        "rss_mb": 133.75,
+        "usage_mb": 133.767578125,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 134.015625,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    21.11ms   13.43ms  72.97ms   64.78%\n    Req/Sec   386.54     49.16   565.00     73.97%\n  Latency Distribution\n     50%   21.28ms\n     75%   30.18ms\n     90%   38.80ms\n     99%   54.12ms\n  9315 requests in 6.10s, 1.27MB read\nRequests/sec:   1526.96\nTransfer/sec:    213.24KB\n",
+        "rps": 1526.96,
+        "transfer_mbps": 0.2082421875,
+        "lat_avg_ms": 21.11,
+        "lat_stdev_ms": 13.43,
+        "lat_max_ms": 72.97,
+        "lat_dist_ms": {
+          "50": 21.28,
+          "75": 30.18,
+          "90": 38.8,
+          "99": 54.12
+        },
+        "lat_p50_ms": 21.28,
+        "lat_p99_ms": 54.12,
+        "requests": 9315
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "badnet_jitter",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 32,
+      "netem": "delay, 20ms, 15ms, distribution, normal",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 11.215,
+        "cpu_max": 22.41,
+        "rss_mb": 21.689999999999998,
+        "usage_mb": 22.68359375,
+        "anon_mb": 18.50390625,
+        "cache_mb": 1.796875,
+        "usage_peak_mb": 23.7421875,
+        "anon_peak_mb": 18.66015625,
+        "cache_peak_mb": 1.796875
+      },
+      "mem": {
+        "cpu_avg": 11.215,
+        "cpu_max": 22.41,
+        "rss_mb": 21.689999999999998,
+        "usage_mb": 22.68359375,
+        "anon_mb": 18.50390625,
+        "cache_mb": 1.796875,
+        "usage_peak_mb": 23.7421875,
+        "anon_peak_mb": 18.66015625,
+        "cache_peak_mb": 1.796875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    21.42ms   13.40ms  73.06ms   65.59%\n    Req/Sec   380.73     41.99   510.00     69.58%\n  Latency Distribution\n     50%   21.71ms\n     75%   30.38ms\n     90%   39.06ms\n     99%   54.32ms\n  9100 requests in 6.00s, 1.35MB read\nRequests/sec:   1515.70\nTransfer/sec:    229.43KB\n",
+        "rps": 1515.7,
+        "transfer_mbps": 0.224052734375,
+        "lat_avg_ms": 21.42,
+        "lat_stdev_ms": 13.4,
+        "lat_max_ms": 73.06,
+        "lat_dist_ms": {
+          "50": 21.71,
+          "75": 30.38,
+          "90": 39.06,
+          "99": 54.32
+        },
+        "lat_p50_ms": 21.71,
+        "lat_p99_ms": 54.32,
+        "requests": 9100
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "badnet_jitter",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 32,
+      "netem": "delay, 20ms, 15ms, distribution, normal",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 5.14,
+        "cpu_max": 10.28,
+        "rss_mb": 8.154499999999999,
+        "usage_mb": 9.501953125,
+        "anon_mb": 6.51171875,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.62890625,
+        "anon_peak_mb": 6.51953125,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 5.14,
+        "cpu_max": 10.28,
+        "rss_mb": 8.154499999999999,
+        "usage_mb": 9.501953125,
+        "anon_mb": 6.51171875,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.62890625,
+        "anon_peak_mb": 6.51953125,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    21.17ms   13.44ms  72.95ms   64.87%\n    Req/Sec   385.73     46.91   510.00     69.58%\n  Latency Distribution\n     50%   21.33ms\n     75%   30.11ms\n     90%   38.70ms\n     99%   54.59ms\n  9221 requests in 6.01s, 2.57MB read\nRequests/sec:   1535.25\nTransfer/sec:    437.78KB\n",
+        "rps": 1535.25,
+        "transfer_mbps": 0.42751953125,
+        "lat_avg_ms": 21.17,
+        "lat_stdev_ms": 13.44,
+        "lat_max_ms": 72.95,
+        "lat_dist_ms": {
+          "50": 21.33,
+          "75": 30.11,
+          "90": 38.7,
+          "99": 54.59
+        },
+        "lat_p50_ms": 21.33,
+        "lat_p99_ms": 54.59,
+        "requests": 9221
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "badnet_loss",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 32,
+      "netem": "loss, 2%",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 3.885,
+        "cpu_max": 7.75,
+        "rss_mb": 135.1,
+        "usage_mb": 134.400390625,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 134.8359375,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 3.885,
+        "cpu_max": 7.75,
+        "rss_mb": 135.1,
+        "usage_mb": 134.400390625,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 134.8359375,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    55.32ms   75.25ms 825.16ms   80.42%\n    Req/Sec     1.86k     1.14k    6.10k    73.68%\n  Latency Distribution\n     50%  396.00us\n     75%  107.00ms\n     90%  171.67ms\n     99%  259.10ms\n  43861 requests in 6.01s, 5.98MB read\nRequests/sec:   7294.78\nTransfer/sec:      0.99MB\n",
+        "rps": 7294.78,
+        "transfer_mbps": 0.99,
+        "lat_avg_ms": 55.32,
+        "lat_stdev_ms": 75.25,
+        "lat_max_ms": 825.16,
+        "lat_dist_ms": {
+          "50": 0.396,
+          "75": 107.0,
+          "90": 171.67,
+          "99": 259.1
+        },
+        "lat_p50_ms": 0.396,
+        "lat_p99_ms": 259.1,
+        "requests": 43861
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "badnet_loss",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 32,
+      "netem": "loss, 2%",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 25.475,
+        "cpu_max": 50.92,
+        "rss_mb": 21.685000000000002,
+        "usage_mb": 22.876953125,
+        "anon_mb": 18.72265625,
+        "cache_mb": 1.796875,
+        "usage_peak_mb": 23.26953125,
+        "anon_peak_mb": 19.08203125,
+        "cache_peak_mb": 1.796875
+      },
+      "mem": {
+        "cpu_avg": 25.475,
+        "cpu_max": 50.92,
+        "rss_mb": 21.685000000000002,
+        "usage_mb": 22.876953125,
+        "anon_mb": 18.72265625,
+        "cache_mb": 1.796875,
+        "usage_peak_mb": 23.26953125,
+        "anon_peak_mb": 19.08203125,
+        "cache_peak_mb": 1.796875
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    53.82ms   70.69ms 417.48ms   79.36%\n    Req/Sec     1.80k     1.37k    7.11k    68.16%\n  Latency Distribution\n     50%  777.00us\n     75%  106.08ms\n     90%  169.30ms\n     99%  207.65ms\n  42648 requests in 6.01s, 6.30MB read\nRequests/sec:   7099.06\nTransfer/sec:      1.05MB\n",
+        "rps": 7099.06,
+        "transfer_mbps": 1.05,
+        "lat_avg_ms": 53.82,
+        "lat_stdev_ms": 70.69,
+        "lat_max_ms": 417.48,
+        "lat_dist_ms": {
+          "50": 0.777,
+          "75": 106.08,
+          "90": 169.3,
+          "99": 207.65
+        },
+        "lat_p50_ms": 0.777,
+        "lat_p99_ms": 207.65,
+        "requests": 42648
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "scenario": "badnet_loss",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 32,
+      "netem": "loss, 2%",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 7.99,
+        "cpu_max": 15.98,
+        "rss_mb": 7.965,
+        "usage_mb": 9.1875,
+        "anon_mb": 6.50390625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.00390625,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "mem": {
+        "cpu_avg": 7.99,
+        "cpu_max": 15.98,
+        "rss_mb": 7.965,
+        "usage_mb": 9.1875,
+        "anon_mb": 6.50390625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.00390625,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 32 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    54.01ms   71.40ms 416.83ms   79.52%\n    Req/Sec     1.92k     1.37k    5.67k    62.37%\n  Latency Distribution\n     50%  540.00us\n     75%  106.12ms\n     90%  169.70ms\n     99%  208.62ms\n  45567 requests in 6.01s, 12.69MB read\nRequests/sec:   7583.62\nTransfer/sec:      2.11MB\n",
+        "rps": 7583.62,
+        "transfer_mbps": 2.11,
+        "lat_avg_ms": 54.01,
+        "lat_stdev_ms": 71.4,
+        "lat_max_ms": 416.83,
+        "lat_dist_ms": {
+          "50": 0.54,
+          "75": 106.12,
+          "90": 169.7,
+          "99": 208.62
+        },
+        "lat_p50_ms": 0.54,
+        "lat_p99_ms": 208.62,
+        "requests": 45567
+      }
+    }
+  ],
+  "sweep": [
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "sparrow",
+      "conns": 1,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 53.62,
+        "cpu_max": 53.62,
+        "rss_mb": 135.2,
+        "usage_mb": 134.6875,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 134.6875,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 5s test @ http://sparrow:8080/status\n  1 threads and 1 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    24.13us  114.16us   3.87ms   99.31%\n    Req/Sec    58.78k     5.89k   67.05k    68.63%\n  Latency Distribution\n     50%   13.00us\n     75%   18.00us\n     90%   27.00us\n     99%   82.00us\n  297526 requests in 5.10s, 40.58MB read\nRequests/sec:  58344.22\nTransfer/sec:      7.96MB\n",
+        "rps": 58344.22,
+        "transfer_mbps": 7.96,
+        "lat_avg_ms": 0.02413,
+        "lat_stdev_ms": 0.11416,
+        "lat_max_ms": 3.87,
+        "lat_dist_ms": {
+          "50": 0.013000000000000001,
+          "75": 0.018000000000000002,
+          "90": 0.027,
+          "99": 0.082
+        },
+        "lat_p50_ms": 0.013000000000000001,
+        "lat_p99_ms": 0.082,
+        "requests": 297526
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "caddy",
+      "conns": 1,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 82.94,
+        "cpu_max": 82.94,
+        "rss_mb": 20.3,
+        "usage_mb": 20.2109375,
+        "anon_mb": 16.5078125,
+        "cache_mb": 1.09765625,
+        "usage_peak_mb": 20.2109375,
+        "anon_peak_mb": 16.5078125,
+        "cache_peak_mb": 1.09765625
+      },
+      "result": {
+        "raw": "Running 5s test @ http://caddy:8080/status\n  1 threads and 1 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    41.69us   86.94us   3.08ms   95.49%\n    Req/Sec    33.56k     4.40k   40.99k    64.00%\n  Latency Distribution\n     50%   23.00us\n     75%   32.00us\n     90%   63.00us\n     99%  327.00us\n  166744 requests in 5.00s, 24.65MB read\nRequests/sec:  33347.87\nTransfer/sec:      4.93MB\n",
+        "rps": 33347.87,
+        "transfer_mbps": 4.93,
+        "lat_avg_ms": 0.04169,
+        "lat_stdev_ms": 0.08694,
+        "lat_max_ms": 3.08,
+        "lat_dist_ms": {
+          "50": 0.023,
+          "75": 0.032,
+          "90": 0.063,
+          "99": 0.327
+        },
+        "lat_p50_ms": 0.023,
+        "lat_p99_ms": 0.327,
+        "requests": 166744
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "nginx",
+      "conns": 1,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 61.75,
+        "cpu_max": 61.75,
+        "rss_mb": 10.25,
+        "usage_mb": 9.60546875,
+        "anon_mb": 6.48828125,
+        "cache_mb": 1.06640625,
+        "usage_peak_mb": 9.60546875,
+        "anon_peak_mb": 6.48828125,
+        "cache_peak_mb": 1.06640625
+      },
+      "result": {
+        "raw": "Running 5s test @ http://nginx:8080/status\n  1 threads and 1 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    34.69us   94.49us   4.51ms   98.44%\n    Req/Sec    35.67k     5.46k   46.35k    68.63%\n  Latency Distribution\n     50%   20.00us\n     75%   37.00us\n     90%   50.00us\n     99%  161.00us\n  180761 requests in 5.10s, 50.34MB read\nRequests/sec:  35444.29\nTransfer/sec:      9.87MB\n",
+        "rps": 35444.29,
+        "transfer_mbps": 9.87,
+        "lat_avg_ms": 0.03469,
+        "lat_stdev_ms": 0.09448999999999999,
+        "lat_max_ms": 4.51,
+        "lat_dist_ms": {
+          "50": 0.02,
+          "75": 0.037,
+          "90": 0.05,
+          "99": 0.161
+        },
+        "lat_p50_ms": 0.02,
+        "lat_p99_ms": 0.161,
+        "requests": 180761
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "sparrow",
+      "conns": 16,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 102.43,
+        "cpu_max": 102.43,
+        "rss_mb": 134.1,
+        "usage_mb": 134.50390625,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 134.50390625,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 5s test @ http://sparrow:8080/status\n  4 threads and 16 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   144.70us  338.69us   9.93ms   95.81%\n    Req/Sec    45.50k     2.58k   51.13k    76.47%\n  Latency Distribution\n     50%   70.00us\n     75%  107.00us\n     90%  228.00us\n     99%    1.65ms\n  922849 requests in 5.10s, 125.85MB read\nRequests/sec: 180970.34\nTransfer/sec:     24.68MB\n",
+        "rps": 180970.34,
+        "transfer_mbps": 24.68,
+        "lat_avg_ms": 0.1447,
+        "lat_stdev_ms": 0.33869,
+        "lat_max_ms": 9.93,
+        "lat_dist_ms": {
+          "50": 0.07,
+          "75": 0.107,
+          "90": 0.228,
+          "99": 1.65
+        },
+        "lat_p50_ms": 0.07,
+        "lat_p99_ms": 1.65,
+        "requests": 922849
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "caddy",
+      "conns": 16,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 102.48,
+        "cpu_max": 102.48,
+        "rss_mb": 21.26,
+        "usage_mb": 21.80859375,
+        "anon_mb": 18.7109375,
+        "cache_mb": 1.09765625,
+        "usage_peak_mb": 21.80859375,
+        "anon_peak_mb": 18.7109375,
+        "cache_peak_mb": 1.09765625
+      },
+      "result": {
+        "raw": "Running 5s test @ http://caddy:8080/status\n  4 threads and 16 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   328.40us  249.05us   3.58ms   76.59%\n    Req/Sec    13.40k   712.83    16.66k    75.37%\n  Latency Distribution\n     50%  293.00us\n     75%  414.00us\n     90%  637.00us\n     99%    1.22ms\n  270563 requests in 5.10s, 39.99MB read\nRequests/sec:  53051.77\nTransfer/sec:      7.84MB\n",
+        "rps": 53051.77,
+        "transfer_mbps": 7.84,
+        "lat_avg_ms": 0.32839999999999997,
+        "lat_stdev_ms": 0.24905000000000002,
+        "lat_max_ms": 3.58,
+        "lat_dist_ms": {
+          "50": 0.293,
+          "75": 0.41400000000000003,
+          "90": 0.637,
+          "99": 1.22
+        },
+        "lat_p50_ms": 0.293,
+        "lat_p99_ms": 1.22,
+        "requests": 270563
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "nginx",
+      "conns": 16,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 102.0,
+        "cpu_max": 102.0,
+        "rss_mb": 8.469,
+        "usage_mb": 8.26171875,
+        "anon_mb": 6.48828125,
+        "cache_mb": 1.06640625,
+        "usage_peak_mb": 8.26171875,
+        "anon_peak_mb": 6.48828125,
+        "cache_peak_mb": 1.06640625
+      },
+      "result": {
+        "raw": "Running 5s test @ http://nginx:8080/status\n  4 threads and 16 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   166.33us   77.18us   3.69ms   96.80%\n    Req/Sec    24.50k     1.10k   26.19k    76.96%\n  Latency Distribution\n     50%  153.00us\n     75%  165.00us\n     90%  187.00us\n     99%  300.00us\n  497329 requests in 5.10s, 138.49MB read\nRequests/sec:  97516.52\nTransfer/sec:     27.16MB\n",
+        "rps": 97516.52,
+        "transfer_mbps": 27.16,
+        "lat_avg_ms": 0.16633,
+        "lat_stdev_ms": 0.07718000000000001,
+        "lat_max_ms": 3.69,
+        "lat_dist_ms": {
+          "50": 0.153,
+          "75": 0.165,
+          "90": 0.187,
+          "99": 0.3
+        },
+        "lat_p50_ms": 0.153,
+        "lat_p99_ms": 0.3,
+        "requests": 497329
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "sparrow",
+      "conns": 64,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 102.06,
+        "cpu_max": 102.06,
+        "rss_mb": 135.0,
+        "usage_mb": 134.140625,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 134.140625,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 5s test @ http://sparrow:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.02ms    1.72ms  19.11ms   88.50%\n    Req/Sec    46.77k     7.73k  137.84k    93.03%\n  Latency Distribution\n     50%  114.00us\n     75%    1.28ms\n     90%    3.04ms\n     99%    8.29ms\n  935048 requests in 5.10s, 127.52MB read\nRequests/sec: 183359.39\nTransfer/sec:     25.01MB\n",
+        "rps": 183359.39,
+        "transfer_mbps": 25.01,
+        "lat_avg_ms": 1.02,
+        "lat_stdev_ms": 1.72,
+        "lat_max_ms": 19.11,
+        "lat_dist_ms": {
+          "50": 0.114,
+          "75": 1.28,
+          "90": 3.04,
+          "99": 8.29
+        },
+        "lat_p50_ms": 0.114,
+        "lat_p99_ms": 8.29,
+        "requests": 935048
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "caddy",
+      "conns": 64,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 102.37,
+        "cpu_max": 102.37,
+        "rss_mb": 21.39,
+        "usage_mb": 21.515625,
+        "anon_mb": 18.02734375,
+        "cache_mb": 1.09765625,
+        "usage_peak_mb": 21.515625,
+        "anon_peak_mb": 18.02734375,
+        "cache_peak_mb": 1.09765625
+      },
+      "result": {
+        "raw": "Running 5s test @ http://caddy:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.39ms    1.10ms  12.25ms   74.55%\n    Req/Sec    12.97k     2.90k   52.31k    97.51%\n  Latency Distribution\n     50%    1.21ms\n     75%    1.78ms\n     90%    2.86ms\n     99%    4.94ms\n  259377 requests in 5.10s, 38.34MB read\nRequests/sec:  50859.92\nTransfer/sec:      7.52MB\n",
+        "rps": 50859.92,
+        "transfer_mbps": 7.52,
+        "lat_avg_ms": 1.39,
+        "lat_stdev_ms": 1.1,
+        "lat_max_ms": 12.25,
+        "lat_dist_ms": {
+          "50": 1.21,
+          "75": 1.78,
+          "90": 2.86,
+          "99": 4.94
+        },
+        "lat_p50_ms": 1.21,
+        "lat_p99_ms": 4.94,
+        "requests": 259377
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "nginx",
+      "conns": 64,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 101.46,
+        "cpu_max": 101.46,
+        "rss_mb": 9.184,
+        "usage_mb": 8.13671875,
+        "anon_mb": 6.48828125,
+        "cache_mb": 1.06640625,
+        "usage_peak_mb": 8.13671875,
+        "anon_peak_mb": 6.48828125,
+        "cache_peak_mb": 1.06640625
+      },
+      "result": {
+        "raw": "Running 5s test @ http://nginx:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   696.60us  268.74us  16.84ms   93.07%\n    Req/Sec    23.30k     5.18k   94.70k    99.50%\n  Latency Distribution\n     50%  643.00us\n     75%  728.00us\n     90%    0.86ms\n     99%    1.32ms\n  465898 requests in 5.10s, 129.74MB read\nRequests/sec:  91362.24\nTransfer/sec:     25.44MB\n",
+        "rps": 91362.24,
+        "transfer_mbps": 25.44,
+        "lat_avg_ms": 0.6966,
+        "lat_stdev_ms": 0.26874000000000003,
+        "lat_max_ms": 16.84,
+        "lat_dist_ms": {
+          "50": 0.643,
+          "75": 0.728,
+          "90": 0.86,
+          "99": 1.32
+        },
+        "lat_p50_ms": 0.643,
+        "lat_p99_ms": 1.32,
+        "requests": 465898
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "sparrow",
+      "conns": 256,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 103.15,
+        "cpu_max": 103.15,
+        "rss_mb": 135.8,
+        "usage_mb": 134.17578125,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 134.17578125,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 5s test @ http://sparrow:8080/status\n  4 threads and 256 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     3.88ms    5.14ms  42.49ms   84.14%\n    Req/Sec    43.71k     4.57k   62.53k    75.50%\n  Latency Distribution\n     50%    1.53ms\n     75%    6.54ms\n     90%   11.28ms\n     99%   20.83ms\n  869410 requests in 5.02s, 118.57MB read\nRequests/sec: 173158.72\nTransfer/sec:     23.61MB\n",
+        "rps": 173158.72,
+        "transfer_mbps": 23.61,
+        "lat_avg_ms": 3.88,
+        "lat_stdev_ms": 5.14,
+        "lat_max_ms": 42.49,
+        "lat_dist_ms": {
+          "50": 1.53,
+          "75": 6.54,
+          "90": 11.28,
+          "99": 20.83
+        },
+        "lat_p50_ms": 1.53,
+        "lat_p99_ms": 20.83,
+        "requests": 869410
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "caddy",
+      "conns": 256,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 102.85,
+        "cpu_max": 102.85,
+        "rss_mb": 28.28,
+        "usage_mb": 28.0078125,
+        "anon_mb": 23.3515625,
+        "cache_mb": 0.7734375,
+        "usage_peak_mb": 28.0078125,
+        "anon_peak_mb": 23.3515625,
+        "cache_peak_mb": 0.7734375
+      },
+      "result": {
+        "raw": "Running 5s test @ http://caddy:8080/status\n  4 threads and 256 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     5.57ms    2.67ms  21.57ms   71.76%\n    Req/Sec    11.65k     1.00k   13.04k    77.00%\n  Latency Distribution\n     50%    5.25ms\n     75%    6.89ms\n     90%    9.39ms\n     99%   13.14ms\n  231896 requests in 5.03s, 34.28MB read\nRequests/sec:  46121.44\nTransfer/sec:      6.82MB\n",
+        "rps": 46121.44,
+        "transfer_mbps": 6.82,
+        "lat_avg_ms": 5.57,
+        "lat_stdev_ms": 2.67,
+        "lat_max_ms": 21.57,
+        "lat_dist_ms": {
+          "50": 5.25,
+          "75": 6.89,
+          "90": 9.39,
+          "99": 13.14
+        },
+        "lat_p50_ms": 5.25,
+        "lat_p99_ms": 13.14,
+        "requests": 231896
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "nginx",
+      "conns": 256,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 101.91,
+        "cpu_max": 101.91,
+        "rss_mb": 9.844,
+        "usage_mb": 8.25,
+        "anon_mb": 6.48828125,
+        "cache_mb": 1.046875,
+        "usage_peak_mb": 8.25,
+        "anon_peak_mb": 6.48828125,
+        "cache_peak_mb": 1.046875
+      },
+      "result": {
+        "raw": "Running 5s test @ http://nginx:8080/status\n  4 threads and 256 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     2.99ms    2.30ms 121.97ms   99.62%\n    Req/Sec    22.07k     0.94k   24.64k    82.50%\n  Latency Distribution\n     50%    2.85ms\n     75%    3.05ms\n     90%    3.28ms\n     99%    4.59ms\n  439251 requests in 5.03s, 122.32MB read\nRequests/sec:  87343.66\nTransfer/sec:     24.32MB\n",
+        "rps": 87343.66,
+        "transfer_mbps": 24.32,
+        "lat_avg_ms": 2.99,
+        "lat_stdev_ms": 2.3,
+        "lat_max_ms": 121.97,
+        "lat_dist_ms": {
+          "50": 2.85,
+          "75": 3.05,
+          "90": 3.28,
+          "99": 4.59
+        },
+        "lat_p50_ms": 2.85,
+        "lat_p99_ms": 4.59,
+        "requests": 439251
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "sparrow",
+      "conns": 1024,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 102.24,
+        "cpu_max": 102.24,
+        "rss_mb": 141.6,
+        "usage_mb": 134.02734375,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.3671875,
+        "usage_peak_mb": 134.02734375,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.3671875
+      },
+      "result": {
+        "raw": "Running 5s test @ http://sparrow:8080/status\n  4 threads and 1024 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    12.30ms   14.55ms  82.72ms   80.88%\n    Req/Sec    42.09k     3.88k   51.98k    67.50%\n  Latency Distribution\n     50%    7.13ms\n     75%   22.81ms\n     90%   34.06ms\n     99%   51.28ms\n  837388 requests in 5.04s, 114.20MB read\n  Socket errors: connect 7, read 0, write 0, timeout 0\nRequests/sec: 166135.39\nTransfer/sec:     22.66MB\n",
+        "rps": 166135.39,
+        "transfer_mbps": 22.66,
+        "lat_avg_ms": 12.3,
+        "lat_stdev_ms": 14.55,
+        "lat_max_ms": 82.72,
+        "lat_dist_ms": {
+          "50": 7.13,
+          "75": 22.81,
+          "90": 34.06,
+          "99": 51.28
+        },
+        "lat_p50_ms": 7.13,
+        "lat_p99_ms": 51.28,
+        "requests": 837388
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "caddy",
+      "conns": 1024,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 102.23,
+        "cpu_max": 102.23,
+        "rss_mb": 55.57,
+        "usage_mb": 55.671875,
+        "anon_mb": 44.7890625,
+        "cache_mb": 0.7734375,
+        "usage_peak_mb": 55.671875,
+        "anon_peak_mb": 44.7890625,
+        "cache_peak_mb": 0.7734375
+      },
+      "result": {
+        "raw": "Running 5s test @ http://caddy:8080/status\n  4 threads and 1024 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    21.64ms    5.51ms  55.32ms   82.26%\n    Req/Sec    11.78k   760.81    13.18k    79.50%\n  Latency Distribution\n     50%   20.87ms\n     75%   25.47ms\n     90%   27.78ms\n     99%   34.13ms\n  234328 requests in 5.06s, 34.64MB read\n  Socket errors: connect 7, read 0, write 0, timeout 0\nRequests/sec:  46346.75\nTransfer/sec:      6.85MB\n",
+        "rps": 46346.75,
+        "transfer_mbps": 6.85,
+        "lat_avg_ms": 21.64,
+        "lat_stdev_ms": 5.51,
+        "lat_max_ms": 55.32,
+        "lat_dist_ms": {
+          "50": 20.87,
+          "75": 25.47,
+          "90": 27.78,
+          "99": 34.13
+        },
+        "lat_p50_ms": 20.87,
+        "lat_p99_ms": 34.13,
+        "requests": 234328
+      }
+    },
+    {
+      "workers": "1",
+      "max_conns": 10000,
+      "server": "nginx",
+      "conns": 1024,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 100.74,
+        "cpu_max": 100.74,
+        "rss_mb": 15.86,
+        "usage_mb": 9.3828125,
+        "anon_mb": 6.48828125,
+        "cache_mb": 1.046875,
+        "usage_peak_mb": 9.3828125,
+        "anon_peak_mb": 6.48828125,
+        "cache_peak_mb": 1.046875
+      },
+      "result": {
+        "raw": "Running 5s test @ http://nginx:8080/status\n  4 threads and 1024 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    49.86ms  190.80ms   2.00s    95.54%\n    Req/Sec    19.84k     3.20k   30.36k    75.00%\n  Latency Distribution\n     50%   12.44ms\n     75%   13.07ms\n     90%   13.92ms\n     99%    1.17s \n  394834 requests in 5.06s, 109.97MB read\n  Socket errors: connect 7, read 0, write 0, timeout 16\n  Non-2xx or 3xx responses: 448\nRequests/sec:  78106.69\nTransfer/sec:     21.75MB\n",
+        "rps": 78106.69,
+        "transfer_mbps": 21.75,
+        "lat_avg_ms": 49.86,
+        "lat_stdev_ms": 190.8,
+        "lat_max_ms": 2000.0,
+        "lat_dist_ms": {
+          "50": 12.44,
+          "75": 13.07,
+          "90": 13.92,
+          "99": 1170.0
+        },
+        "lat_p50_ms": 12.44,
+        "lat_p99_ms": 1170.0,
+        "requests": 394834
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "sparrow",
+      "conns": 1,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 53.03,
+        "cpu_max": 53.03,
+        "rss_mb": 134.3,
+        "usage_mb": 133.52734375,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.52734375,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 5s test @ http://sparrow:8080/status\n  1 threads and 1 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    24.32us   91.93us   3.50ms   98.82%\n    Req/Sec    56.90k     6.83k   68.94k    58.82%\n  Latency Distribution\n     50%   14.00us\n     75%   20.00us\n     90%   27.00us\n     99%  144.00us\n  288081 requests in 5.10s, 39.29MB read\nRequests/sec:  56491.60\nTransfer/sec:      7.70MB\n",
+        "rps": 56491.6,
+        "transfer_mbps": 7.7,
+        "lat_avg_ms": 0.02432,
+        "lat_stdev_ms": 0.09193000000000001,
+        "lat_max_ms": 3.5,
+        "lat_dist_ms": {
+          "50": 0.014,
+          "75": 0.02,
+          "90": 0.027,
+          "99": 0.14400000000000002
+        },
+        "lat_p50_ms": 0.014,
+        "lat_p99_ms": 0.14400000000000002,
+        "requests": 288081
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "caddy",
+      "conns": 1,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 110.32,
+        "cpu_max": 110.32,
+        "rss_mb": 21.22,
+        "usage_mb": 22.734375,
+        "anon_mb": 17.50390625,
+        "cache_mb": 1.796875,
+        "usage_peak_mb": 22.734375,
+        "anon_peak_mb": 17.50390625,
+        "cache_peak_mb": 1.796875
+      },
+      "result": {
+        "raw": "Running 5s test @ http://caddy:8080/status\n  1 threads and 1 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    65.28us  119.23us   3.80ms   97.40%\n    Req/Sec    18.31k     2.22k   23.53k    72.55%\n  Latency Distribution\n     50%   51.00us\n     75%   62.00us\n     90%   96.00us\n     99%  328.00us\n  92860 requests in 5.10s, 13.73MB read\nRequests/sec:  18208.87\nTransfer/sec:      2.69MB\n",
+        "rps": 18208.87,
+        "transfer_mbps": 2.69,
+        "lat_avg_ms": 0.06528,
+        "lat_stdev_ms": 0.11923,
+        "lat_max_ms": 3.8,
+        "lat_dist_ms": {
+          "50": 0.051000000000000004,
+          "75": 0.062,
+          "90": 0.096,
+          "99": 0.328
+        },
+        "lat_p50_ms": 0.051000000000000004,
+        "lat_p99_ms": 0.328,
+        "requests": 92860
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "nginx",
+      "conns": 1,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 63.68,
+        "cpu_max": 63.68,
+        "rss_mb": 9.043,
+        "usage_mb": 10.140625,
+        "anon_mb": 6.50390625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 10.140625,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 5s test @ http://nginx:8080/status\n  1 threads and 1 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    31.69us   71.37us   3.29ms   98.15%\n    Req/Sec    37.36k     5.41k   49.23k    68.63%\n  Latency Distribution\n     50%   20.00us\n     75%   33.00us\n     90%   48.00us\n     99%  136.00us\n  189321 requests in 5.10s, 52.72MB read\nRequests/sec:  37121.63\nTransfer/sec:     10.34MB\n",
+        "rps": 37121.63,
+        "transfer_mbps": 10.34,
+        "lat_avg_ms": 0.03169,
+        "lat_stdev_ms": 0.07137,
+        "lat_max_ms": 3.29,
+        "lat_dist_ms": {
+          "50": 0.02,
+          "75": 0.033,
+          "90": 0.048,
+          "99": 0.136
+        },
+        "lat_p50_ms": 0.02,
+        "lat_p99_ms": 0.136,
+        "requests": 189321
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "sparrow",
+      "conns": 16,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 102.83,
+        "cpu_max": 102.83,
+        "rss_mb": 134.8,
+        "usage_mb": 133.6796875,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.6796875,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 5s test @ http://sparrow:8080/status\n  4 threads and 16 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   131.36us  298.04us   8.88ms   96.17%\n    Req/Sec    47.68k     5.45k   99.56k    93.07%\n  Latency Distribution\n     50%   66.00us\n     75%  103.00us\n     90%  206.00us\n     99%    1.49ms\n  957902 requests in 5.10s, 130.63MB read\nRequests/sec: 187853.83\nTransfer/sec:     25.62MB\n",
+        "rps": 187853.83,
+        "transfer_mbps": 25.62,
+        "lat_avg_ms": 0.13136,
+        "lat_stdev_ms": 0.29804,
+        "lat_max_ms": 8.88,
+        "lat_dist_ms": {
+          "50": 0.066,
+          "75": 0.10300000000000001,
+          "90": 0.20600000000000002,
+          "99": 1.49
+        },
+        "lat_p50_ms": 0.066,
+        "lat_p99_ms": 1.49,
+        "requests": 957902
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "caddy",
+      "conns": 16,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 304.24,
+        "cpu_max": 304.24,
+        "rss_mb": 24.06,
+        "usage_mb": 24.3984375,
+        "anon_mb": 19.41796875,
+        "cache_mb": 1.796875,
+        "usage_peak_mb": 24.3984375,
+        "anon_peak_mb": 19.41796875,
+        "cache_peak_mb": 1.796875
+      },
+      "result": {
+        "raw": "Running 5s test @ http://caddy:8080/status\n  4 threads and 16 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   155.99us  179.94us   4.99ms   91.64%\n    Req/Sec    30.84k     2.60k   38.05k    78.33%\n  Latency Distribution\n     50%  112.00us\n     75%  188.00us\n     90%  308.00us\n     99%  774.00us\n  622667 requests in 5.10s, 92.04MB read\nRequests/sec: 122092.45\nTransfer/sec:     18.05MB\n",
+        "rps": 122092.45,
+        "transfer_mbps": 18.05,
+        "lat_avg_ms": 0.15599000000000002,
+        "lat_stdev_ms": 0.17994,
+        "lat_max_ms": 4.99,
+        "lat_dist_ms": {
+          "50": 0.112,
+          "75": 0.188,
+          "90": 0.308,
+          "99": 0.774
+        },
+        "lat_p50_ms": 0.112,
+        "lat_p99_ms": 0.774,
+        "requests": 622667
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "nginx",
+      "conns": 16,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 102.33,
+        "cpu_max": 102.33,
+        "rss_mb": 7.211,
+        "usage_mb": 8.6171875,
+        "anon_mb": 6.50390625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 8.6171875,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 5s test @ http://nginx:8080/status\n  4 threads and 16 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   179.58us  101.00us   5.37ms   96.90%\n    Req/Sec    22.98k     1.74k   25.17k    85.29%\n  Latency Distribution\n     50%  160.00us\n     75%  179.00us\n     90%  216.00us\n     99%  438.00us\n  466414 requests in 5.10s, 129.88MB read\nRequests/sec:  91460.06\nTransfer/sec:     25.47MB\n",
+        "rps": 91460.06,
+        "transfer_mbps": 25.47,
+        "lat_avg_ms": 0.17958000000000002,
+        "lat_stdev_ms": 0.101,
+        "lat_max_ms": 5.37,
+        "lat_dist_ms": {
+          "50": 0.16,
+          "75": 0.179,
+          "90": 0.216,
+          "99": 0.438
+        },
+        "lat_p50_ms": 0.16,
+        "lat_p99_ms": 0.438,
+        "requests": 466414
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "sparrow",
+      "conns": 64,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 102.59,
+        "cpu_max": 102.59,
+        "rss_mb": 134.9,
+        "usage_mb": 133.51953125,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.51953125,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 5s test @ http://sparrow:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.03ms    1.80ms  23.33ms   88.97%\n    Req/Sec    47.94k     7.28k  137.52k    96.02%\n  Latency Distribution\n     50%  110.00us\n     75%    1.24ms\n     90%    3.06ms\n     99%    8.62ms\n  958147 requests in 5.10s, 130.67MB read\nRequests/sec: 187885.22\nTransfer/sec:     25.62MB\n",
+        "rps": 187885.22,
+        "transfer_mbps": 25.62,
+        "lat_avg_ms": 1.03,
+        "lat_stdev_ms": 1.8,
+        "lat_max_ms": 23.33,
+        "lat_dist_ms": {
+          "50": 0.11,
+          "75": 1.24,
+          "90": 3.06,
+          "99": 8.62
+        },
+        "lat_p50_ms": 0.11,
+        "lat_p99_ms": 8.62,
+        "requests": 958147
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "caddy",
+      "conns": 64,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 303.18,
+        "cpu_max": 303.18,
+        "rss_mb": 23.43,
+        "usage_mb": 25.24609375,
+        "anon_mb": 20.2578125,
+        "cache_mb": 1.796875,
+        "usage_peak_mb": 25.24609375,
+        "anon_peak_mb": 20.2578125,
+        "cache_peak_mb": 1.796875
+      },
+      "result": {
+        "raw": "Running 5s test @ http://caddy:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   623.68us  574.22us   7.32ms   82.37%\n    Req/Sec    30.43k     2.35k   36.13k    73.50%\n  Latency Distribution\n     50%  478.00us\n     75%  849.00us\n     90%    1.37ms\n     99%    2.63ms\n  605345 requests in 5.01s, 89.48MB read\nRequests/sec: 120740.63\nTransfer/sec:     17.85MB\n",
+        "rps": 120740.63,
+        "transfer_mbps": 17.85,
+        "lat_avg_ms": 0.62368,
+        "lat_stdev_ms": 0.5742200000000001,
+        "lat_max_ms": 7.32,
+        "lat_dist_ms": {
+          "50": 0.47800000000000004,
+          "75": 0.849,
+          "90": 1.37,
+          "99": 2.63
+        },
+        "lat_p50_ms": 0.47800000000000004,
+        "lat_p99_ms": 2.63,
+        "requests": 605345
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "nginx",
+      "conns": 64,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 101.82,
+        "cpu_max": 101.82,
+        "rss_mb": 8.656,
+        "usage_mb": 8.37890625,
+        "anon_mb": 6.50390625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 8.37890625,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 5s test @ http://nginx:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   716.82us  290.00us  17.22ms   94.42%\n    Req/Sec    22.73k     2.66k   28.17k    88.00%\n  Latency Distribution\n     50%  643.00us\n     75%  728.00us\n     90%    0.89ms\n     99%    1.68ms\n  452281 requests in 5.01s, 125.95MB read\nRequests/sec:  90321.17\nTransfer/sec:     25.15MB\n",
+        "rps": 90321.17,
+        "transfer_mbps": 25.15,
+        "lat_avg_ms": 0.71682,
+        "lat_stdev_ms": 0.29,
+        "lat_max_ms": 17.22,
+        "lat_dist_ms": {
+          "50": 0.643,
+          "75": 0.728,
+          "90": 0.89,
+          "99": 1.68
+        },
+        "lat_p50_ms": 0.643,
+        "lat_p99_ms": 1.68,
+        "requests": 452281
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "sparrow",
+      "conns": 256,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 102.05,
+        "cpu_max": 102.05,
+        "rss_mb": 136.2,
+        "usage_mb": 133.51953125,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.51953125,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 5s test @ http://sparrow:8080/status\n  4 threads and 256 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     4.01ms    5.53ms  47.76ms   85.23%\n    Req/Sec    45.02k     4.78k   60.35k    75.00%\n  Latency Distribution\n     50%    1.46ms\n     75%    6.53ms\n     90%   11.63ms\n     99%   23.23ms\n  895493 requests in 5.03s, 122.12MB read\nRequests/sec: 177926.63\nTransfer/sec:     24.26MB\n",
+        "rps": 177926.63,
+        "transfer_mbps": 24.26,
+        "lat_avg_ms": 4.01,
+        "lat_stdev_ms": 5.53,
+        "lat_max_ms": 47.76,
+        "lat_dist_ms": {
+          "50": 1.46,
+          "75": 6.53,
+          "90": 11.63,
+          "99": 23.23
+        },
+        "lat_p50_ms": 1.46,
+        "lat_p99_ms": 23.23,
+        "requests": 895493
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "caddy",
+      "conns": 256,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 302.78,
+        "cpu_max": 302.78,
+        "rss_mb": 29.77,
+        "usage_mb": 31.375,
+        "anon_mb": 24.59375,
+        "cache_mb": 1.796875,
+        "usage_peak_mb": 31.375,
+        "anon_peak_mb": 24.59375,
+        "cache_peak_mb": 1.796875
+      },
+      "result": {
+        "raw": "Running 5s test @ http://caddy:8080/status\n  4 threads and 256 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     2.21ms    1.57ms  18.00ms   68.02%\n    Req/Sec    30.66k     2.35k   36.83k    76.00%\n  Latency Distribution\n     50%    2.03ms\n     75%    3.12ms\n     90%    4.32ms\n     99%    6.71ms\n  610106 requests in 5.02s, 90.19MB read\nRequests/sec: 121454.35\nTransfer/sec:     17.95MB\n",
+        "rps": 121454.35,
+        "transfer_mbps": 17.95,
+        "lat_avg_ms": 2.21,
+        "lat_stdev_ms": 1.57,
+        "lat_max_ms": 18.0,
+        "lat_dist_ms": {
+          "50": 2.03,
+          "75": 3.12,
+          "90": 4.32,
+          "99": 6.71
+        },
+        "lat_p50_ms": 2.03,
+        "lat_p99_ms": 6.71,
+        "requests": 610106
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "nginx",
+      "conns": 256,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 100.84,
+        "cpu_max": 100.84,
+        "rss_mb": 10.46,
+        "usage_mb": 9.66015625,
+        "anon_mb": 6.50390625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.66015625,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 5s test @ http://nginx:8080/status\n  4 threads and 256 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     2.97ms    3.08ms 136.80ms   99.45%\n    Req/Sec    22.66k     1.52k   30.08k    87.50%\n  Latency Distribution\n     50%    2.73ms\n     75%    2.95ms\n     90%    3.25ms\n     99%    5.19ms\n  450859 requests in 5.04s, 125.55MB read\nRequests/sec:  89535.33\nTransfer/sec:     24.93MB\n",
+        "rps": 89535.33,
+        "transfer_mbps": 24.93,
+        "lat_avg_ms": 2.97,
+        "lat_stdev_ms": 3.08,
+        "lat_max_ms": 136.8,
+        "lat_dist_ms": {
+          "50": 2.73,
+          "75": 2.95,
+          "90": 3.25,
+          "99": 5.19
+        },
+        "lat_p50_ms": 2.73,
+        "lat_p99_ms": 5.19,
+        "requests": 450859
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "sparrow",
+      "conns": 1024,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 101.88,
+        "cpu_max": 101.88,
+        "rss_mb": 142.0,
+        "usage_mb": 134.328125,
+        "anon_mb": 127.2421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 134.328125,
+        "anon_peak_mb": 127.2421875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 5s test @ http://sparrow:8080/status\n  4 threads and 1024 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    13.04ms   15.98ms  89.34ms   81.73%\n    Req/Sec    45.45k     7.13k   60.80k    73.00%\n  Latency Distribution\n     50%    6.47ms\n     75%   23.77ms\n     90%   37.27ms\n     99%   58.22ms\n  904112 requests in 5.06s, 123.30MB read\n  Socket errors: connect 7, read 0, write 0, timeout 0\nRequests/sec: 178707.82\nTransfer/sec:     24.37MB\n",
+        "rps": 178707.82,
+        "transfer_mbps": 24.37,
+        "lat_avg_ms": 13.04,
+        "lat_stdev_ms": 15.98,
+        "lat_max_ms": 89.34,
+        "lat_dist_ms": {
+          "50": 6.47,
+          "75": 23.77,
+          "90": 37.27,
+          "99": 58.22
+        },
+        "lat_p50_ms": 6.47,
+        "lat_p99_ms": 58.22,
+        "requests": 904112
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "caddy",
+      "conns": 1024,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 304.0,
+        "cpu_max": 304.0,
+        "rss_mb": 57.33,
+        "usage_mb": 58.8671875,
+        "anon_mb": 46.25390625,
+        "cache_mb": 1.796875,
+        "usage_peak_mb": 58.8671875,
+        "anon_peak_mb": 46.25390625,
+        "cache_peak_mb": 1.796875
+      },
+      "result": {
+        "raw": "Running 5s test @ http://caddy:8080/status\n  4 threads and 1024 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     8.45ms    2.83ms  38.94ms   78.13%\n    Req/Sec    30.25k     1.86k   32.85k    75.50%\n  Latency Distribution\n     50%    8.32ms\n     75%   10.09ms\n     90%   11.61ms\n     99%   15.41ms\n  601952 requests in 5.06s, 88.98MB read\n  Socket errors: connect 7, read 0, write 0, timeout 0\nRequests/sec: 118924.77\nTransfer/sec:     17.58MB\n",
+        "rps": 118924.77,
+        "transfer_mbps": 17.58,
+        "lat_avg_ms": 8.45,
+        "lat_stdev_ms": 2.83,
+        "lat_max_ms": 38.94,
+        "lat_dist_ms": {
+          "50": 8.32,
+          "75": 10.09,
+          "90": 11.61,
+          "99": 15.41
+        },
+        "lat_p50_ms": 8.32,
+        "lat_p99_ms": 15.41,
+        "requests": 601952
+      }
+    },
+    {
+      "workers": "3",
+      "max_conns": 10000,
+      "server": "nginx",
+      "conns": 1024,
+      "pool_limit": false,
+      "cpu": {
+        "cpu_avg": 101.77,
+        "cpu_max": 101.77,
+        "rss_mb": 16.84,
+        "usage_mb": 9.21484375,
+        "anon_mb": 6.50390625,
+        "cache_mb": 1.2890625,
+        "usage_peak_mb": 9.21484375,
+        "anon_peak_mb": 6.50390625,
+        "cache_peak_mb": 1.2890625
+      },
+      "result": {
+        "raw": "Running 5s test @ http://nginx:8080/status\n  4 threads and 1024 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency    14.18ms   25.61ms 713.37ms   99.11%\n    Req/Sec    20.58k     1.33k   23.65k    86.00%\n  Latency Distribution\n     50%   12.16ms\n     75%   12.56ms\n     90%   13.07ms\n     99%   30.17ms\n  409786 requests in 5.06s, 114.15MB read\n  Socket errors: connect 7, read 0, write 0, timeout 0\n  Non-2xx or 3xx responses: 692\nRequests/sec:  81027.89\nTransfer/sec:     22.57MB\n",
+        "rps": 81027.89,
+        "transfer_mbps": 22.57,
+        "lat_avg_ms": 14.18,
+        "lat_stdev_ms": 25.61,
+        "lat_max_ms": 713.37,
+        "lat_dist_ms": {
+          "50": 12.16,
+          "75": 12.56,
+          "90": 13.07,
+          "99": 30.17
+        },
+        "lat_p50_ms": 12.16,
+        "lat_p99_ms": 30.17,
+        "requests": 409786
+      }
+    }
+  ],
+  "config_runs": [
+    {
+      "workers": 1,
+      "max_conns": 5000,
+      "scenario": "status",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 50.669999999999995,
+        "cpu_max": 101.32,
+        "rss_mb": 68.47,
+        "usage_mb": 67.65625,
+        "anon_mb": 63.57421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 67.83984375,
+        "anon_peak_mb": 63.57421875,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 50.669999999999995,
+        "cpu_max": 101.32,
+        "rss_mb": 68.47,
+        "usage_mb": 67.65625,
+        "anon_mb": 63.57421875,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 67.83984375,
+        "anon_peak_mb": 63.57421875,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.09ms    1.97ms  26.05ms   88.97%\n    Req/Sec    48.47k     6.42k  104.94k    83.47%\n  Latency Distribution\n     50%  110.00us\n     75%    1.21ms\n     90%    3.32ms\n     99%    9.29ms\n  1166186 requests in 6.10s, 159.04MB read\nRequests/sec: 191175.21\nTransfer/sec:     26.07MB\n",
+        "rps": 191175.21,
+        "transfer_mbps": 26.07,
+        "lat_avg_ms": 1.09,
+        "lat_stdev_ms": 1.97,
+        "lat_max_ms": 26.05,
+        "lat_dist_ms": {
+          "50": 0.11,
+          "75": 1.21,
+          "90": 3.32,
+          "99": 9.29
+        },
+        "lat_p50_ms": 0.11,
+        "lat_p99_ms": 9.29,
+        "requests": 1166186
+      }
+    },
+    {
+      "workers": 1,
+      "max_conns": 5000,
+      "scenario": "status",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 50.77,
+        "cpu_max": 101.54,
+        "rss_mb": 17.02,
+        "usage_mb": 16.794921875,
+        "anon_mb": 14.77734375,
+        "cache_mb": 0.23828125,
+        "usage_peak_mb": 17.26171875,
+        "anon_peak_mb": 14.77734375,
+        "cache_peak_mb": 0.23828125
+      },
+      "mem": {
+        "cpu_avg": 50.77,
+        "cpu_max": 101.54,
+        "rss_mb": 17.02,
+        "usage_mb": 16.794921875,
+        "anon_mb": 14.77734375,
+        "cache_mb": 0.23828125,
+        "usage_peak_mb": 17.26171875,
+        "anon_peak_mb": 14.77734375,
+        "cache_peak_mb": 0.23828125
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.26ms    0.89ms   7.09ms   70.90%\n    Req/Sec    13.62k   620.45    14.65k    76.67%\n  Latency Distribution\n     50%    1.18ms\n     75%    1.69ms\n     90%    2.41ms\n     99%    4.01ms\n  325162 requests in 6.01s, 48.07MB read\nRequests/sec:  54127.66\nTransfer/sec:      8.00MB\n",
+        "rps": 54127.66,
+        "transfer_mbps": 8.0,
+        "lat_avg_ms": 1.26,
+        "lat_stdev_ms": 0.89,
+        "lat_max_ms": 7.09,
+        "lat_dist_ms": {
+          "50": 1.18,
+          "75": 1.69,
+          "90": 2.41,
+          "99": 4.01
+        },
+        "lat_p50_ms": 1.18,
+        "lat_p99_ms": 4.01,
+        "requests": 325162
+      }
+    },
+    {
+      "workers": 1,
+      "max_conns": 5000,
+      "scenario": "status",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 50.77,
+        "cpu_max": 101.54,
+        "rss_mb": 6.0355,
+        "usage_mb": 6.16796875,
+        "anon_mb": 4.34375,
+        "cache_mb": 0.015625,
+        "usage_peak_mb": 7.140625,
+        "anon_peak_mb": 4.359375,
+        "cache_peak_mb": 0.015625
+      },
+      "mem": {
+        "cpu_avg": 50.77,
+        "cpu_max": 101.54,
+        "rss_mb": 6.0355,
+        "usage_mb": 6.16796875,
+        "anon_mb": 4.34375,
+        "cache_mb": 0.015625,
+        "usage_peak_mb": 7.140625,
+        "anon_peak_mb": 4.359375,
+        "cache_peak_mb": 0.015625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   682.18us  258.35us  17.33ms   91.05%\n    Req/Sec    23.85k     4.62k   92.26k    98.76%\n  Latency Distribution\n     50%  621.00us\n     75%  683.00us\n     90%    0.86ms\n     99%    1.59ms\n  571699 requests in 6.10s, 159.20MB read\nRequests/sec:  93728.57\nTransfer/sec:     26.10MB\n",
+        "rps": 93728.57,
+        "transfer_mbps": 26.1,
+        "lat_avg_ms": 0.68218,
+        "lat_stdev_ms": 0.25835,
+        "lat_max_ms": 17.33,
+        "lat_dist_ms": {
+          "50": 0.621,
+          "75": 0.683,
+          "90": 0.86,
+          "99": 1.59
+        },
+        "lat_p50_ms": 0.621,
+        "lat_p99_ms": 1.59,
+        "requests": 571699
+      }
+    },
+    {
+      "workers": 1,
+      "max_conns": 10000,
+      "scenario": "status",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 50.419999999999995,
+        "cpu_max": 100.82,
+        "rss_mb": 133.65,
+        "usage_mb": 133.36328125,
+        "anon_mb": 126.7734375,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.65234375,
+        "anon_peak_mb": 126.7734375,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 50.419999999999995,
+        "cpu_max": 100.82,
+        "rss_mb": 133.65,
+        "usage_mb": 133.36328125,
+        "anon_mb": 126.7734375,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 133.65234375,
+        "anon_peak_mb": 126.7734375,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.49ms    2.94ms  40.46ms   89.75%\n    Req/Sec    49.20k     6.07k   69.88k    71.67%\n  Latency Distribution\n     50%  104.00us\n     75%    1.57ms\n     90%    4.50ms\n     99%   14.09ms\n  1174149 requests in 6.01s, 160.13MB read\nRequests/sec: 195264.85\nTransfer/sec:     26.63MB\n",
+        "rps": 195264.85,
+        "transfer_mbps": 26.63,
+        "lat_avg_ms": 1.49,
+        "lat_stdev_ms": 2.94,
+        "lat_max_ms": 40.46,
+        "lat_dist_ms": {
+          "50": 0.10400000000000001,
+          "75": 1.57,
+          "90": 4.5,
+          "99": 14.09
+        },
+        "lat_p50_ms": 0.10400000000000001,
+        "lat_p99_ms": 14.09,
+        "requests": 1174149
+      }
+    },
+    {
+      "workers": 1,
+      "max_conns": 10000,
+      "scenario": "status",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 50.85,
+        "cpu_max": 101.7,
+        "rss_mb": 18.12,
+        "usage_mb": 17.6796875,
+        "anon_mb": 15.578125,
+        "cache_mb": 0.203125,
+        "usage_peak_mb": 17.95703125,
+        "anon_peak_mb": 16.34375,
+        "cache_peak_mb": 0.203125
+      },
+      "mem": {
+        "cpu_avg": 50.85,
+        "cpu_max": 101.7,
+        "rss_mb": 18.12,
+        "usage_mb": 17.6796875,
+        "anon_mb": 15.578125,
+        "cache_mb": 0.203125,
+        "usage_peak_mb": 17.95703125,
+        "anon_peak_mb": 16.34375,
+        "cache_peak_mb": 0.203125
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.29ms    0.93ms   8.74ms   71.05%\n    Req/Sec    13.40k     2.73k   53.46k    99.17%\n  Latency Distribution\n     50%    1.19ms\n     75%    1.72ms\n     90%    2.49ms\n     99%    4.16ms\n  321173 requests in 6.10s, 47.48MB read\nRequests/sec:  52650.81\nTransfer/sec:      7.78MB\n",
+        "rps": 52650.81,
+        "transfer_mbps": 7.78,
+        "lat_avg_ms": 1.29,
+        "lat_stdev_ms": 0.93,
+        "lat_max_ms": 8.74,
+        "lat_dist_ms": {
+          "50": 1.19,
+          "75": 1.72,
+          "90": 2.49,
+          "99": 4.16
+        },
+        "lat_p50_ms": 1.19,
+        "lat_p99_ms": 4.16,
+        "requests": 321173
+      }
+    },
+    {
+      "workers": 1,
+      "max_conns": 10000,
+      "scenario": "status",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 51.275,
+        "cpu_max": 102.55,
+        "rss_mb": 7.998,
+        "usage_mb": 8.345703125,
+        "anon_mb": 6.41015625,
+        "cache_mb": 0.015625,
+        "usage_peak_mb": 9.0546875,
+        "anon_peak_mb": 6.41015625,
+        "cache_peak_mb": 0.015625
+      },
+      "mem": {
+        "cpu_avg": 51.275,
+        "cpu_max": 102.55,
+        "rss_mb": 7.998,
+        "usage_mb": 8.345703125,
+        "anon_mb": 6.41015625,
+        "cache_mb": 0.015625,
+        "usage_peak_mb": 9.0546875,
+        "anon_peak_mb": 6.41015625,
+        "cache_peak_mb": 0.015625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   710.77us  801.93us  42.83ms   97.88%\n    Req/Sec    23.88k     2.40k   27.14k    88.33%\n  Latency Distribution\n     50%  619.00us\n     75%  675.00us\n     90%  797.00us\n     99%    1.77ms\n  570178 requests in 6.01s, 158.78MB read\nRequests/sec:  94860.80\nTransfer/sec:     26.42MB\n",
+        "rps": 94860.8,
+        "transfer_mbps": 26.42,
+        "lat_avg_ms": 0.71077,
+        "lat_stdev_ms": 0.8019299999999999,
+        "lat_max_ms": 42.83,
+        "lat_dist_ms": {
+          "50": 0.619,
+          "75": 0.675,
+          "90": 0.797,
+          "99": 1.77
+        },
+        "lat_p50_ms": 0.619,
+        "lat_p99_ms": 1.77,
+        "requests": 570178
+      }
+    },
+    {
+      "workers": 1,
+      "max_conns": 15000,
+      "scenario": "status",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 51.45,
+        "cpu_max": 102.87,
+        "rss_mb": 197.05,
+        "usage_mb": 196.802734375,
+        "anon_mb": 190.0234375,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 197.1171875,
+        "anon_peak_mb": 190.0234375,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 51.45,
+        "cpu_max": 102.87,
+        "rss_mb": 197.05,
+        "usage_mb": 196.802734375,
+        "anon_mb": 190.0234375,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 197.1171875,
+        "anon_peak_mb": 190.0234375,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.22ms    2.19ms  26.92ms   88.71%\n    Req/Sec    48.42k     5.03k   58.64k    66.67%\n  Latency Distribution\n     50%  109.00us\n     75%    1.39ms\n     90%    3.72ms\n     99%   10.40ms\n  1156230 requests in 6.01s, 157.68MB read\nRequests/sec: 192366.40\nTransfer/sec:     26.23MB\n",
+        "rps": 192366.4,
+        "transfer_mbps": 26.23,
+        "lat_avg_ms": 1.22,
+        "lat_stdev_ms": 2.19,
+        "lat_max_ms": 26.92,
+        "lat_dist_ms": {
+          "50": 0.109,
+          "75": 1.39,
+          "90": 3.72,
+          "99": 10.4
+        },
+        "lat_p50_ms": 0.109,
+        "lat_p99_ms": 10.4,
+        "requests": 1156230
+      }
+    },
+    {
+      "workers": 1,
+      "max_conns": 15000,
+      "scenario": "status",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 51.16,
+        "cpu_max": 102.32,
+        "rss_mb": 18.045,
+        "usage_mb": 18.037109375,
+        "anon_mb": 15.49609375,
+        "cache_mb": 0.0703125,
+        "usage_peak_mb": 18.2578125,
+        "anon_peak_mb": 16.2578125,
+        "cache_peak_mb": 0.0703125
+      },
+      "mem": {
+        "cpu_avg": 51.16,
+        "cpu_max": 102.32,
+        "rss_mb": 18.045,
+        "usage_mb": 18.037109375,
+        "anon_mb": 15.49609375,
+        "cache_mb": 0.0703125,
+        "usage_peak_mb": 18.2578125,
+        "anon_peak_mb": 16.2578125,
+        "cache_peak_mb": 0.0703125
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.25ms    0.89ms   9.08ms   70.81%\n    Req/Sec    13.74k     2.68k   54.00k    99.59%\n  Latency Distribution\n     50%    1.16ms\n     75%    1.68ms\n     90%    2.40ms\n     99%    4.01ms\n  329608 requests in 6.10s, 48.72MB read\nRequests/sec:  54038.32\nTransfer/sec:      7.99MB\n",
+        "rps": 54038.32,
+        "transfer_mbps": 7.99,
+        "lat_avg_ms": 1.25,
+        "lat_stdev_ms": 0.89,
+        "lat_max_ms": 9.08,
+        "lat_dist_ms": {
+          "50": 1.16,
+          "75": 1.68,
+          "90": 2.4,
+          "99": 4.01
+        },
+        "lat_p50_ms": 1.16,
+        "lat_p99_ms": 4.01,
+        "requests": 329608
+      }
+    },
+    {
+      "workers": 1,
+      "max_conns": 15000,
+      "scenario": "status",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 50.915,
+        "cpu_max": 101.83,
+        "rss_mb": 10.058,
+        "usage_mb": 10.07421875,
+        "anon_mb": 8.5390625,
+        "cache_mb": 0.015625,
+        "usage_peak_mb": 10.8203125,
+        "anon_peak_mb": 8.5546875,
+        "cache_peak_mb": 0.015625
+      },
+      "mem": {
+        "cpu_avg": 50.915,
+        "cpu_max": 101.83,
+        "rss_mb": 10.058,
+        "usage_mb": 10.07421875,
+        "anon_mb": 8.5390625,
+        "cache_mb": 0.015625,
+        "usage_peak_mb": 10.8203125,
+        "anon_peak_mb": 8.5546875,
+        "cache_peak_mb": 0.015625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   705.14us  690.89us  36.53ms   98.39%\n    Req/Sec    23.67k     4.51k   86.26k    95.44%\n  Latency Distribution\n     50%  625.00us\n     75%  694.00us\n     90%    0.87ms\n     99%    1.60ms\n  567567 requests in 6.10s, 158.05MB read\nRequests/sec:  93052.40\nTransfer/sec:     25.91MB\n",
+        "rps": 93052.4,
+        "transfer_mbps": 25.91,
+        "lat_avg_ms": 0.70514,
+        "lat_stdev_ms": 0.69089,
+        "lat_max_ms": 36.53,
+        "lat_dist_ms": {
+          "50": 0.625,
+          "75": 0.6940000000000001,
+          "90": 0.87,
+          "99": 1.6
+        },
+        "lat_p50_ms": 0.625,
+        "lat_p99_ms": 1.6,
+        "requests": 567567
+      }
+    },
+    {
+      "workers": 1,
+      "max_conns": 20000,
+      "scenario": "status",
+      "server": "sparrow",
+      "url": "http://sparrow:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-sparrow",
+      "cpu": {
+        "cpu_avg": 51.144999999999996,
+        "cpu_max": 102.27,
+        "rss_mb": 218.05,
+        "usage_mb": 217.58984375,
+        "anon_mb": 210.74609375,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 217.90234375,
+        "anon_peak_mb": 210.74609375,
+        "cache_peak_mb": 0.0
+      },
+      "mem": {
+        "cpu_avg": 51.144999999999996,
+        "cpu_max": 102.27,
+        "rss_mb": 218.05,
+        "usage_mb": 217.58984375,
+        "anon_mb": 210.74609375,
+        "cache_mb": 0.0,
+        "usage_peak_mb": 217.90234375,
+        "anon_peak_mb": 210.74609375,
+        "cache_peak_mb": 0.0
+      },
+      "result": {
+        "raw": "Running 6s test @ http://sparrow:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.32ms    2.34ms  26.25ms   88.29%\n    Req/Sec    47.04k     5.80k   62.30k    75.83%\n  Latency Distribution\n     50%  114.00us\n     75%    1.52ms\n     90%    4.15ms\n     99%   11.19ms\n  1122893 requests in 6.01s, 153.14MB read\nRequests/sec: 186941.14\nTransfer/sec:     25.49MB\n",
+        "rps": 186941.14,
+        "transfer_mbps": 25.49,
+        "lat_avg_ms": 1.32,
+        "lat_stdev_ms": 2.34,
+        "lat_max_ms": 26.25,
+        "lat_dist_ms": {
+          "50": 0.114,
+          "75": 1.52,
+          "90": 4.15,
+          "99": 11.19
+        },
+        "lat_p50_ms": 0.114,
+        "lat_p99_ms": 11.19,
+        "requests": 1122893
+      }
+    },
+    {
+      "workers": 1,
+      "max_conns": 20000,
+      "scenario": "status",
+      "server": "caddy",
+      "url": "http://caddy:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-caddy",
+      "cpu": {
+        "cpu_avg": 50.73,
+        "cpu_max": 101.46,
+        "rss_mb": 18.215,
+        "usage_mb": 18.17578125,
+        "anon_mb": 15.78515625,
+        "cache_mb": 0.00390625,
+        "usage_peak_mb": 18.48046875,
+        "anon_peak_mb": 16.296875,
+        "cache_peak_mb": 0.00390625
+      },
+      "mem": {
+        "cpu_avg": 50.73,
+        "cpu_max": 101.46,
+        "rss_mb": 18.215,
+        "usage_mb": 18.17578125,
+        "anon_mb": 15.78515625,
+        "cache_mb": 0.00390625,
+        "usage_peak_mb": 18.48046875,
+        "anon_peak_mb": 16.296875,
+        "cache_peak_mb": 0.00390625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://caddy:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency     1.26ms    0.93ms  15.27ms   72.73%\n    Req/Sec    13.87k     2.64k   51.98k    97.93%\n  Latency Distribution\n     50%    1.15ms\n     75%    1.66ms\n     90%    2.44ms\n     99%    4.05ms\n  332596 requests in 6.10s, 49.16MB read\nRequests/sec:  54522.64\nTransfer/sec:      8.06MB\n",
+        "rps": 54522.64,
+        "transfer_mbps": 8.06,
+        "lat_avg_ms": 1.26,
+        "lat_stdev_ms": 0.93,
+        "lat_max_ms": 15.27,
+        "lat_dist_ms": {
+          "50": 1.15,
+          "75": 1.66,
+          "90": 2.44,
+          "99": 4.05
+        },
+        "lat_p50_ms": 1.15,
+        "lat_p99_ms": 4.05,
+        "requests": 332596
+      }
+    },
+    {
+      "workers": 1,
+      "max_conns": 20000,
+      "scenario": "status",
+      "server": "nginx",
+      "url": "http://nginx:8080/status",
+      "conns": 64,
+      "netem": "none",
+      "container": "bench-nginx",
+      "cpu": {
+        "cpu_avg": 50.52,
+        "cpu_max": 101.04,
+        "rss_mb": 12.399999999999999,
+        "usage_mb": 11.986328125,
+        "anon_mb": 10.6171875,
+        "cache_mb": 0.015625,
+        "usage_peak_mb": 12.76953125,
+        "anon_peak_mb": 10.6328125,
+        "cache_peak_mb": 0.015625
+      },
+      "mem": {
+        "cpu_avg": 50.52,
+        "cpu_max": 101.04,
+        "rss_mb": 12.399999999999999,
+        "usage_mb": 11.986328125,
+        "anon_mb": 10.6171875,
+        "cache_mb": 0.015625,
+        "usage_peak_mb": 12.76953125,
+        "anon_peak_mb": 10.6328125,
+        "cache_peak_mb": 0.015625
+      },
+      "result": {
+        "raw": "Running 6s test @ http://nginx:8080/status\n  4 threads and 64 connections\n  Thread Stats   Avg      Stdev     Max   +/- Stdev\n    Latency   683.60us  210.59us   5.82ms   90.48%\n    Req/Sec    23.75k     4.91k   92.65k    96.27%\n  Latency Distribution\n     50%  622.00us\n     75%  685.00us\n     90%  843.00us\n     99%    1.65ms\n  569435 requests in 6.10s, 158.57MB read\nRequests/sec:  93353.46\nTransfer/sec:     26.00MB\n",
+        "rps": 93353.46,
+        "transfer_mbps": 26.0,
+        "lat_avg_ms": 0.6836,
+        "lat_stdev_ms": 0.21059,
+        "lat_max_ms": 5.82,
+        "lat_dist_ms": {
+          "50": 0.622,
+          "75": 0.685,
+          "90": 0.843,
+          "99": 1.65
+        },
+        "lat_p50_ms": 0.622,
+        "lat_p99_ms": 1.65,
+        "requests": 569435
+      }
+    }
+  ],
+  "memory": {
+    "1": {
+      "bench-caddy": {
+        "idle_usage_mb": 14.69921875,
+        "idle_anon_mb": 11.58984375,
+        "idle_cache_mb": 2.0234375,
+        "peak_usage_mb": 57.69140625,
+        "peak_anon_mb": 28.54296875,
+        "peak_cache_mb": 2.09765625
+      },
+      "bench-nginx": {
+        "idle_usage_mb": 8.27734375,
+        "idle_anon_mb": 6.41015625,
+        "idle_cache_mb": 1.2890625,
+        "peak_usage_mb": 27.46875,
+        "peak_anon_mb": 6.640625,
+        "peak_cache_mb": 1.2890625
+      },
+      "bench-sparrow": {
+        "idle_usage_mb": 133.5546875,
+        "idle_anon_mb": 126.98046875,
+        "idle_cache_mb": 0.3671875,
+        "peak_usage_mb": 135.51953125,
+        "peak_anon_mb": 127.2421875,
+        "peak_cache_mb": 0.3671875
+      },
+      "bench-sparrow-tls": {
+        "idle_usage_mb": 132.90234375,
+        "idle_anon_mb": 126.78125,
+        "idle_cache_mb": 0.0,
+        "peak_usage_mb": 136.0234375,
+        "peak_anon_mb": 129.05859375,
+        "peak_cache_mb": 0.0
+      }
+    },
+    "3": {
+      "bench-caddy": {
+        "idle_usage_mb": 13.24609375,
+        "idle_anon_mb": 10.671875,
+        "idle_cache_mb": 1.4609375,
+        "peak_usage_mb": 39.3828125,
+        "peak_anon_mb": 29.70703125,
+        "peak_cache_mb": 1.796875
+      },
+      "bench-nginx": {
+        "idle_usage_mb": 8.29296875,
+        "idle_anon_mb": 6.42578125,
+        "idle_cache_mb": 1.2890625,
+        "peak_usage_mb": 12.515625,
+        "peak_anon_mb": 8.7109375,
+        "peak_cache_mb": 1.2890625
+      },
+      "bench-sparrow": {
+        "idle_usage_mb": 133.14453125,
+        "idle_anon_mb": 126.98046875,
+        "idle_cache_mb": 0.0,
+        "peak_usage_mb": 134.8359375,
+        "peak_anon_mb": 127.2421875,
+        "peak_cache_mb": 0.0
+      },
+      "bench-sparrow-tls": {
+        "idle_usage_mb": 132.90625,
+        "idle_anon_mb": 126.78515625,
+        "idle_cache_mb": 0.0,
+        "peak_usage_mb": 135.203125,
+        "peak_anon_mb": 129.0625,
+        "peak_cache_mb": 0.0
+      }
+    }
+  },
+  "memory_by_conns": {
+    "5000": {
+      "bench-caddy": {
+        "idle_usage_mb": 12.5859375,
+        "idle_anon_mb": 11.25390625,
+        "idle_cache_mb": 0.23828125,
+        "peak_usage_mb": 17.26171875,
+        "peak_anon_mb": 14.77734375,
+        "peak_cache_mb": 0.23828125
+      },
+      "bench-nginx": {
+        "idle_usage_mb": 4.921875,
+        "idle_anon_mb": 4.328125,
+        "idle_cache_mb": 0.015625,
+        "peak_usage_mb": 7.140625,
+        "peak_anon_mb": 4.359375,
+        "peak_cache_mb": 0.015625
+      },
+      "bench-sparrow": {
+        "idle_usage_mb": 67.45703125,
+        "idle_anon_mb": 63.57421875,
+        "idle_cache_mb": 0.0,
+        "peak_usage_mb": 67.83984375,
+        "peak_anon_mb": 63.57421875,
+        "peak_cache_mb": 0.0
+      },
+      "bench-sparrow-tls": {
+        "idle_usage_mb": 67.83984375,
+        "idle_anon_mb": 63.5859375,
+        "idle_cache_mb": 0.3671875,
+        "peak_usage_mb": 67.83984375,
+        "peak_anon_mb": 63.5859375,
+        "peak_cache_mb": 0.3671875
+      }
+    },
+    "10000": {
+      "bench-caddy": {
+        "idle_usage_mb": 12.48828125,
+        "idle_anon_mb": 11.2734375,
+        "idle_cache_mb": 0.203125,
+        "peak_usage_mb": 17.95703125,
+        "peak_anon_mb": 16.34375,
+        "peak_cache_mb": 0.203125
+      },
+      "bench-nginx": {
+        "idle_usage_mb": 7.40234375,
+        "idle_anon_mb": 6.41015625,
+        "idle_cache_mb": 0.015625,
+        "peak_usage_mb": 9.0546875,
+        "peak_anon_mb": 6.41015625,
+        "peak_cache_mb": 0.015625
+      },
+      "bench-sparrow": {
+        "idle_usage_mb": 132.89453125,
+        "idle_anon_mb": 126.7734375,
+        "idle_cache_mb": 0.0,
+        "peak_usage_mb": 133.65234375,
+        "peak_anon_mb": 126.7734375,
+        "peak_cache_mb": 0.0
+      },
+      "bench-sparrow-tls": {
+        "idle_usage_mb": 132.8984375,
+        "idle_anon_mb": 126.78125,
+        "idle_cache_mb": 0.0,
+        "peak_usage_mb": 132.8984375,
+        "peak_anon_mb": 126.78125,
+        "peak_cache_mb": 0.0
+      }
+    },
+    "15000": {
+      "bench-caddy": {
+        "idle_usage_mb": 12.28515625,
+        "idle_anon_mb": 11.1953125,
+        "idle_cache_mb": 0.0703125,
+        "peak_usage_mb": 18.2578125,
+        "peak_anon_mb": 16.2578125,
+        "peak_cache_mb": 0.0703125
+      },
+      "bench-nginx": {
+        "idle_usage_mb": 9.12890625,
+        "idle_anon_mb": 8.5234375,
+        "idle_cache_mb": 0.015625,
+        "peak_usage_mb": 10.8203125,
+        "peak_anon_mb": 8.5546875,
+        "peak_cache_mb": 0.015625
+      },
+      "bench-sparrow": {
+        "idle_usage_mb": 196.3046875,
+        "idle_anon_mb": 190.0234375,
+        "idle_cache_mb": 0.0,
+        "peak_usage_mb": 197.1171875,
+        "peak_anon_mb": 190.0234375,
+        "peak_cache_mb": 0.0
+      },
+      "bench-sparrow-tls": {
+        "idle_usage_mb": 196.328125,
+        "idle_anon_mb": 190.0390625,
+        "idle_cache_mb": 0.0,
+        "peak_usage_mb": 196.328125,
+        "peak_anon_mb": 190.0390625,
+        "peak_cache_mb": 0.0
+      }
+    },
+    "20000": {
+      "bench-caddy": {
+        "idle_usage_mb": 12.38671875,
+        "idle_anon_mb": 11.22265625,
+        "idle_cache_mb": 0.00390625,
+        "peak_usage_mb": 18.48046875,
+        "peak_anon_mb": 16.296875,
+        "peak_cache_mb": 0.00390625
+      },
+      "bench-nginx": {
+        "idle_usage_mb": 11.203125,
+        "idle_anon_mb": 10.6015625,
+        "idle_cache_mb": 0.015625,
+        "peak_usage_mb": 12.76953125,
+        "peak_anon_mb": 10.6328125,
+        "peak_cache_mb": 0.015625
+      },
+      "bench-sparrow": {
+        "idle_usage_mb": 217.078125,
+        "idle_anon_mb": 210.74609375,
+        "idle_cache_mb": 0.0,
+        "peak_usage_mb": 217.90234375,
+        "peak_anon_mb": 210.74609375,
+        "peak_cache_mb": 0.0
+      },
+      "bench-sparrow-tls": {
+        "idle_usage_mb": 217.15625,
+        "idle_anon_mb": 210.81640625,
+        "idle_cache_mb": 0.0,
+        "peak_usage_mb": 217.15625,
+        "peak_anon_mb": 210.81640625,
+        "peak_cache_mb": 0.0
+      }
+    }
+  },
+  "sparrow_only": {}
+}

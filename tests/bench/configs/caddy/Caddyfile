@@ -1,0 +1,59 @@
+{
+	# Без ACME и админ-сокета: сертификаты явные, бенчмарк не должен гонять фоновую работу
+	auto_https off
+	admin off
+}
+
+http://:8080 {
+	root * /www
+
+	encode gzip {
+		minimum_length 20
+	}
+
+	handle /status {
+		respond "{\"status\":\"ok\",\"server\":\"caddy\"}"
+	}
+
+	handle /big {
+		file_server
+	}
+
+	# handle_path — как nginx alias: срезает /static и отдаёт /www/<файл>
+	handle_path /static/* {
+		root * /www
+		file_server
+	}
+
+	handle /api/* {
+		reverse_proxy 172.30.0.10:9090
+	}
+}
+
+https://:8443 {
+	tls /certs/cert.pem /certs/key.pem
+
+	root * /www
+
+	encode gzip {
+		minimum_length 20
+	}
+
+	handle /status {
+		respond "{\"status\":\"ok\",\"server\":\"caddy\"}"
+	}
+
+	handle /big {
+		file_server
+	}
+
+	# handle_path — как nginx alias: срезает /static и отдаёт /www/<файл>
+	handle_path /static/* {
+		root * /www
+		file_server
+	}
+
+	handle /api/* {
+		reverse_proxy 172.30.0.10:9090
+	}
+}
