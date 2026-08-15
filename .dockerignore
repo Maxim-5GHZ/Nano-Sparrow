@@ -1,0 +1,14 @@
+# .dockerignore
+.git
+.gitignore
+build/
+build-*/
+cmake-build-*/
+.idea/
+.vscode/
+*.o
+*.a
+*.so
+results/
+all_code.txt
+tests/
