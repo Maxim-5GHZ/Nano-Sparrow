@@ -479,10 +479,11 @@ def main():
     ap.add_argument("--tag", default="", help="метка прогона (в метаданные)")
     ap.add_argument("--no-up", action="store_true",
                     help="не пересоздавать сервисы compose (серверы уже подняты)")
-    ap.add_argument("--max-conns", type=int, default=10000,
-                    help="лимит соединений в конфигах (max_connections sparrow/nginx)")
+    ap.add_argument("--max-conns", type=int, default=1000,
+                    help="лимит соединений в конфигах (max_connections sparrow/nginx), "
+                         "по умолчанию 1000")
     ap.add_argument("--conns-research",
-                    default=os.environ.get("CONNS_RESEARCH", "5000 10000 15000 20000"),
+                    default=os.environ.get("CONNS_RESEARCH", "500 1000"),
                     help="доп. прогоны с разными max_connections: idle-память + /status")
     ap.add_argument("--no-research", action="store_true",
                     help="пропустить research-фазу (max_connections sweep)")

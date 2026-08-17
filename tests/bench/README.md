@@ -22,7 +22,8 @@ cd tests/bench
   машине без интернета: собрать заранее, потом `./run.sh` работает офлайн)
 - `./run.sh --down` — снять стенд без прогона
 - `./run.sh --max-conns N` — лимит соединений в конфигах (sparrow
-  `max_connections`, nginx `worker_connections`) для основной матрицы
+  `max_connections`, nginx `worker_connections`) для основной матрицы;
+  по умолчанию `3000`
 - `./run.sh -- --workers 1 --duration 8 --no-sweep` — свои параметры
 - Exit code 0 = успех: `./run.sh && echo PASS`
 - Если нужен лог, используйте `./run.sh | tee log.txt`, а НЕ `./run.sh > log.txt`:

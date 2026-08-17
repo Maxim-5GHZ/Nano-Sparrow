@@ -229,23 +229,23 @@ curl, `strace` attach, and RSS measurement before/after load:
 Session end-state: `-Werror` build is clean; 100 parallel requests under
 `strace -e trace=mmap,brk,mremap,munmap` — **0 memory-allocation syscalls**; RSS
 **4 904 kB before and after** 200 requests + proxying a 300 KB file (zero growth);
-keep-alive reuses the connection (200 OK). Numbers note: the 10 000-connection pool
-reserves ~82 MB of virtual memory, but Linux commits pages lazily, so physical memory
+keep-alive reuses the connection (200 OK). Numbers note: the 1 000-connection pool
+reserves ~8 MB of virtual memory, but Linux commits pages lazily, so physical memory
 grows only for connections actually in use.
 
 #### Bench/research session: harness, limits and crashes under max_connections (most recent)
 
 In parallel with the performance session ran the comparative-benchmark session: a
 docker-compose harness (sparrow/caddy/nginx + a runner with wrk and netem) and the
-research phases for the connection limit — `max_connections` 5k/10k/15k/20k in the
-main run and 1000/5000 in the "sparrow only" phase. The full history lives in
+research phases for the connection limit — `max_connections` 500/1000 in the
+research phase and 1000/5000 in the "sparrow only" phase. The full history lives in
 `tests/bench/README.md`; here are the problems and their fixes:
 
 | # | Problem | Fix | Numbers: before → after |
 |---|---------|-----|--------------------------|
 | R1 | **Envoy bloated the run** (a fourth server) | removed entirely from compose, configs and scripts | run shorter by ~a third; sparrow/caddy/nginx numbers unchanged |
 | R2 | **snap-docker 29.6.1: `exec > file` silently loses output and exit code** (journalctl: `exec attach failed: broken pipe`) | pipe output through `2>&1 \| cat`, take exit from `PIPESTATUS[0]`, use `tee` instead of redirection | `run.sh && echo PASS` falsely failed → honest exit 0/1, full log |
-| R3 | **io_uring: entries > 32768 → EINVAL — crash at max_connections=20000** (research phase) | cap `entries = min(required, 32768)` in `server.cpp` | research 5k/10k/15k/20k crashed → works; 20k holds 210.7 MB idle RSS |
+| R3 | **io_uring: entries > 32768 → EINVAL — crash at max_connections=20000** (research phase, historical limits) | cap `entries = min(required, 32768)` in `server.cpp` | research at 20k crashed → works at any limit; 20k-era run held 210.7 MB idle RSS |
 | R4 | **Service-recreation races on weak machines** (starting everything at once + immediate recreation → wait_ready timeouts) | `run.sh` brings up only the runner; `run_bench.py` recreates the server services; `ready_with_retry()` (self-healing) | startup timeouts → stable starts |
 | R5 | **One-off run "pause"** (transient docker failure: 35 min with no saved results) | diagnose via mtime of `results.json`, `docker compose logs runner`, `docker ps`; rerun | hang → reproducible run, numbers stable (±noise) |
 | R6 | **Pool ceiling for connections**: sweep `c > max_connections` looked like a failure (wrk honestly counts rejections as errors) | limit lives in the sparrow config (`__MAX_CONNECTIONS__`); points marked `pool_limit=true`, labeled "pool ceiling" on the plot | "phantom drops" → honest marking; server refuses extra connections but does not crash (max=1000, c=1024: ~150k rps) |
@@ -268,10 +268,10 @@ The ±10% spread (caddy at W=3 up to −21%) is demo-mode noise (short durations
 parallel host load); the trends are stable. For reproducible numbers use `--full`
 (15 s per scenario).
 
-Session end-state: the research phase (5k/10k/15k/20k) and "sparrow only" (1000/5000)
-work; memory is preallocated for the pool and grows linearly (idle RSS: 63.6/126.8/
-190.0/210.7 MB at 5k/10k/15k/20k, ~12.6 MB per 1000 connections); the pool ceiling
-is honestly marked, runs are reproducible (±10% demo-mode noise).
+Session end-state: the research phase (500/1000) and "sparrow only" (1000/5000)
+work; memory is preallocated for the pool and grows linearly (idle RSS: 6.6/12.9 MB
+at 500/1000, ~12.9 MB per 1000 connections); the pool ceiling is honestly marked,
+runs are reproducible (±10% demo-mode noise).
 
 #### io_uring performance session: timeouts, Nagle, SQPOLL, affinity (previous)
 
@@ -475,10 +475,12 @@ emulation (`tc netem`), CPU/RSS sampling and matplotlib plots. Everything is
 reproducible with one command: `cd tests/bench && ./run.sh` (methodology and
 scenario details: [tests/bench/README.md](tests/bench/README.md)).
 
-Run: 2026-08-09, kernel 7.0.0-28-generic, wrk `-t4`, 3 s per scenario (demo mode;
-`./run.sh --full` — 15 s each). Every run is repeated for `WORKERS=1` and
-`WORKERS=3` (sparrow: `worker_threads` + SO_REUSEPORT; caddy: `GOMAXPROCS`;
-nginx: `worker_processes`). Full data and plots:
+Run: 2026-08-17, kernel 7.0.0-28-generic, wrk `-t4`, 6 s per scenario (demo mode;
+`./run.sh --full` — 15 s each). Server configs allow **1000 connections**
+(`max_connections` in sparrow, `worker_connections` in nginx) — sparrow
+preallocates its pool at startup, so idle RSS is ~13 MB. Every run is repeated for
+`WORKERS=1` and `WORKERS=3` (sparrow: `worker_threads` + SO_REUSEPORT; caddy:
+`GOMAXPROCS`; nginx: `worker_processes`). Full data and plots:
 `tests/bench/results/`. Bold = best in row (rps: higher is better, p99: lower).
 
 ### Problems found while building the harness (and how they were fixed)
@@ -527,69 +529,69 @@ Key scenario deltas (smoke → final):
 
 | Scenario | sparrow | caddy | nginx |
 |---|---|---|---|
-| status JSON (keep-alive) | **180,678** | 50,324 | 97,303 |
-| `Connection: close` | 6,110 | 6,970 | **69,410** |
-| TLS `/status` | **119,802** | 47,735 | 53,308 |
-| gzip `/static/mid.txt` (1.3 KB) | **67,772** | 21,724 | 47,752 |
-| `/static/small.txt` (86 B) | 77,085 | 30,490 | **95,922** |
-| `/static/big.bin` (10 MB) | 1,053 | 882 | **1,262** |
-| proxy GET `/api/ping` | 1,082 | **1,533** | 1,275 |
-| proxy POST `/api/echo` | 1,253 | **1,522** | 1,091 |
-| badnet base (c32, no netem) | **186,074** | 51,057 | 97,175 |
-| badnet latency (50±10 ms) | **630** | 620 | 629 |
-| badnet jitter (20±15 ms) | 1,526 | **1,539** | 1,544 |
-| badnet loss (2%) | 6,482 | **7,494** | 7,284 |
+| status JSON (keep-alive) | **197,342** | 53,259 | 97,839 |
+| `Connection: close` | 7,423 | 6,947 | **67,775** |
+| TLS `/status` | **123,143** | 47,050 | 54,419 |
+| gzip `/static/mid.txt` (1.3 KB) | **71,673** | 25,160 | 50,015 |
+| `/static/small.txt` (86 B) | 81,765 | 32,925 | **100,159** |
+| `/static/big.bin` (10 MB) | 1,022 | 885 | **1,337** |
+| proxy GET `/api/ping` | 1,315 | **1,527** | 1,126 |
+| proxy POST `/api/echo` | 1,027 | **1,523** | 1,121 |
+| badnet base (c32, no netem) | **198,487** | 54,341 | 100,263 |
+| badnet latency (50±10 ms) | **628** | 626 | 630 |
+| badnet jitter (20±15 ms) | **1,535** | 1,529 | 1,520 |
+| badnet loss (2%) | 7,369 | 7,384 | **7,915** |
 
 ### p99 latency, ms (WORKERS=1)
 
 | Scenario | sparrow | caddy | nginx |
 |---|---|---|---|
-| status JSON (keep-alive) | 13.0 | 4.8 | **1.0** |
-| `Connection: close` | 19.8 | 20.7 | **1.8** |
-| TLS `/status` | 99.3 | 5.2 | **2.4** |
-| gzip `/static/mid.txt` (1.3 KB) | 15.0 | 10.0 | **2.2** |
-| `/static/small.txt` (86 B) | 2.2 | 6.9 | **1.1** |
-| `/static/big.bin` (10 MB) | **26.3** | 35.2 | 26.6 |
-| proxy GET `/api/ping` | 1,360.0 | **50.2** | 1,360.0 |
-| proxy POST `/api/echo` | 1,430.0 | **51.9** | 1,340.0 |
-| badnet base (c32, no netem) | 3.7 | 3.0 | **0.6** |
-| badnet latency (50±10 ms) | **73.0** | 71.9 | 73.1 |
-| badnet jitter (20±15 ms) | 54.7 | 55.0 | **54.5** |
-| badnet loss (2%) | 258.1 | 220.7 | **207.4** |
+| status JSON (keep-alive) | 13.4 | 4.5 | **1.1** |
+| `Connection: close` | 19.0 | 21.8 | **2.0** |
+| TLS `/status` | 20.5 | 5.6 | **1.9** |
+| gzip `/static/mid.txt` (1.3 KB) | 16.0 | 7.7 | **3.0** |
+| `/static/small.txt` (86 B) | 2.4 | 6.5 | **1.1** |
+| `/static/big.bin` (10 MB) | **28.3** | 40.8 | 28.7 |
+| proxy GET `/api/ping` | 1,370.0 | **48.7** | 1,410.0 |
+| proxy POST `/api/echo` | 1,340.0 | **47.9** | 1,410.0 |
+| badnet base (c32, no netem) | 9.5 | 2.8 | **0.6** |
+| badnet latency (50±10 ms) | 74.5 | 74.2 | **73.8** |
+| badnet jitter (20±15 ms) | 55.0 | **54.6** | 54.8 |
+| badnet loss (2%) | 222.0 | **208.0** | 317.7 |
 
 ### rps (WORKERS=3)
 
 | Scenario | sparrow | caddy | nginx |
 |---|---|---|---|
-| status JSON (keep-alive) | **181,976** | 113,147 | 90,368 |
-| `Connection: close` | 6,300 | 17,310 | **55,895** |
-| TLS `/status` | **114,734** | 103,873 | 50,625 |
-| gzip `/static/mid.txt` (1.3 KB) | **67,994** | 57,209 | 50,235 |
-| `/static/small.txt` (86 B) | 75,891 | 72,754 | **93,544** |
-| `/static/big.bin` (10 MB) | **1,185** | 859 | 1,151 |
-| proxy GET `/api/ping` | 1,242 | **1,535** | 1,174 |
-| proxy POST `/api/echo` | 1,065 | **1,520** | 1,238 |
-| badnet base (c32, no netem) | **185,682** | 114,411 | 96,462 |
-| badnet latency (50±10 ms) | 628 | 628 | **630** |
-| badnet jitter (20±15 ms) | 1,527 | 1,516 | **1,535** |
-| badnet loss (2%) | 7,295 | 7,099 | **7,584** |
+| status JSON (keep-alive) | **197,875** | 127,975 | 95,635 |
+| `Connection: close` | 6,304 | 18,359 | **68,397** |
+| TLS `/status` | 121,669 | **123,481** | 54,509 |
+| gzip `/static/mid.txt` (1.3 KB) | **71,268** | 65,073 | 48,889 |
+| `/static/small.txt` (86 B) | 81,240 | 80,921 | **99,669** |
+| `/static/big.bin` (10 MB) | 1,109 | 979 | **1,229** |
+| proxy GET `/api/ping` | 1,076 | **1,508** | 1,313 |
+| proxy POST `/api/echo` | 1,202 | **1,507** | 1,205 |
+| badnet base (c32, no netem) | **197,510** | 129,918 | 100,209 |
+| badnet latency (50±10 ms) | **631** | 626 | 629 |
+| badnet jitter (20±15 ms) | **1,548** | 1,530 | 1,528 |
+| badnet loss (2%) | 7,554 | **7,768** | 7,317 |
 
 ### p99 latency, ms (WORKERS=3)
 
 | Scenario | sparrow | caddy | nginx |
 |---|---|---|---|
-| status JSON (keep-alive) | 8.5 | 3.0 | **1.5** |
-| `Connection: close` | 19.4 | 19.6 | **2.5** |
-| TLS `/status` | 43.2 | 3.1 | **3.0** |
-| gzip `/static/mid.txt` (1.3 KB) | 13.4 | 4.7 | **2.2** |
-| `/static/small.txt` (86 B) | 2.5 | 3.9 | **1.4** |
-| `/static/big.bin` (10 MB) | **29.8** | 36.6 | 29.7 |
-| proxy GET `/api/ping` | 1,310.0 | **46.1** | 1,360.0 |
-| proxy POST `/api/echo` | 1,360.0 | **47.9** | 1,350.0 |
-| badnet base (c32, no netem) | 5.0 | 1.6 | **0.7** |
-| badnet latency (50±10 ms) | **72.7** | 73.7 | 73.8 |
-| badnet jitter (20±15 ms) | **54.1** | 54.3 | 54.6 |
-| badnet loss (2%) | 259.1 | 207.7 | **208.6** |
+| status JSON (keep-alive) | 14.6 | 2.6 | **1.7** |
+| `Connection: close` | 21.0 | 17.2 | **2.1** |
+| TLS `/status` | 90.2 | 2.6 | **2.2** |
+| gzip `/static/mid.txt` (1.3 KB) | 22.4 | 4.3 | **3.2** |
+| `/static/small.txt` (86 B) | 2.5 | 3.7 | **1.1** |
+| `/static/big.bin` (10 MB) | **26.1** | 31.7 | 27.9 |
+| proxy GET `/api/ping` | 1,380.0 | **64.2** | 1,340.0 |
+| proxy POST `/api/echo` | 1,370.0 | **56.7** | 611.9 |
+| badnet base (c32, no netem) | 8.5 | 1.4 | **0.8** |
+| badnet latency (50±10 ms) | **73.5** | 74.4 | 73.6 |
+| badnet jitter (20±15 ms) | **54.7** | 54.8 | 54.8 |
+| badnet loss (2%) | 278.5 | 239.9 | **209.0** |
 
 ### Sweep: rps vs connection count (`/status`)
 
@@ -597,21 +599,25 @@ WORKERS=1:
 
 | conns | sparrow | caddy | nginx |
 |---|---|---|---|
-| 1 | **58,344** | 33,348 | 35,444 |
-| 16 | **180,970** | 53,052 | 97,517 |
-| 64 | **183,359** | 50,860 | 91,362 |
-| 256 | **173,159** | 46,121 | 87,344 |
-| 1024 | **166,135** | 46,347 | 78,107 |
+| 1 | **70,284** | 38,737 | 50,006 |
+| 16 | **194,356** | 56,291 | 99,771 |
+| 64 | **198,632** | 54,527 | 101,232 |
+| 256 | **192,451** | 51,819 | 95,128 |
+| 1024 | **186,889**¹ | 49,283¹ | 82,875¹ |
 
 WORKERS=3:
 
 | conns | sparrow | caddy | nginx |
 |---|---|---|---|
-| 1 | **56,492** | 18,209 | 37,122 |
-| 16 | **187,854** | 122,092 | 91,460 |
-| 64 | **187,885** | 120,741 | 90,321 |
-| 256 | **177,927** | 121,454 | 89,535 |
-| 1024 | **178,708** | 118,925 | 81,028 |
+| 1 | **68,826** | 22,414 | 47,305 |
+| 16 | **194,584** | 130,118 | 100,204 |
+| 64 | **200,043** | 133,753 | 100,633 |
+| 256 | **192,169** | 126,740 | 92,204 |
+| 1024 | **189,727**¹ | 119,556¹ | 83,372¹ |
+
+¹ c=1024 exceeds the config limit of 1000 connections — pool ceiling: the server
+rejects extra connections and wrk counts them as errors (marked on the sweep chart),
+so these points sit slightly below the curve instead of above it.
 
 ### Charts (matplotlib, from the fresh run)
 
@@ -641,33 +647,44 @@ WORKERS=3:
 
 | Container | idle RSS | peak RSS | peak usage |
 |---|---|---|---|
-| sparrow http | 127 MB | 127 MB | 136 MB |
-| sparrow tls | 127 MB | 129 MB | 136 MB |
-| caddy | 12 MB | 29 MB | 58 MB |
-| nginx | 6 MB | 7 MB | 27 MB |
+| sparrow http | 13 MB | 13 MB | 18 MB |
+| sparrow tls | 13 MB | 15 MB | 24 MB |
+| caddy | 11 MB | 28 MB | 76 MB |
+| nginx | 3 MB | 5 MB | 45 MB |
 
-All of sparrow's memory is allocated once at startup (connection pools 10k × 8 KB,
+All of sparrow's memory is allocated once at startup (connection pool 1k × 8 KB,
 512 splice pipes, 256 × 128 KB TLS buffers) and TLS contexts are created lazily per
-connection instead of pre-allocated — `idle ≈ peak`, and the TLS server now costs the
-same as the plain one (316 → 127 MB). The other servers grow under load as
+connection instead of pre-allocated — `idle ≈ peak`, and the TLS server now costs
+the same as the plain one (316 → 13 MB). The other servers grow under load as
 connections/buffers are allocated. Methodology is in
 [tests/bench/README.md](tests/bench/README.md).
 
 ### Memory vs max_connections (research phase)
 
-Separate runs with `max_connections` 5k/10k/15k/20k (workers=1): idle RSS with no
+Separate runs with `max_connections` 500/1000 (workers=1): idle RSS with no
 load and `/status` rps — sparrow **preallocates the connection pool** (buffers at
 startup), so its memory grows linearly:
 
-| Container (idle RSS, MB) | 5,000 | 10,000 | 15,000 | 20,000 |
-|---|---|---|---|---|
-| sparrow http | 63.6 | 126.8 | 190.0 | 210.7 |
-| sparrow tls | 63.6 | 126.8 | 190.0 | 210.8 |
-| caddy | 11.3 | 11.2 | 11.2 | 11.2 |
-| nginx | 4.3 | 6.4 | 8.5 | 10.6 |
+| Container (idle RSS, MB) | 500 | 1,000 |
+|---|---|---|
+| sparrow http | 6.6 | 12.9 |
+| sparrow tls | 6.7 | 13.0 |
+| caddy | 11.2 | 11.2 |
+| nginx | 2.4 | 2.6 |
+
+Why does a smaller limit cost nothing in performance? The connection pool is a
+*ceiling*, not a per-request resource: all scenarios run at 16–64 connections
+(sweep tops out at 1024), and the hot path — O(1) slot lookup, zero allocations,
+a 4096-entry io_uring ring — is identical regardless of pool size. The pool is
+paid up front as pinned pages (`IORING_REGISTER_BUFFERS` needs `memlock`), so
+cutting the limit from 10k to 1k drops idle RSS ~10x (127 → 13 MB) without moving
+rps/p99: 197.3k rps at max=1000 vs 180.7k at max=10000 — run-to-run noise. The
+only real cost of a small limit is the ceiling itself: at c=1024 the server
+rejects extra connections (marked "pool ceiling" on the sweep chart) instead of
+serving them.
 
 Runs automatically at the end of `./run.sh`; disable with `--no-research`,
-change the list with `--conns-research "5000 10000"`.
+change the list with `--conns-research "500 1000"`.
 
 ### Sparrow-only phase (`run_only_sparrow.sh`)
 
@@ -679,50 +696,50 @@ the comparative `results/` untouched:
 
 ```bash
 cd tests/bench
-./run_only_sparrow.sh                  # max_connections 1000 and 5000
-./run_only_sparrow.sh --conns "1000 5000 10000"
+./run_only_sparrow.sh                  # max_connections 500 and 1500
+./run_only_sparrow.sh --conns "500 1500 5000"
 ```
 
 Demo run (6 s per scenario, this machine; format rps / p99):
 
-| Scenario | max=1000 | max=5000 |
+| Scenario | max=500 | max=1500 |
 |---|---|---|
-| status JSON (keep-alive) | **165,156** / 6.0 ms | 158,246 / 6.3 ms |
-| `Connection: close` | 5,423 / 26.2 ms | 5,318 / 27.6 ms |
-| TLS `/status` | 98,391 / 128.1 ms | **99,715** / 43.5 ms |
-| gzip `/static/mid.txt` (1.3 KB) | 60,811 / 9.3 ms | 60,903 / 11.9 ms |
-| `/static/small.txt` (86 B) | 63,835 / 3.4 ms | 65,385 / 3.2 ms |
-| `/static/big.bin` (10 MB) | 1,072 / 33.5 ms | 1,082 / 32.7 ms |
-| proxy GET `/api/ping` | 1,011 / 1,350 ms | 1,071 / 1,300 ms |
-| badnet latency 50±10 ms | 631 / 73.8 ms | 629 / 74.1 ms |
-| badnet jitter 20±15 ms | 1,536 / 53.4 ms | 1,525 / 54.8 ms |
-| badnet loss 2% | 7,780 / 207.1 ms | 7,701 / 206.5 ms |
-| idle anon RSS (http) | **13.1 MB** | **63.8 MB** |
+| status JSON (keep-alive) | 163,702 / 7.1 ms | **169,226** / 6.9 ms |
+| `Connection: close` | 5,549 / 26.0 ms | 5,414 / 24.5 ms |
+| TLS `/status` | 101,120 / 8.3 ms | **101,004** / 5.2 ms |
+| gzip `/static/mid.txt` (1.3 KB) | 62,349 / 12.8 ms | 62,191 / 11.2 ms |
+| `/static/small.txt` (86 B) | 67,333 / 3.1 ms | 67,063 / 3.3 ms |
+| `/static/big.bin` (10 MB) | 1,073 / 29.5 ms | 1,199 / 29.3 ms |
+| proxy GET `/api/ping` | 1,190 / 1,330 ms | 1,221 / 1,360 ms |
+| proxy POST (streamed upload) | 1,543 / 44.8 ms | 1,545 / 44.0 ms |
+| badnet latency 50±10 ms | 633 / 72.5 ms | 629 / 74.5 ms |
+| badnet jitter 20±15 ms | 1,519 / 54.7 ms | 1,530 / 54.7 ms |
+| badnet loss 2% | 7,120 / 207.7 ms | 7,441 / 208.2 ms |
+| idle anon RSS (http) | **6.8 MB** | **19.5 MB** |
 
-The connection-pool ceiling is visible in the sweep part: at `max_connections=1000`
+The connection-pool ceiling is visible in the sweep part: at `max_connections=500`
 the `c=1024` point is marked "pool ceiling" — sparrow rejects connections beyond
 the config limit (wrk counts them as errors), but the server does not crash
-(~150k rps vs ~157–161k at lower concurrency). Chart:
+(73.4k rps vs ~161–166k at lower concurrency). At `max_connections=1500` the
+ceiling is not reached — all 1024 connections are served (~154k rps). Chart:
 `tests/bench/results-sparrow/sparrow_only.png`.
 
 Why idle RSS scales with `max_connections`: sparrow preallocates the whole
 connection pool at startup (`connection_buffers_` = max_connections × 2 × 8 KB in
 one block, plus the slot pools and the io_uring ring), so idle anon RSS grows
-linearly by ~12.6 MB per 1,000 slots — 13.1 MB at 1k, 63.8 MB at 5k, 126.8 MB at
-10k, 190.0 MB at 15k, then flattens at 20k (210.7 MB) where the kernel's
-registered-buffers cap (16,384, `IORING_MAX_REG_BUFFERS`) stops further slots
-from materializing pages. This is the price of zero-alloc on the hot path.
+linearly by ~12.7 MB per 1,000 slots — 6.8 MB at 500, 13.1 MB at 1k, 19.5 MB at
+1.5k. This is the price of zero-alloc on the hot path.
 
 Why p99 looks like that: it is nearly independent of `max_connections` and is set
-by four sources — single-worker CPU saturation (status p99 6 ms at ~165k rps vs
-p50 0.13 ms), the connection-establishment path (no-keep-alive 26 ms, 10 MB
-transfer ~33 ms ≈ bridge bandwidth), the Python backend (proxy p50 41 ms, p99
-~1.3 s — backend queue, not sparrow), and the network (netem: 74 ms latency, 207
-ms loss). The TLS p99 (128 vs 43.5 ms at the same p50 of 0.23 ms) is a noisy
-handshake tail on one worker, not a pool-size effect — the comparative matrix
-measured 99.3 ms at max=10000. The sweep shows the flip side of the pool ceiling:
-at c=1024 with max=1000 the p99 is *better* (33 ms vs 60 ms at max=5000), because
-rejected connections never queue on the server.
+by four sources — single-worker CPU saturation (status p99 ~7 ms at ~165k rps vs
+p50 0.13 ms), the connection-establishment path (no-keep-alive ~25 ms, 10 MB
+transfer ~29 ms ≈ bridge bandwidth), the Python backend (proxy p50 41 ms, p99
+~1.3 s — backend queue, not sparrow), and the network (netem: ~73 ms latency,
+~208 ms loss). The TLS p99 (8.3 vs 5.2 ms at a similar p50) is a noisy handshake
+tail on one worker, not a pool-size effect — the comparative matrix (max=1000)
+measured 20.5 ms for the same scenario. The sweep shows the flip side of the pool
+ceiling: at c=1024 with max=500 the p99 is *better* (21.5 ms vs 58.7 ms at
+max=1500), because rejected connections never queue on the server.
 
 ### Observations
 
@@ -731,26 +748,27 @@ rejected connections never queue on the server.
   caddy leads here (1.5k rps), sparrow has a higher p99 on uploads (streaming).
 - **badnet_latency**: every server hits the theoretical netem ceiling
   (32 connections × 50 ms RTT ≈ 640 rps) — the network dominates the servers.
-- **status JSON**: sparrow leads in every configuration — 180.7k rps with one
-  worker vs 97.3k for nginx and 50.3k for caddy; with 3 workers caddy scales to
-  113.1k while sparrow stays ~182k (wrk-client bound). In the sweep sparrow
-  holds ~166–183k from 16 to 1024 connections.
-- **`Connection: close`** is sparrow's weakest scenario (6.1–6.3k rps here —
+- **status JSON**: sparrow leads in every configuration — 197.3k rps with one
+  worker vs 97.8k for nginx and 53.3k for caddy; with 3 workers caddy scales to
+  128.0k while sparrow stays ~198k (wrk-client bound). In the sweep sparrow
+  holds ~186–200k from 16 to 1024 connections.
+- **`Connection: close`** is sparrow's weakest scenario (6.3–7.4k rps here —
   the docker-bridge environment is too noisy to show the ~37k rps reached on the
-  host loopback); nginx is far ahead (56–69k): new connections are accepted via
+  host loopback); nginx is far ahead (67–68k): new connections are accepted via
   multishot accept on a single thread.
-- **10 MB static**: nginx leads — 1,262 rps (W=1, kernel `sendfile`,
-  ~12.6 GB/s); sparrow — 1,053 rps (~10.5 GB/s): it streams 8 KB chunks through
+- **10 MB static**: nginx leads — 1,337 rps (W=1, kernel `sendfile`,
+  ~13.4 GB/s); sparrow — 1,022 rps (~10.2 GB/s): it streams 8 KB chunks through
   user space instead, but uses no page cache and no kernel copy. On tiny files
-  (86 B) nginx also leads: 96k vs 77k at one worker.
-- **TLS**: with one worker sparrow is the fastest (119.8k rps) but its p99 is worse
-  (99.3 ms vs 2.4 ms for nginx at c256); with 3 workers sparrow still leads
-  (114.7k vs 103.9k for caddy), with a much better p99 (43.2 ms).
-- **badnet loss (2%)**: everyone is level at one worker (~6.5–7.5k rps) and at
-  three workers (~7.1–7.6k) — retries over keep-alive work everywhere.
-- **Memory**: sparrow preallocates its connection pool at startup (63.6 MB at 5k,
-  210.7 MB at 20k connections — ~12.6 MB per 1000), caddy stays flat (~11 MB),
-  nginx grows slowly (4.3→10.6 MB). That is the price of zero-alloc on the hot
+  (86 B) nginx also leads: 100.2k vs 81.8k at one worker.
+- **TLS**: with one worker sparrow is the fastest (123.1k rps) but its p99 is worse
+  (20.5 ms vs 1.9 ms for nginx at c64); with 3 workers caddy edges ahead
+  (123.5k vs 121.7k for sparrow), and sparrow's p99 (90.2 ms) shows the noisy
+  handshake tail of a single ring.
+- **badnet loss (2%)**: everyone is level at one worker (~7.4–7.9k rps) and at
+  three workers (~7.3–7.8k) — retries over keep-alive work everywhere.
+- **Memory**: sparrow preallocates its connection pool at startup (6.6 MB at 500,
+  12.9 MB at 1k connections — ~12.9 MB per 1000), caddy stays flat (~11 MB),
+  nginx stays flat too (2.4→2.6 MB). That is the price of zero-alloc on the hot
   path: no allocations under load.
 
 ## Building
@@ -789,7 +807,7 @@ Both flags are **mandatory** on Docker's default profile:
 - `--security-opt seccomp=unconfined` — the default seccomp profile blocks the
   `io_uring_*` syscalls; without it the server exits with `Failed to init ring`.
 - `--ulimit memlock=-1:-1` — the default 64 MB memlock cap is not enough to register the
-  tx-buffer pool (`max_connections × buffer_size`, e.g. 10000 × 8192 ≈ 80 MB) via
+  tx-buffer pool (`max_connections × buffer_size`, e.g. 1000 × 8192 ≈ 8 MB) via
   `IORING_REGISTER_BUFFERS`; without it SEND_ZC stays disabled.
 
 Verify:
@@ -819,7 +837,7 @@ INI with sections (`#`/`;` are comments; errors are fatal — the server refuses
 [server]
 port = 8080                # listen port
 worker_threads = 1         # SO_REUSEPORT workers (each with its own pool and ring)
-max_connections = 10000    # pool per ONE worker (divided between workers in main)
+max_connections = 1000     # pool per ONE worker (divided between workers in main)
 buffer_size = 8192         # rx/tx buffers (one memory block at startup)
 io_timeout_ms = 30000      # idle timeout (Slowloris protection)
 splice_pipes = 512         # pre-allocated pipes/worker for SEND_SPLICE (0 = off)

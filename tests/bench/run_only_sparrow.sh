@@ -6,9 +6,9 @@
 # Результаты — в tests/bench/results-sparrow/ (сравнительный
 # ./run.sh и его results/ не трогаются).
 #
-#   ./run_only_sparrow.sh                  max_connections 1000 и 5000
+#   ./run_only_sparrow.sh                  max_connections 500 и 1500
 #   ./run_only_sparrow.sh --full           полные длительности (15 с на сценарий)
-#   ./run_only_sparrow.sh --conns "1000 5000 10000"  свои лимиты
+#   ./run_only_sparrow.sh --conns "500 1500 5000"  свои лимиты
 #   ./run_only_sparrow.sh --build          предварительно собрать образы и уйти
 #   ./run_only_sparrow.sh --down           снять контейнеры (не прогоняя)
 #   ./run_only_sparrow.sh -- <arg>...      остальные аргументы уходят в run_bench.py
@@ -22,7 +22,7 @@ cd "$(dirname "$0")"
 COMPOSE="docker compose -f docker-compose.yml"
 DEMO_DURATION=${DEMO_DURATION:-6}
 DEMO_SWEEP_DURATION=${DEMO_SWEEP_DURATION:-5}
-CONNS=${SPARROW_CONNS:-"1000 5000"}
+CONNS=${SPARROW_CONNS:-"500 1500"}
 
 usage() {
     sed -n '2,23p' "$0" | sed 's/^# \{0,1\}//'
